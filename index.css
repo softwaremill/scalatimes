@@ -1,0 +1,102 @@
+body{
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Georgia, TimesNewRoman, serif;
+  font-size: 14px;
+  padding-top: 3em;
+}
+p{
+  text-align: center;
+}
+.logo{
+  text-align: center;
+}
+#logo{
+  line-height:80%;
+}
+
+#logoEst{
+  font-family: Georgia,TimesNewRoman,serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 11px;
+  display: block;
+}
+
+#logoEst span{
+  font-style: normal;
+  font-size: 15px;
+}
+
+#logoScalaTimes{
+  font-family: Georgia,TimesNewRoman,serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  -webkit-text-stroke: 0.6px rgba(107,107,107,0.8);
+}
+
+#logoNewspaper{
+  font-family: Courier,monospace;
+  font-weight: normal;
+  font-size: 11px;
+  padding-bottom: 20px;
+  padding-top: 2px;
+  text-transform: uppercase;
+  display: block;
+}
+form[name="mc-embedded-subscribe-form"] {
+  padding: 3em 1.5em 1.5em;
+  position: relative;
+}
+.indicates-required{
+  position: absolute;
+  right: 1.5em;
+}
+label[for="mce-EMAIL"] {
+  display: block;
+  margin-bottom: 10px;
+}
+label[for="mce-EMAIL"] .asterisk{
+  position: absolute;
+  right: 2em;
+  top: 4em;
+  font-size: 20px;
+}
+.asterisk{
+  color: #bd0808;
+}
+input {
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 0.8em;
+  width: 100%;
+  border: 1px solid #E7E7E7;
+  background: #F5F5F5;
+  margin-bottom: 10px;
+}
+.response{
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 10px;
+}
+#mce-error-response{
+  background: rgb(252, 180, 180);
+  color: rgb(255, 68, 68);
+}
+#mce-success-response{
+  background: rgb(157, 202, 157);
+  color: green;
+}
+input[type="submit"]{
+  background: #750404;
+  border: 1px solid #490000;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+input[type="submit"]:hover{
+  background: #490000;
+}
