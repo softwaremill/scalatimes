@@ -1,46 +1,361 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/EducationEvent">
+<html lang="en">
   <head>
-    <title>Scala Times</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Scala Times Newsletters</title>
+    <style>
+      body{
+        max-width: 500px;
+        margin: 0 auto;
+        font-family: Georgia, TimesNewRoman, serif;
+        font-size: 14px;
+        padding: 3em 1.5em 0;
+      }
+      section{
+        padding-top: 2em;
+      }
+      section p:first-child{
+        margin-top: 0;
+      }
+      section .centered{
+        text-align: center;
+      }
+      section a{
+        color: #BD0808;
+        text-decoration: none;
+      }
+      section a:hover{
+        color: #E40303;
+      }
+      section h2{
+        margin-bottom: 1.25em;
+      }
+      .team-sign{
+        color: gray;
+        font-style: italic;
+        margin: 3em 0 0 0;
+      }
+      .logo{
+        text-align: center;
+      }
+      #logo{
+        line-height:80%;
+      }
+      #logoEst{
+        font-family: Georgia,TimesNewRoman,serif;
+        font-weight: normal;
+        font-style: italic;
+        font-size: 11px;
+        display: block;
+      }
+      #logoEst span{
+        font-style: normal;
+        font-size: 15px;
+      }
+      #logoScalaTimes{
+        font-family: Georgia,TimesNewRoman,serif;
+        font-weight: bold;
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        -webkit-text-stroke: 0.6px rgba(107,107,107,0.8);
+      }
+      #logoNewspaper{
+        font-family: Courier,monospace;
+        font-weight: normal;
+        font-size: 11px;
+        padding-bottom: 20px;
+        padding-top: 2px;
+        text-transform: uppercase;
+        display: block;
+      }
+      form[name="mc-embedded-subscribe-form"] {
+        padding: 3em 0 1.5em;
+        position: relative;
+      }
+      label[for="mce-EMAIL"] {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding: 0.8em;
+        width: 100%;
+        border: 1px solid #E7E7E7;
+        background: #F5F5F5;
+        margin-bottom: 10px;
+      }
+      input[type='email']:focus {
+        outline: none;
+        -webkit-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+        -moz-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+        box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+      }
+      .response{
+        text-align: center;
+        padding: 0.5em;
+        margin-bottom: 10px;
+        font-family: monospace;
+      }
+      .response a {
+        color: white;
+        text-decoration: none;
+      }
+      .response a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      #mce-error-response{
+        background: rgb(252, 180, 180);
+        color: rgb(255, 68, 68);
+      }
+      #mce-success-response{
+        background: #ceebce;
+        color: #4ab14a;
+      }
+      input[type="submit"]{
+        background: #750404;
+        border: 1px solid #490000;
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+      }
+      input[type="submit"]:focus {
+        outline: none;
+        -webkit-box-shadow: inset 0 0 7px black;
+        -moz-box-shadow: inset 0 0 7px black;
+        box-shadow: inset 0 0 7px black;
+      }
+      input[type="submit"]:hover{
+        background: #490000;
+      }
+    </style>
   </head>
   <body>
-    <h1 class="logo">
-      <span id="logoEst" align="center" valign="top">
-        <span>&nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;</span>Est. 2014<span>&nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;</span>
-      </span>
-      <span id="logoScalaTimes" align="center" valign="top">
-        SCALA TIMES
-      </span>
-      <span id="logoNewspaper" align="center" valign="top">
-        Weekly Scala Newspaper
-      </span>
-    </h1>
-    <p>A free, once-weekly Scala news flash. Easy to unsubscribe. Goes out every Thursday 8:30 PST.</p>
-    <!-- Begin MailChimp Signup Form -->
-    <div id="mc_embed_signup">
-      <form action="http://softwaremill.us2.list-manage1.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&amp;id=32cef9ab4e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div class="indicates-required">
-          <span class="asterisk">*</span> 
-        indicates required</div>
-        <div class="mc-field-group">
-          <label for="mce-EMAIL">E-mail Address  <span class="asterisk">*</span></label>
-          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-        </div>
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div>
-        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;">
-          <input type="text" name="b_ba834c562d82d9aba5eaf90ba_32cef9ab4e" value="">
-        </div>
-        <div class="clear">
-          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </div>
-      </form>
-    </div>
+    <header>
+      <h1 class="logo">
+        <span id="logoEst" align="center" valign="top">
+          <span>&nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;</span>Est. 2014<span>&nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;</span>
+        </span>
+        <span id="logoScalaTimes" align="center" valign="top">
+          SCALA TIMES
+        </span>
+        <span id="logoNewspaper" align="center" valign="top">
+          Weekly Scala Newspaper
+        </span>
+      </h1>
+    </header>
+    <section class="signup-form">
+      <p class="centered">A free, once-weekly Scala news flash. Easy to unsubscribe.<br>Goes out every Thursday 8:30 PST.</p>
 
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="http://softwaremill.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&amp;id=32cef9ab4e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">E-mail Address</label>
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+          </div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_ba834c562d82d9aba5eaf90ba_32cef9ab4e" value=""></div>
+          <div class="clear">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
+    try {
+      var jqueryLoaded=jQuery;
+      jqueryLoaded=true;
+    } catch(err) {
+      var jqueryLoaded=false;
+    }
+    var head= document.getElementsByTagName('head')[0];
+    if (!jqueryLoaded) {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+      head.appendChild(script);
+      if (script.readyState && script.onload!==null){
+        script.onreadystatechange= function () {
+          if (this.readyState == 'complete') mce_preload_check();
+        }    
+      }
+    }
+    var err_style = '';
+    try{
+      err_style = mc_custom_error_style;
+    } catch(e){
+      err_style = '#mc_embed_signup input.mce_inline_error{border-color:#f35f5f;} #mc_embed_signup input.mce_inline_error:focus{outline:none; -webkit-box-shadow: inset 0px 0px 7px 0px rgba(255, 147, 147, 0.75); -moz-box-shadow: inset 0px 0px 7px 0px rgba(255, 147, 147, 0.75);box-shadow: inset 0px 0px 7px 0px rgba(255, 147, 147, 0.75);} #mc_embed_signup div.mce_inline_error{font-family: monospace; margin-bottom: 10px; padding: 5px 10px; background-color:#ffbebe; z-index: 1; color:#ff4c4c;}';
+    }
+    var head= document.getElementsByTagName('head')[0];
+    var style= document.createElement('style');
+    style.type= 'text/css';
+    if (style.styleSheet) {
+      style.styleSheet.cssText = err_style;
+    } else {
+      style.appendChild(document.createTextNode(err_style));
+    }
+    head.appendChild(style);
+    setTimeout('mce_preload_check();', 250);
+
+    var mce_preload_checks = 0;
+    function mce_preload_check(){
+      if (mce_preload_checks>40) return;
+      mce_preload_checks++;
+      try {
+        var jqueryLoaded=jQuery;
+      } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+      }
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+      head.appendChild(script);
+      try {
+        var validatorLoaded=jQuery("#fake-form").validate({});
+      } catch(err) {
+        setTimeout('mce_preload_check();', 250);
+        return;
+      }
+      mce_init_form();
+    }
+    function mce_init_form(){
+      jQuery(document).ready( function($) {
+        var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+        var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+        $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+        options = { url: 'http://softwaremill.us2.list-manage.com/subscribe/post-json?u=ba834c562d82d9aba5eaf90ba&id=32cef9ab4e&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+          beforeSubmit: function(){
+            $('#mce_tmp_error_msg').remove();
+            $('.datefield','#mc_embed_signup').each(
+              function(){
+                var txt = 'filled';
+                var fields = new Array();
+                var i = 0;
+                $(':text', this).each(
+                  function(){
+                    fields[i] = this;
+                    i++;
+                  });
+                $(':hidden', this).each(
+                  function(){
+                    var bday = false;
+                    if (fields.length == 2){
+                        bday = true;
+                        fields[2] = {'value':1970};//trick birthdays into having years
+                    }
+                    if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
+                      this.value = '';
+                    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+                      this.value = '';
+                    } else {
+                      if (/\[day\]/.test(fields[0].name)){
+                        this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;                         
+                      } else {
+                        this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+                      }
+                    }
+                  });
+              });
+            $('.phonefield-us','#mc_embed_signup').each(
+              function(){
+                var fields = new Array();
+                var i = 0;
+                $(':text', this).each(
+                  function(){
+                    fields[i] = this;
+                    i++;
+                  });
+                $(':hidden', this).each(
+                  function(){
+                    if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
+                    this.value = '';
+                    } else {
+                      this.value = 'filled';
+                    }
+                  });
+              });
+            return mce_validator.form();
+          }, 
+          success: mce_success_cb
+        };
+        $('#mc-embedded-subscribe-form').ajaxForm(options);
+      });
+    }
+    function mce_success_cb(resp){
+      $('#mce-success-response').hide();
+      $('#mce-error-response').hide();
+      if (resp.result=="success"){
+        $('#mce-'+resp.result+'-response').show();
+        $('#mce-'+resp.result+'-response').html(resp.msg);
+        $('#mc-embedded-subscribe-form').each(function(){
+          this.reset();
+        });
+      } else {
+        var index = -1;
+        var msg;
+        try {
+          var parts = resp.msg.split(' - ',2);
+          if (parts[1]==undefined){
+            msg = resp.msg;
+          } else {
+            i = parseInt(parts[0]);
+            if (i.toString() == parts[0]){
+              index = parts[0];
+              msg = parts[1];
+            } else {
+              index = -1;
+              msg = resp.msg;
+            }
+          }
+        } catch(e){
+          index = -1;
+          msg = resp.msg;
+        }
+        try{
+          if (index== -1){
+            $('#mce-'+resp.result+'-response').show();
+            $('#mce-'+resp.result+'-response').html(msg);
+          } else {
+            err_id = 'mce_tmp_error_msg';
+            html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+            
+            var input_id = '#mc_embed_signup';
+            var f = $(input_id);
+            if (ftypes[index]=='address'){
+              input_id = '#mce-'+fnames[index]+'-addr1';
+              f = $(input_id).parent().parent().get(0);
+            } else if (ftypes[index]=='date'){
+              input_id = '#mce-'+fnames[index]+'-month';
+              f = $(input_id).parent().parent().get(0);
+            } else {
+              input_id = '#mce-'+fnames[index];
+              f = $().parent(input_id).get(0);
+            }
+            if (f){
+              $(f).append(html);
+              $(input_id).focus();
+            } else {
+              $('#mce-'+resp.result+'-response').show();
+              $('#mce-'+resp.result+'-response').html(msg);
+            }
+          }
+        } catch(e){
+          $('#mce-'+resp.result+'-response').show();
+          $('#mce-'+resp.result+'-response').html(msg);
+        }
+      }
+    }
+
+    </script>
     <!--End mc_embed_signup-->
   </body>
 </html>
