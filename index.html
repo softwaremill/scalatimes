@@ -4,7 +4,7 @@
     <title>Scala Times - the weekly Scala Newsletter</title>
     <style>
       body{
-        max-width: 500px;
+        max-width: 565px;
         margin: 0 auto;
         font-family: Georgia, TimesNewRoman, serif;
         font-size: 14px;
@@ -133,6 +133,25 @@
       input[type="submit"]:hover{
         background: #490000;
       }
+      .banners-btn {
+        cursor: pointer;
+      }
+      .banner {
+        padding-top: 20px;
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+        -webkit-transition: height 1200ms;
+        -moz-transition: height 1200ms;
+        -o-transition: height 1200ms;
+        transition: height 1200ms;
+      }
+      .banner img {
+        margin: 3px;
+      }
+      .banners-btn:hover .banner {
+        height: 735px;
+      }
     </style>
   </head>
   <body>
@@ -170,6 +189,18 @@
         </form>
 
  	<p class="centered">Got a tip? <a href="mailto:scalatimes@softwaremill.com">Send it in!</a> Looking for an archive? Check out our <a href="http://twitter.com/scalatimes">Twitter</a>.</p>
+  <div class="centered banners-btn">Want ST banner for your blog? <a>Take one.</a><br/>
+          <div class="banner">
+            <img src="scalatimes_banners/125.png" />
+            <img src="scalatimes_banners/300.png" />
+            <img src="scalatimes_banners/260.png" />
+            <img src="scalatimes_banners/285.png" />
+            <img src="scalatimes_banners/125-2.png" />
+            <img src="scalatimes_banners/300-2.png" />
+            <img src="scalatimes_banners/260-2.png" />
+            <img src="scalatimes_banners/285-2.png" />
+          </div>
+        </div>
 
       </div>
     </section>
