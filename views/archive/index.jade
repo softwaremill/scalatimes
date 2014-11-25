@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  h2 Archive
+  ol
+    each campaign in campaigns
+      li
+        a(href="/archive/"+campaign.id)= campaign.title
+        div!= campaign.excerpt
