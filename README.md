@@ -35,12 +35,21 @@ This will install all required dependencies for this project (Express, Jade, Mai
 
 Navigate to `routes/archive.js` file and update Mailchimp API key and List ID.
 [Here](http://kb.mailchimp.com/accounts/management/about-api-keys) you can find information on how to find your Mailchimp API key.
-[Here](http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id) you can find information on how 
+[Here](http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id) you can find information on how to find List ID.
 
 After that run
 
 ```
   MAILCHIMP_API_KEY={YOUR_API_KEY} MAILCHIMP_LIST_ID={YOUR_LIST_ID} node app.js
+```
+
+or for Windows run like this
+
+```
+  $env:MAILCHIMP_API_KEY="{key}"
+  $env:MAILCHIMP_LIST_ID="{list_id}"
+
+  node app.js
 ```
 
 Wait couple of seconds, while you see
