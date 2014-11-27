@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #fafafa;
+  padding: 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  color: black;
+}
+
+.container {
+  max-width: 1060px;
+  width: 100%;
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid #E7E7E7;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+header {
+  width: 100%;
+  overflow: auto;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+header .intro, 
+header .subscribe {
+  width: 260px;
+  font-size: 1.16em;
+}
+
+header .intro {
+  float: left;
+  border: 1px solid black;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+header .subscribe {
+  float: right;
+}
+
+header .logo {
+  width: 100%;
+  padding: 0 285px;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+header .logo .top {
+  font-size: 1.42em;
+  font-style: italic;
+  display: block;
+}
+
+header .logo .middle {
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: block;
+}
+
+header .logo .bottom {
+  font-size: 1.42em;
+  text-transform: uppercase;
+  font-family: Courier, monospace;
+  font-weight: normal;
+  display: block;
+}
+
+header .issue-info {
+  border-top: 3px double black;
+  border-bottom: 3px double black;
+  margin-bottom: 10px;
+  padding: 3px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.1em;
+}
+
+.newspaper-body {
+  width: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.newspaper-body .left-column, 
+.newspaper-body .right-column {
+  width: 200px;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.newspaper-body .left-column {
+  left: 0;
+  border-right: 1px solid black;
+}
+
+.newspaper-body .right-column {
+  right: 0;
+  border-left: 1px solid black;
+}
+
+.newspaper-body .issue {
+  padding: 15px 205px 0;
+  vertical-align: top;
+}
+
+.newspaper-body .sml-ad {
+  border: 2px solid black;
+  padding: 5px 7px;
+  text-align: center;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}

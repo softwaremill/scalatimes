@@ -38,12 +38,16 @@ function getCampaignsContent(campaigns) {
         var htmlContent = contentData.html;
 
         var excerpt = getCampaignExcerpts(htmlContent);
+        var campaignBody = getCampaignBody(htmlContent);
+        var issueInfo = getIssueInfo(htmlContent);
      
         campaignsArray.push({
           'title': campaignTitle,
           'id': campaignId,
           'html': htmlContent,
           'excerpt': excerpt,
+          'campaignBody': campaignBody,
+          'issueInfo': issueInfo,
           'index': i
         });
 
@@ -103,6 +107,19 @@ function getCampaignExcerpts (htmlContent) {
   return html;
 }
 
+function getCampaignBody (htmlContent) {
+  var $ = cheerio.load(htmlContent);
+  var campaignBody = $('#bodyContent #bodyTable td[align="left"]');
+
+  return campaignBody;
+}
+
+function getIssueInfo (htmlContent) {
+  var $ = cheerio.load(htmlContent);
+  var issueInfo = $('#issueSection').text().trim().split('This issue on')[0].trim().slice(0,-1);
+
+  return issueInfo;
+}
 
 
 /*
