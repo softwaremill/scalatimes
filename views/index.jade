@@ -2,8 +2,235 @@ extends layout
 
 block content
   header
-    div A free, once-weekly Scala news flash. Easy to unsubscribe.<br>Goes out every Thursday 8:30 PST.
-    div
-    div
-  h2 Latest issue
-  div!= html
+    div.intro A free, once-weekly Scala news flash. Easy to unsubscribe. Goes out every Thursday 8:30 PST.
+    div.subscribe
+      div#mc_embed_signup
+        form#mc-embedded-subscribe-form.validate(action='http://softwaremill.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&id=32cef9ab4e', method='post', name='mc-embedded-subscribe-form', novalidate='novalidate')
+          .mc-field-group
+            label(for='mce-EMAIL') E-mail Address:
+            input#mce-EMAIL.required.email(type='email', value='', name='EMAIL')
+          div#mce-responses.clear
+            div#mce-error-response.response(style='display: none;')
+            div#mce-success-response.response(style='display: none;')
+          //- real people should not fill this in and expect good things - do not remove this or risk form bot signups
+          div(style='position: absolute; left: -5000px;')
+            input(type='text', name='b_ba834c562d82d9aba5eaf90ba_32cef9ab4e', value='')
+          .clear
+            input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')  
+    div.logo
+      span.top
+        span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
+        | Est. 2014
+        span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
+      span.middle Scala Times
+      span.bottom Weekly Scala newspaper
+    div.issue-info= issueInfo
+
+  section.newspaper-body
+    section.issue
+      table
+        tbody
+          tr
+            != campaignBody
+    section.left-column
+    section.right-column
+      div.sml-ad Got a tip? 
+        a(href="mailto:scalatimes@softwaremill.com") Send it in
+        |!<br>Follow us on 
+        a(href="http://twitter.com/scalatimes") Twitter
+        |.<br>Want ST banner for your blog? 
+        a(href="") Take one
+        |.<br>Curated by 
+        a(href="http://softwaremill.com") SoftwareMill
+        |.<br>We are 
+        a(href="https://softwaremill.com/join-us/") hiring
+        |.<br>And 
+        a(href="https://softwaremill.com/portfolio/") taking on projects
+        |.
+    
+    
+
+  //- script(type='text/javascript')
+  //-   var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
+  //-   try {
+  //-   var jqueryLoaded=jQuery;
+  //-   jqueryLoaded=true;
+  //-   } catch(err) {
+  //-   var jqueryLoaded=false;
+  //-   }
+  //-   var head= document.getElementsByTagName('head')[0];
+  //-   if (!jqueryLoaded) {
+  //-   var script = document.createElement('script');
+  //-   script.type = 'text/javascript';
+  //-   script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+  //-   head.appendChild(script);
+  //-   if (script.readyState && script.onload!==null){
+  //-   script.onreadystatechange= function () {
+  //-   if (this.readyState == 'complete') mce_preload_check();
+  //-   }
+  //-   }
+  //-   }
+  //-   var err_style = '';
+  //-   try{
+  //-   err_style = mc_custom_error_style;
+  //-   } catch(e){
+  //-   err_style = '#mc_embed_signup input.mce_inline_error{border-color:#f35f5f;} #mc_embed_signup input.mce_inline_error:focus{outline:none; -webkit-box-shadow: inset 0px 0px 7px 0px rgba(255, 147, 147, 0.75); -moz-box-shadow: inset 0px 0px 7px 0px rgba(255, 147, 147, 0.75);box-shadow: inset 0px 0px 7px 0px rgba(255, 147, 147, 0.75);} #mc_embed_signup div.mce_inline_error{font-family: monospace; margin-bottom: 10px; padding: 5px 10px; background-color:#ffbebe; z-index: 1; color:#ff4c4c;}';
+  //-   }
+  //-   var head= document.getElementsByTagName('head')[0];
+  //-   var style= document.createElement('style');
+  //-   style.type= 'text/css';
+  //-   if (style.styleSheet) {
+  //-   style.styleSheet.cssText = err_style;
+  //-   } else {
+  //-   style.appendChild(document.createTextNode(err_style));
+  //-   }
+  //-   head.appendChild(style);
+  //-   setTimeout('mce_preload_check();', 250);
+  //-   var mce_preload_checks = 0;
+  //-   function mce_preload_check(){
+  //-   if (mce_preload_checks>40) return;
+  //-   mce_preload_checks++;
+  //-   try {
+  //-   var jqueryLoaded=jQuery;
+  //-   } catch(err) {
+  //-   setTimeout('mce_preload_check();', 250);
+  //-   return;
+  //-   }
+  //-   var script = document.createElement('script');
+  //-   script.type = 'text/javascript';
+  //-   script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+  //-   head.appendChild(script);
+  //-   try {
+  //-   var validatorLoaded=jQuery("#fake-form").validate({});
+  //-   } catch(err) {
+  //-   setTimeout('mce_preload_check();', 250);
+  //-   return;
+  //-   }
+  //-   mce_init_form();
+  //-   }
+  //-   function mce_init_form(){
+  //-   jQuery(document).ready( function($) {
+  //-   var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+  //-   var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+  //-   $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+  //-   options = { url: 'http://softwaremill.us2.list-manage.com/subscribe/post-json?u=ba834c562d82d9aba5eaf90ba&id=32cef9ab4e&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+  //-   beforeSubmit: function(){
+  //-   $('#mce_tmp_error_msg').remove();
+  //-   $('.datefield','#mc_embed_signup').each(
+  //-   function(){
+  //-   var txt = 'filled';
+  //-   var fields = new Array();
+  //-   var i = 0;
+  //-   $(':text', this).each(
+  //-   function(){
+  //-   fields[i] = this;
+  //-   i++;
+  //-   });
+  //-   $(':hidden', this).each(
+  //-   function(){
+  //-   var bday = false;
+  //-   if (fields.length == 2){
+  //-   bday = true;
+  //-   fields[2] = {'value':1970};//trick birthdays into having years
+  //-   }
+  //-   if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
+  //-   this.value = '';
+  //-   } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+  //-   this.value = '';
+  //-   } else {
+  //-   if (/\\[day\]/.test(fields[0].name)){
+  //-   this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;
+  //-   } else {
+  //-   this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+  //-   }
+  //-   }
+  //-   });
+  //-   });
+  //-   $('.phonefield-us','#mc_embed_signup').each(
+  //-   function(){
+  //-   var fields = new Array();
+  //-   var i = 0;
+  //-   $(':text', this).each(
+  //-   function(){
+  //-   fields[i] = this;
+  //-   i++;
+  //-   });
+  //-   $(':hidden', this).each(
+  //-   function(){
+  //-   if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
+  //-   this.value = '';
+  //-   } else {
+  //-   this.value = 'filled';
+  //-   }
+  //-   });
+  //-   });
+  //-   return mce_validator.form();
+  //-   },
+  //-   success: mce_success_cb
+  //-   };
+  //-   $('#mc-embedded-subscribe-form').ajaxForm(options);
+  //-   });
+  //-   }
+  //-   function mce_success_cb(resp){
+  //-   $('#mce-success-response').hide();
+  //-   $('#mce-error-response').hide();
+  //-   if (resp.result=="success"){
+  //-   $('#mce-'+resp.result+'-response').show();
+  //-   $('#mce-'+resp.result+'-response').html(resp.msg);
+  //-   $('#mc-embedded-subscribe-form').each(function(){
+  //-   this.reset();
+  //-   });
+  //-   } else {
+  //-   var index = -1;
+  //-   var msg;
+  //-   try {
+  //-   var parts = resp.msg.split(' - ',2);
+  //-   if (parts[1]==undefined){
+  //-   msg = resp.msg;
+  //-   } else {
+  //-   i = parseInt(parts[0]);
+  //-   if (i.toString() == parts[0]){
+  //-   index = parts[0];
+  //-   msg = parts[1];
+  //-   } else {
+  //-   index = -1;
+  //-   msg = resp.msg;
+  //-   }
+  //-   }
+  //-   } catch(e){
+  //-   index = -1;
+  //-   msg = resp.msg;
+  //-   }
+  //-   try{
+  //-   if (index== -1){
+  //-   $('#mce-'+resp.result+'-response').show();
+  //-   $('#mce-'+resp.result+'-response').html(msg);
+  //-   } else {
+  //-   err_id = 'mce_tmp_error_msg';
+  //-   html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+  //-   var input_id = '#mc_embed_signup';
+  //-   var f = $(input_id);
+  //-   if (ftypes[index]=='address'){
+  //-   input_id = '#mce-'+fnames[index]+'-addr1';
+  //-   f = $(input_id).parent().parent().get(0);
+  //-   } else if (ftypes[index]=='date'){
+  //-   input_id = '#mce-'+fnames[index]+'-month';
+  //-   f = $(input_id).parent().parent().get(0);
+  //-   } else {
+  //-   input_id = '#mce-'+fnames[index];
+  //-   f = $().parent(input_id).get(0);
+  //-   }
+  //-   if (f){
+  //-   $(f).append(html);
+  //-   $(input_id).focus();
+  //-   } else {
+  //-   $('#mce-'+resp.result+'-response').show();
+  //-   $('#mce-'+resp.result+'-response').html(msg);
+  //-   }
+  //-   }
+  //-   } catch(e){
+  //-   $('#mce-'+resp.result+'-response').show();
+  //-   $('#mce-'+resp.result+'-response').html(msg);
+  //-   }
+  //-   }
+  //-   }
