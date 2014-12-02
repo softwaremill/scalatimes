@@ -24,16 +24,22 @@ block content
         span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
       span.middle Scala Times
       span.bottom Weekly Scala newspaper
-    div.issue-info= issueInfo
+    div.issue-info= issue.issueInfo
 
   section.newspaper-body
     section.issue
-      table
+      table.issue-table
         tbody
           tr
-            != campaignBody
-    section.left-column
-    section.right-column
+            != issue.campaignBody
+    section.left-column.archive
+      ol
+        each campaign in campaigns
+          li
+            a.issue-link(href="/archive/"+campaign.id)= campaign.title
+            != campaign.excerpt
+          hr
+    section.right-column.archive
       div.sml-ad Got a tip? 
         a(href="mailto:scalatimes@softwaremill.com") Send it in
         |!<br>Follow us on 
