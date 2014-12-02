@@ -16,6 +16,7 @@ setInterval(function(){
 
 function getAllCampaignsForList(listId) {
   mc.campaigns.list({filters: {'status':'sent', 'list_id':listId}, 'limit': 100}, function(data) {
+    console.log("start generating campaignsCache...")
     var campaigns = data.data;
     getCampaignsContent(campaigns);
   })
@@ -142,5 +143,5 @@ exports.view = function(req, res){
  */
 exports.view_latest = function(req, res){
   var contentData = campaignsCache[0];
-  res.render('index', contentData);
+  res.render('index', {campaigns: campaignsCache, issue: contentData});
 };

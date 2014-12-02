@@ -8,6 +8,7 @@ body {
   font-size: 12px;
   font-family: sans-serif;
   color: black;
+  line-height: 1.5;
 }
 
 a {
@@ -44,7 +45,7 @@ header .subscribe {
 header .intro {
   float: left;
   border: 1px solid black;
-  padding: 15px 10px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -129,4 +130,35 @@ header .issue-info {
   font-family: Georgia, Times, 'Times New Roman', serif;
   line-height: 1.8;
   font-size: 1.16em;
+}
+
+.archive ol {
+  padding: 0;
+  margin:  0;
+}
+
+.archive .issue-link {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.16em;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  display: block;
+}
+
+.archive .issue-link:hover {
+  color: #ED0000;
+}
+
+.archive ul {
+  padding: 0;
+}
+
+.archive ol > li {
+  padding-top: 7px;
+  padding-bottom: 13px;
+}
+
+.archive hr {
+  width: 80px;
 }
