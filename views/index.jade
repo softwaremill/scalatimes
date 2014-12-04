@@ -38,7 +38,8 @@ block content
           li
             a.issue-link(href="/archive/"+campaign.id)= campaign.title
             != campaign.excerpt
-          hr
+            hr
+
     section.right-column.archive
       div.sml-ad Got a tip? 
         a(href="mailto:scalatimes@softwaremill.com") Send it in
@@ -53,8 +54,11 @@ block content
         |.<br>And 
         a(href="https://softwaremill.com/portfolio/") taking on projects
         |.
-    
-    
+      ol
+
+    section.other-archives
+      p Hello!
+      
 
   //- script(type='text/javascript')
   //-   var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';

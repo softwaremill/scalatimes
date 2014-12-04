@@ -135,6 +135,7 @@ header .issue-info {
 .archive ol {
   padding: 0;
   margin:  0;
+  list-style: none;
 }
 
 .archive .issue-link {
@@ -152,13 +153,23 @@ header .issue-info {
 
 .archive ul {
   padding: 0;
+  list-style: none;
 }
 
-.archive ol > li {
+.archive ol>li {
   padding-top: 7px;
-  padding-bottom: 13px;
+  padding-bottom: 1px;
+}
+
+.archive ol  ul {
+  padding-bottom: 12px;
 }
 
 .archive hr {
   width: 80px;
+}
+
+.archive-campaigns {
+  width: 189px;
+  /*display: none;*/
 }
