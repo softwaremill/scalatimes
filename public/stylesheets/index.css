@@ -21,7 +21,7 @@ a:hover {
 }
 
 .container {
-  max-width: 1060px;
+  max-width: 1032px;
   width: 100%;
   background-color: white;
   margin: 0 auto;
@@ -95,37 +95,34 @@ header .issue-info {
 
 .newspaper-body {
   width: 100%;
-  /*overflow: auto;*/
   position: relative;
+}
+
+.column {
+  width: 200px;
+  padding: 10px;
+  vertical-align: top;
 }
 
 .newspaper-body .left-column, 
 .newspaper-body .right-column {
-  width: 200px;
-  padding: 5px;
   position: absolute;
   top: 0;
-  /*height: 100%;*/
 }
 
 .newspaper-body .left-column {
-  /*float: left;*/
   left: 0;
-  /*border-right: 1px solid black;*/
 }
 
 .newspaper-body .right-column {
-  /*float: right;*/
   right: 0;
-  /*border-left: 1px solid black;*/
 }
 
 .newspaper-body .issue{
-  padding: 0 205px;
+  padding: 0 200px;
   vertical-align: top;
-  /*float: left;*/
-  /*max-width: 600px;*/
-  min-width: 810px;
+  width: 1000px;
+  margin-bottom: 10px;
 }
 
 .issue-table {
@@ -144,13 +141,13 @@ header .issue-info {
   margin-bottom: 10px;
 }
 
-.archive ol {
+.column ol {
   padding: 0;
   margin:  0;
   list-style: none;
 }
 
-.archive .issue-link {
+.column .issue-link {
   font-family: Georgia, Times, 'Times New Roman', serif;
   font-size: 1.16em;
   font-weight: bold;
@@ -159,29 +156,29 @@ header .issue-info {
   display: block;
 }
 
-.archive .issue-link:hover {
+.column .issue-link:hover {
   color: #ED0000;
 }
 
-.archive ul {
+.column ul {
   padding: 0;
   list-style: none;
 }
 
-.archive ol>li {
+.column ol>li {
   padding-top: 7px;
   padding-bottom: 1px;
 }
 
-.archive ol  ul {
+.column ol  ul {
   padding-bottom: 12px;
 }
 
-.archive hr {
+.column hr {
   width: 80px;
 }
 
-.archive ol > li:last-child hr {
+.column ol > li:last-child hr {
   display: none;
 }
 
@@ -189,4 +186,15 @@ header .issue-info {
 .other-archives {
   width: 100%;
   border-top: 1px solid black;
+  padding: 10px 0 0;
+}
+
+.other-archives .column {
+  display: inline-block;
+  border-right: 1px solid black;
+  height: 100%;
+}
+
+.other-archives .column:last-child {
+  border-right: none;
 }

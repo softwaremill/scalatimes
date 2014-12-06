@@ -32,7 +32,7 @@ block content
         tbody
           tr
             != issue.campaignBody
-    section.left-column.archive
+    section.left-column.archive.column
       ol
         each campaign in campaigns
           li
@@ -40,7 +40,7 @@ block content
             != campaign.excerpt
             hr
 
-    section.right-column.archive
+    section.right-column.archive.column
       div.sml-ad Got a tip? 
         a(href="mailto:scalatimes@softwaremill.com") Send it in
         |!<br>Follow us on 
@@ -57,9 +57,16 @@ block content
       ol
 
   section.other-archives
-
-      p Hello!
-      
+    div.archive.column
+      ol
+    div.archive.column
+      ol
+    div.archive.column
+      ol
+    div.archive.column
+      ol
+    div.archive.column   
+      ol   
 
   //- script(type='text/javascript')
   //-   var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
