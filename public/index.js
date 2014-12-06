@@ -50,11 +50,6 @@ $(function() {
     }
 
   }); 
-  
-  console.log("table height = "+tableHeight+"; left height = "+liLeftHeight+"; Right Height = "+liRightHeight);
-  console.log(leftLi);
-  console.log(rightLi);
-  console.log(bottomLi);
 
   var leftColumnHtml="";
 
@@ -72,5 +67,40 @@ $(function() {
   };
 
   $('.right-column.archive ol').append(rightColumnHtml);
+
+  // split bottomLi between bottom columns
+  var numberOfColumns = $('.other-archives .column').length;
+  console.log(bottomLi);
+
+  function split(a, n, callback) {
+    var len = a.length, out = [], i = 0;
+    while (i < len) {
+      var size = Math.ceil((len - i) / n--);
+      out.push(a.slice(i, i += size));
+    }
+
+    callback(out);
+  }
+
+  var columnsArray = $('.other-archives .archive.column');
+
+  split(bottomLi, numberOfColumns, function(array) {
+
+    console.log(array);
+
+    for (var i = 0; i < array.length; i++) {
+      var columnHtml="";
+
+      for (var l = 0; l < array[i].length; l++) {
+
+        columnHtml = columnHtml + array[i][l].outerHTML;
+
+      }
+
+      $(columnsArray[i]).find('ol').append(columnHtml);
+    }
+
+  });
+ 
 
 });
