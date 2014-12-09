@@ -37,8 +37,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/archive', archive.list);
-app.get('/archive/:campaignId', archive.view);
+// app.get('/issues', archive.list);
+app.get('/:campaignId', archive.view);
 app.get('/', archive.view_latest)
 
 
