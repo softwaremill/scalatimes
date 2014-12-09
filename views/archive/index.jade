@@ -1,9 +1,69 @@
 extends ../layout
 
 block content
-  h2 Archive
-  ol
-    each campaign in campaigns
-      li
-        a(href="/archive/"+campaign.id)= campaign.title
-        div!= campaign.excerpt
+  header
+    div.intro A free, once-weekly Scala news flash. Easy to unsubscribe. Goes out every Thursday 8:30 PST.
+    div.subscribe
+      div#mc_embed_signup
+        form#mc-embedded-subscribe-form.validate(action='http://softwaremill.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&id=32cef9ab4e', method='post', name='mc-embedded-subscribe-form', novalidate='novalidate')
+          .mc-field-group
+            label(for='mce-EMAIL') E-mail Address:
+            input#mce-EMAIL.required.email(type='email', value='', name='EMAIL')
+          div#mce-responses.clear
+            div#mce-error-response.response(style='display: none;')
+            div#mce-success-response.response(style='display: none;')
+          //- real people should not fill this in and expect good things - do not remove this or risk form bot signups
+          div(style='position: absolute; left: -5000px;')
+            input(type='text', name='b_ba834c562d82d9aba5eaf90ba_32cef9ab4e', value='')
+          .clear
+            input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')  
+    div.logo
+      span.top
+        span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
+        | Est. 2014
+        span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
+      span.middle Scala Times
+      span.bottom Weekly Scala newspaper
+    div.issue-info= issue.issueInfo
+
+  section.newspaper-body
+    section.issue
+      table.issue-table
+        tbody
+          tr
+            != issue.campaignBody
+    section.left-column.archive.column
+      ol
+        each campaign in campaigns
+          li
+            a.issue-link(href="/"+campaign.id)= campaign.title
+            != campaign.excerpt
+            hr
+
+    section.right-column.archive.column
+      div.sml-ad Got a tip? 
+        a(href="mailto:scalatimes@softwaremill.com") Send it in
+        |!<br>Follow us on 
+        a(href="http://twitter.com/scalatimes") Twitter
+        |.<br>Want ST banner for your blog? 
+        a(href="") Take one
+        |.<br>Curated by 
+        a(href="http://softwaremill.com") SoftwareMill
+        |.<br>We are 
+        a(href="https://softwaremill.com/join-us/") hiring
+        |.<br>And 
+        a(href="https://softwaremill.com/portfolio/") taking on projects
+        |.
+      ol
+
+  section.other-archives
+    div.archive.column
+      ol
+    div.archive.column
+      ol
+    div.archive.column
+      ol
+    div.archive.column
+      ol
+    div.archive.column   
+      ol  

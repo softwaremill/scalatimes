@@ -126,16 +126,16 @@ function getIssueInfo (htmlContent) {
 /*
  * Render list of sent campaigns (archive page).
  */
-exports.list = function(req, res){
-  res.render('archive/index', { title: 'Archive', campaigns: campaignsCache}); 
-};
+// exports.list = function(req, res){
+//   res.render('archive/index', { title: 'Archive', campaigns: campaignsCache}); 
+// };
 
 /*
  * Render content of given camplaign (/archive/:campaignId page).
  */
 exports.view = function(req, res){
   var contentData = _.findWhere(campaignsCache, {'id': req.params.campaignId});
-  res.render('archive/view', contentData);
+  res.render('archive/index', {campaigns: campaignsCache, issue: contentData});
 };
 
 /*

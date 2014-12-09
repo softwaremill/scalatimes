@@ -36,7 +36,7 @@ block content
       ol
         each campaign in campaigns
           li
-            a.issue-link(href="/archive/"+campaign.id)= campaign.title
+            a.issue-link(href="/"+campaign.id)= campaign.title
             != campaign.excerpt
             hr
 
