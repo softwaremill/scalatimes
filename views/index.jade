@@ -43,8 +43,8 @@ block content
         each campaign in campaigns
           li
             a.issue-link(href="/"+campaign.id)
-              p.issue-title= campaign.title
-              != campaign.excerpt
+              h2.issue-title= campaign.title
+              p= campaign.excerpt
             hr
 
     section.right-column.archive.column

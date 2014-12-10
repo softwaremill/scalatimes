@@ -99,11 +99,10 @@ function getCampaignExcerpts (htmlContent) {
   // Use only first 5 titles
   goodContentArray = _.first(goodContentArray, 5);
 
-  var html = "<ul>";
+  var html = "";
   _.each(goodContentArray, function(element){
-    html = html + "<li>" + element + "</li>";
+    html = html + element + ". ";
   });
-  html = html + "</ul>";
 
   return html;
 }
@@ -122,13 +121,6 @@ function getIssueInfo (htmlContent) {
   return issueInfo;
 }
 
-
-/*
- * Render list of sent campaigns (archive page).
- */
-// exports.list = function(req, res){
-//   res.render('archive/index', { title: 'Archive', campaigns: campaignsCache}); 
-// };
 
 /*
  * Render content of given camplaign (/archive/:campaignId page).
