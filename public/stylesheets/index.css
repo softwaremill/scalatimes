@@ -53,6 +53,76 @@ header .subscribe {
   float: right;
 }
 
+header .subscribe input {
+  width: 100%;
+}
+
+header .subscribe .mc-field-group {
+  margin-bottom: 5px;
+}
+
+header .subscribe .clear {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+header .subscribe input[type="email"] {
+  border-radius: 1px;
+  padding: 0.35em 0.5em;
+  border: 1px solid #E7E7E7;
+  background: #F5F5F5;
+}
+
+header .subscribe input[type="email"]:focus,
+header .subscribe input[type="email"]:active {
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+  -moz-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+  box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+}
+
+header .subscribe input[type="submit"] {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  border-radius: 1px;
+  font-weight: bold;
+  color: white;
+  background: #750404;
+  border: 1px solid #490000;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+header .subscribe input[type="submit"]:active,
+header .subscribe input[type="submit"]:focus,
+header .subscribe input[type="submit"]:hover {
+  background: #490000;
+}
+
+#mc_embed_signup div.mce_inline_error,
+#mc_embed_signup #mce-error-response {
+  z-index: 1;
+  font-family: Courier, monospace;
+  color: red!important;
+  font-size: 0.8em;
+  padding: 0!important;
+  margin: 0!important;
+  background-color: transparent!important;
+  font-weight: normal!important;
+  line-height: 1.2;
+}
+
+#mc_embed_signup #mce-success-response {
+  z-index: 1;
+  font-family: Courier, monospace;
+  font-size: 0.8em;
+  color: rgb(69, 143, 69);
+  line-height: 1.2;
+}
+
+#mc_embed_signup input.mce_inline_error {
+  border-color: rgb(211, 0, 0)!important;
+}
+
 header .logo {
   width: 100%;
   padding: 0 285px;
@@ -61,10 +131,18 @@ header .logo {
   margin-bottom: 10px;
 }
 
+header .logo a {
+  color: black;
+}
+
 header .logo .top {
   font-size: 1.42em;
   font-style: italic;
   display: block;
+}
+
+header .logo .top span {
+  font-style: normal;
 }
 
 header .logo .middle {
@@ -91,6 +169,7 @@ header .issue-info {
   text-align: center;
   font-family: sans-serif;
   font-size: 1.1em;
+  clear: both;
 }
 
 .newspaper-body {
@@ -128,7 +207,11 @@ header .issue-info {
 .issue-table {
   border-right: 1px solid black;
   border-left: 1px solid black;
-  padding-top: 15px;
+  padding: 15px 15px 0;
+}
+
+.issue-table img {
+  max-width: 100%!important;
 }
 
 .newspaper-body .sml-ad {
@@ -148,15 +231,21 @@ header .issue-info {
 }
 
 .column .issue-link {
+  color: black;
+}
+
+.column .issue-title {
   font-family: Georgia, Times, 'Times New Roman', serif;
   font-size: 1.16em;
   font-weight: bold;
   color: black;
   text-align: center;
   display: block;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-.column .issue-link:hover {
+.column .issue-link:hover .issue-title {
   color: #ED0000;
 }
 
