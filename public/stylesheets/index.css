@@ -4,11 +4,12 @@
 
 body {
   color: #fafafa;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 12px;
   font-family: sans-serif;
   color: black;
   line-height: 1.5;
+  margin: 10px 0;
 }
 
 a {
@@ -21,13 +22,14 @@ a:hover {
 }
 
 .container {
-  max-width: 1032px;
+  max-width: 992px;
   width: 100%;
   background-color: white;
   margin: 0 auto;
   border: 1px solid #E7E7E7;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
   padding: 15px;
+  min-height: 100%;
 }
 
 header {
@@ -178,7 +180,7 @@ header .issue-info {
 }
 
 .column {
-  width: 200px;
+  width: 192px;
   padding: 10px;
   vertical-align: top;
 }
@@ -198,9 +200,9 @@ header .issue-info {
 }
 
 .newspaper-body .issue{
-  padding: 0 200px;
+  padding: 0 192px;
   vertical-align: top;
-  width: 1000px;
+  width: 960px;
   margin-bottom: 10px;
 }
 
@@ -212,6 +214,10 @@ header .issue-info {
 
 .issue-table img {
   max-width: 100%!important;
+}
+
+.issue-table a:hover strong {
+  color: #ED0000!important;
 }
 
 .newspaper-body .sml-ad {
@@ -245,6 +251,11 @@ header .issue-info {
   margin-top: 0;
 }
 
+.column .issue-link p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .column .issue-link:hover .issue-title {
   color: #ED0000;
 }
@@ -259,9 +270,9 @@ header .issue-info {
   padding-bottom: 1px;
 }
 
-.column ol  ul {
+/*.column ol  ul {
   padding-bottom: 12px;
-}
+}*/
 
 .column hr {
   width: 80px;
@@ -273,17 +284,164 @@ header .issue-info {
 
 
 .other-archives {
+  display: table;
   width: 100%;
   border-top: 1px solid black;
   padding: 10px 0 0;
 }
 
 .other-archives .column {
-  display: inline-block;
+  display: table-cell;
   border-right: 1px solid black;
   height: 100%;
 }
 
 .other-archives .column:last-child {
   border-right: none;
+}
+
+/* tablets */
+/*@media only screen and (min-device-width : 600px) and (max-device-width : 1024px) {*/
+@media only screen and (min-width : 600px) and (max-width : 1024px) {
+  body {
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  .container {
+    max-width: 580px;
+  }
+
+  header .intro,
+  header .subscribe {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  header .intro {
+    padding: 0;
+    font-size: 1.1em;
+    border: none;
+    color: gray; 
+  }
+
+  header .logo {
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .newspaper-body .issue {
+    padding: 0;
+    width: 100%;
+  }
+
+  .issue-table {
+    border: none;
+    border-bottom: 3px double black;
+  }
+
+  .newspaper-body .left-column, 
+  .newspaper-body .right-column {
+    position: initial;
+    margin-bottom: 10px;
+  }
+
+  .newspaper-body .left-column {
+    border-right: 1px solid black; 
+  }
+
+  .column {
+    display: inline-block;
+    width: 274px;
+  }
+
+  .other-archives {
+    display: block;
+  }
+
+  .other-archives .column {
+    display: inline-block;
+  }
+
+  .other-archives .column:nth-child(even) {
+    border-right: none;
+  }
+
+  .other-archives .column:last-child {
+    border-right: 1px solid black;
+  }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 599px) {
+  body {
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  .container {
+    max-width: 300px;
+  }
+
+  header .intro,
+  header .subscribe {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  header .intro {
+    padding: 0;
+    font-size: 1.1em;
+    border: none;
+    color: gray; 
+  }
+
+  header .logo {
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .newspaper-body .issue {
+    padding: 0;
+    width: 100%;
+  }
+
+  .issue-table {
+    border: none;
+    border-bottom: 3px double black;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .newspaper-body .left-column, 
+  .newspaper-body .right-column {
+    position: initial;
+  }
+
+  .column {
+    display: inline-block;
+    width: 268px;
+  }
+
+  .other-archives {
+    display: block;
+    border-top: none;
+    padding: 0;
+  }
+
+  .other-archives .column {
+    display: inline-block;
+  }
+
+  .other-archives .column {
+    border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .column ol > li:last-child hr {
+    display: block;
+  }
+
 }
