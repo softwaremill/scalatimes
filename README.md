@@ -63,6 +63,9 @@ Novigate to `http://localhost:3000/` in your browser.
 
 You should have the latest issue on index page, and archive (last 100 issues) on `http://localhost:3000/archive` page. 
 
+### Disk cache
+
+The app tries to load campaigns from local cache directory `/home/scalatimes/cache`. This directory can be purged to force reload from MailChimp API.
 
 ### Fix archive page
 
