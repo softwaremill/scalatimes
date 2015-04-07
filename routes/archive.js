@@ -1,11 +1,12 @@
 var mcapi = require('../node_modules/mailchimp-api/mailchimp');
 var _ = require('underscore');
 var cheerio = require('cheerio');
+var fs = require('fs');
 mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
 
 // Variable, that keeps all campaigns 
 var campaignsCache = [];
-
+var cachePath = "/home/scalatimes/cache/";
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
@@ -16,10 +17,42 @@ setInterval(function(){
 
 function getAllCampaignsForList(listId) {
   mc.campaigns.list({filters: {'status':'sent', 'list_id':listId}, 'limit': 100}, function(data) {
-    console.log("start generating campaignsCache...")
+    console.log("start generating campaignsCache...");
     var campaigns = data.data;
     getCampaignsContent(campaigns);
-  })
+  }, function(error) {
+    console.log(error);
+    getCampaignsContent(readListFromDiskCache());
+  });
+}
+
+function readListFromDiskCache() {
+  var files = fs.readdirSync(cachePath);
+  var campaigns = _.map(files, function(filename) {
+    var id = filename.slice(0, -("html".length + 1));
+    return {
+      id: id
+    }
+  });
+  return campaigns;
+}
+
+function fetchCampaignHtml(id, callback) {
+  var path = diskCachePathForKey(id);
+  fs.readFile(path, 'utf8', function(err, data) {
+    if (err) {
+      console.log("Fetching campaign " + id + " from Mailchimp API");
+      mc.campaigns.content({cid:id}, function(contentData) {
+        var htmlContent = contentData.html;
+        cacheHtmlToDisk(id, htmlContent);
+        callback(htmlContent);
+      });
+    }
+    else {
+      console.log("Loading campaign " + id + " from disk cache");
+      callback(data);
+    }
+  });
 }
 
 // Get object for every campaign: title, id, html, excerpt(for archive page), index
@@ -32,16 +65,14 @@ function getCampaignsContent(campaigns) {
     
     (function (i) {
       var campaignId = campaigns[i].id;
-      var campaignTitle = campaigns[i].title;
 
-      mc.campaigns.content({cid:campaignId}, function(contentData) {
+      fetchCampaignHtml(campaignId, function(htmlContent) {
         num++;
-        var htmlContent = contentData.html;
-
         var excerpt = getCampaignExcerpts(htmlContent);
         var campaignBody = getCampaignBody(htmlContent);
         var issueInfo = getIssueInfo(htmlContent);
-     
+        var campaignTitle = getCampaignTitle(htmlContent);
+        var campaignIndex = getCampaignIndex(issueInfo, i);
         campaignsArray.push({
           'title': campaignTitle,
           'id': campaignId,
@@ -49,20 +80,20 @@ function getCampaignsContent(campaigns) {
           'excerpt': excerpt,
           'campaignBody': campaignBody,
           'issueInfo': issueInfo,
-          'index': i
+          'index': campaignIndex
         });
 
         // check if all requests were finished => array is complete
         if (num == campaigns.length) {
 
-          campaignsCache = _.sortBy(campaignsArray, "index");
+          campaignsCache = _.sortBy(campaignsArray, "index").reverse();
           // send to console, that variable is ready and timestamp
           console.log ("campaignsCache is ready");
           var date = new Date();
           console.log(date);
 
         }
-        
+
       });
 
     })(i);
@@ -70,6 +101,34 @@ function getCampaignsContent(campaigns) {
   }
 }
 
+function getCampaignTitle(htmlContent) {
+  var $ = cheerio.load(htmlContent);
+  return $('meta[property="og:title"]').attr("content");
+}
+
+function getCampaignIndex(issueInfo, i) {
+  var campaignIndexStr = issueInfo.substr(issueInfo.lastIndexOf(" "), issueInfo.length);
+  var campaignIndex = i;
+  if (!_.isNull(campaignIndexStr) && !_.isUndefined(campaignIndexStr))
+    campaignIndex = parseInt(campaignIndexStr);
+  return campaignIndex;
+}
+
+function cacheHtmlToDisk(key, html) {
+  var path = diskCachePathForKey(key);
+  fs.writeFile(path, html, {encoding: 'utf8'}, function(err) {
+    if(err) {
+      return console.log(err);
+    }
+    else {
+      console.log("Cached local file " + path);
+    }
+  });
+}
+
+function diskCachePathForKey(key) {
+  return cachePath + key + '.html';
+}
 
 function getCampaignExcerpts (htmlContent) {
   var $ = cheerio.load(htmlContent);
