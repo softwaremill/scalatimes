@@ -2,7 +2,7 @@ extends layout
 
 block content
   header
-    div.intro A free, once-weekly Scala news flash. Easy to unsubscribe. Goes out every Thursday 8:30 PST.
+    div.intro A free, once-weekly Scala news flash. Easy to unsubscribe. Goes out every Thursday.
     div.subscribe
       div#mc_embed_signup
         form#mc-embedded-subscribe-form.validate(action='//scalatimes.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&id=32cef9ab4e', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
@@ -38,6 +38,14 @@ block content
         tbody
           tr
             != issue.campaignBody
+        tfoot
+          tr
+            td
+              br
+              br
+              br
+              br
+              br
     section.left-column.archive.column
       ol
         each campaign in campaigns
@@ -48,9 +56,12 @@ block content
             hr
 
     section.right-column.archive.column
+      div.sml-ad Organizing a conference? <br/> Promote it with<br/>
+        a(href="http://localhost:3000/press") Scala Times
+        | .
       div.sml-ad Got a tip? 
         a(href="mailto:scalatimes@softwaremill.com") Send it in
-        |!<br>Follow us on 
+        |!<br>Follow us on&nbsp;
         a(href="http://twitter.com/scalatimes") Twitter
         //- |.<br>Want ST banner for your blog? 
         //- a(href="") Take one

@@ -5,6 +5,7 @@
 
 var express = require('express')
   , archive = require('./routes/archive')
+  , press = require('./routes/press')
   , http = require('http')
   , path = require('path');
 
@@ -38,8 +39,9 @@ if ('development' == app.get('env')) {
 }
 
 // app.get('/issues', archive.list);
+app.get('/press', press.view);
 app.get('/:campaignId', archive.view);
-app.get('/', archive.view_latest)
+app.get('/', archive.view_latest);
 
 
 http.createServer(app).listen(app.get('port'), function(){
