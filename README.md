@@ -8,6 +8,10 @@ You can see example on [Scala Times](http://www.scalatimes.com/) - Weekly Scala 
 
 This app is built on the top of [MailChimp API v2.0 NodeJs Example Application](https://github.com/mailchimp/mcapi2-node-examples).
 
+### Analytics
+
+Here is [the link](https://analytics.google.com/analytics/web/#report/defaultid/a11235106w117557468p123015903/) where you can check GA for the site.
+
 
 ## Running project for the first time
 
