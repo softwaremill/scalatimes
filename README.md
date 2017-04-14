@@ -12,6 +12,9 @@ This app is built on the top of [MailChimp API v2.0 NodeJs Example Application](
 
 Here is [the link](https://analytics.google.com/analytics/web/#report/defaultid/a11235106w117557468p123015903/) where you can check GA for the site.
 
+### TeamCity CI
+
+Continouos integration for the site is [here](https://teamcity.internal.sml.io/project.html?projectId=ScalatimesCom&tab=projectOverview).
 
 ## Running project for the first time
 
