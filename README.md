@@ -14,7 +14,7 @@ Here is [the link](https://analytics.google.com/analytics/web/#report/defaultid/
 
 ### TeamCity CI
 
-Continouos integration for the site is [here](https://teamcity.internal.sml.io/project.html?projectId=ScalatimesCom&tab=projectOverview).
+Continuous Integration for the site is [here](https://teamcity.internal.sml.io/project.html?projectId=ScalatimesCom&tab=projectOverview).
 
 ## Running project for the first time
 
