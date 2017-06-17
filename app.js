@@ -6,6 +6,7 @@
 var express = require('express')
   , archive = require('./routes/archive')
   , events = require('./routes/events')
+  , banners = require('./routes/banners')
   , http = require('http')
   , path = require('path');
 
@@ -40,6 +41,7 @@ if ('development' == app.get('env')) {
 
 // app.get('/issues', archive.list);
 app.get('/events', events.view);
+app.get('/banners', banners.view);
 app.get('/:campaignId', archive.view);
 app.get('/', archive.view_latest);
 

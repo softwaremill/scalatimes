@@ -216,6 +216,17 @@ header .issue-info {
   padding-left: 30px;
 }
 
+.banners-table td {
+  padding: 15px 35px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: larger;
+}
+
+.banners-table img {
+  margin-top: 10px;
+}
+
 .issue-table {
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -425,6 +436,14 @@ header .issue-info {
 
   .exchange-list {
     padding-left: 10px;
+  }
+
+  .banners-table td {
+    padding: 5px 10px;
+  }
+
+  .banners-table img {
+    margin-top: 5px;
   }
 
   .issue-table {

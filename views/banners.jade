@@ -1,0 +1,61 @@
+extends layout
+
+block content
+    header
+        div.intro A free, once-weekly Scala news flash. Easy to unsubscribe. Goes out every Thursday.
+        div.subscribe
+            div#mc_embed_signup
+                form#mc-embedded-subscribe-form.validate(action='//scalatimes.us2.list-manage.com/subscribe/post?u=ba834c562d82d9aba5eaf90ba&id=32cef9ab4e', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+                    div#mc_embed_signup_scroll
+                        div.mc-field-group
+                            label(for='mce-EMAIL') E-mail address
+                            input#mce-EMAIL.required.email(type='email', value='', name='EMAIL')
+                        div#mce-responses.clear
+                            div#mce-error-response.response(style='display:none')
+                            div#mce-success-response.response(style='display:none')
+                        //- real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                        div(style='position: absolute; left: -5000px;')
+                            input(type='text', name='b_ba834c562d82d9aba5eaf90ba_32cef9ab4e', tabindex='-1', value='')
+                        .clear
+                            input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
+
+            script(type='text/javascript', src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js')
+            script(type='text/javascript')
+                | (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);
+        div.logo
+            a(href="/")
+                span.top
+                    span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
+                    | Est. 2014
+                    span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
+                span.middle Scala Times
+                span.bottom Weekly Scala newspaper
+        div.issue-info= "Reading Scala Times? Here are banners for your site!"
+
+    section.newspaper-body
+        table.promotion-table
+            tbody
+                tr
+                    td
+                        h3 Spread the word about Scala Times!
+                        p Would you like to reveal your source of weekly Scala news? Get a banner on your web! Just follow the below simple steps:
+                        div.exchange-list
+                            ol
+                            li Download the banner you like most.
+                            li Post it on your web.
+                            li Link the banner to <a href="http://scalatimes.com/">http://scalatimes.com</a>
+                        p Thank you!
+                        p The variety of banners for your choice:
+                        table.banners-table
+                            tr
+                                td <a href="/images/banners/260.png" ><img src="/images/banners/260.png" /></a></br>size 260x203 png RGB
+                                td <a href="/images/banners/125.png" ><img src="/images/banners/125.png" /></a></br>size 125x114 png RGB
+                            tr
+                                td <a href="/images/banners/300.png" ><img src="/images/banners/300.png" /></a></br>size 300x235 png RGB
+                                td <a href="/images/banners/285.png" ><img src="/images/banners/285.png" /></a></br>size 285x223 png RGB
+                            tr
+                                td <a href="/images/banners/260-2.png" ><img src="/images/banners/260-2.png" /></a></br>size 260x101 png RGB
+                                td <a href="/images/banners/125-2.png" ><img src="/images/banners/125-2.png" /></a></br>size 125x101 png RGB
+                            tr
+                                td <a href="/images/banners/300-2.png" ><img src="/images/banners/300-2.png" /></a></br>size 300x117 png RGB
+                                td <a href="/images/banners/285-2.png" ><img src="/images/banners/285-2.png" /></a></br>size 285x111 png RGB
