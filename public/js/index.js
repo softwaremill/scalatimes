@@ -1,7 +1,7 @@
 $(function() {
 
   var tableHeight = $('.issue-table').outerHeight();
-  var rightColumnHeight = tableHeight - (2 * $('.sml-ad').outerHeight()+10);
+  var rightColumnHeight = tableHeight - (3 * $('.sml-ad').outerHeight()+10);
   var lis = $('.left-column.archive ol>li');
 
   console.log(lis);
