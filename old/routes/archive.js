@@ -1,29 +1,32 @@
-var mcapi = require('../node_modules/mailchimp-api/mailchimp');
-var _ = require('underscore');
-var cheerio = require('cheerio');
-var fs = require('fs');
+var mcapi = require("../node_modules/mailchimp-api/mailchimp");
+var _ = require("underscore");
+var cheerio = require("cheerio");
+var fs = require("fs");
 mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
 
-// Variable, that keeps all campaigns 
+// Variable, that keeps all campaigns
 var campaignsCache = [];
-var cachePath = "/home/scalatimes/cache/";
+var cachePath = "/home/pbu/cache/";
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
-setInterval(function(){
+setInterval(function() {
   getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
-}, 1000*60*60);
-
+}, 1000 * 60 * 60);
 
 function getAllCampaignsForList(listId) {
-  mc.campaigns.list({filters: {'status':'sent', 'list_id':listId}, 'limit': 100}, function(data) {
-    console.log("start generating campaignsCache...");
-    var campaigns = data.data;
-    getCampaignsContent(campaigns);
-  }, function(error) {
-    console.log(error);
-    getCampaignsContent(readListFromDiskCache());
-  });
+  mc.campaigns.list(
+    { filters: { status: "sent", list_id: listId }, limit: 100 },
+    function(data) {
+      console.log("start generating campaignsCache...");
+      var campaigns = data.data;
+      getCampaignsContent(campaigns);
+    },
+    function(error) {
+      console.log(error);
+      getCampaignsContent(readListFromDiskCache());
+    }
+  );
 }
 
 function readListFromDiskCache() {
@@ -31,24 +34,23 @@ function readListFromDiskCache() {
   var campaigns = _.map(files, function(filename) {
     var id = filename.slice(0, -("html".length + 1));
     return {
-      id: id
-    }
+      id: id,
+    };
   });
   return campaigns;
 }
 
 function fetchCampaignHtml(id, callback) {
   var path = diskCachePathForKey(id);
-  fs.readFile(path, 'utf8', function(err, data) {
+  fs.readFile(path, "utf8", function(err, data) {
     if (err) {
       console.log("Fetching campaign " + id + " from Mailchimp API");
-      mc.campaigns.content({cid:id}, function(contentData) {
+      mc.campaigns.content({ cid: id }, function(contentData) {
         var htmlContent = contentData.html;
         cacheHtmlToDisk(id, htmlContent);
         callback(htmlContent);
       });
-    }
-    else {
+    } else {
       console.log("Loading campaign " + id + " from disk cache");
       callback(data);
     }
@@ -59,11 +61,10 @@ function fetchCampaignHtml(id, callback) {
 function getCampaignsContent(campaigns) {
   var campaignsArray = [];
 
-  for (var i = 0; i < campaigns.length; i++) {
-    
+  for (var i = 10; i < 20; i++) {
     var num = 0;
-    
-    (function (i) {
+
+    (function(i) {
       var campaignId = campaigns[i].id;
 
       fetchCampaignHtml(campaignId, function(htmlContent) {
@@ -74,30 +75,25 @@ function getCampaignsContent(campaigns) {
         var campaignTitle = getCampaignTitle(htmlContent);
         var campaignIndex = getCampaignIndex(issueInfo, i);
         campaignsArray.push({
-          'title': campaignTitle,
-          'id': campaignId,
-          'html': htmlContent,
-          'excerpt': excerpt,
-          'campaignBody': campaignBody,
-          'issueInfo': issueInfo,
-          'index': campaignIndex
+          title: campaignTitle,
+          id: campaignId,
+          html: htmlContent,
+          excerpt: excerpt,
+          campaignBody: campaignBody,
+          issueInfo: issueInfo,
+          index: campaignIndex,
         });
 
         // check if all requests were finished => array is complete
         if (num == campaigns.length) {
-
           campaignsCache = _.sortBy(campaignsArray, "index").reverse();
           // send to console, that variable is ready and timestamp
-          console.log ("campaignsCache is ready");
+          console.log("campaignsCache is ready");
           var date = new Date();
           console.log(date);
-
         }
-
       });
-
     })(i);
-
   }
 }
 
@@ -107,7 +103,10 @@ function getCampaignTitle(htmlContent) {
 }
 
 function getCampaignIndex(issueInfo, i) {
-  var campaignIndexStr = issueInfo.substr(issueInfo.lastIndexOf(" "), issueInfo.length);
+  var campaignIndexStr = issueInfo.substr(
+    issueInfo.lastIndexOf(" "),
+    issueInfo.length
+  );
   var campaignIndex = i;
   if (!_.isNull(campaignIndexStr) && !_.isUndefined(campaignIndexStr))
     campaignIndex = parseInt(campaignIndexStr);
@@ -116,41 +115,47 @@ function getCampaignIndex(issueInfo, i) {
 
 function cacheHtmlToDisk(key, html) {
   var path = diskCachePathForKey(key);
-  fs.writeFile(path, html, {encoding: 'utf8'}, function(err) {
-    if(err) {
+  fs.writeFile(path, html, { encoding: "utf8" }, function(err) {
+    if (err) {
       return console.log(err);
-    }
-    else {
+    } else {
       console.log("Cached local file " + path);
     }
   });
 }
 
 function diskCachePathForKey(key) {
-  return cachePath + key + '.html';
+  return cachePath + key + ".html";
 }
 
-function getCampaignExcerpts (htmlContent) {
+function getCampaignExcerpts(htmlContent) {
   var $ = cheerio.load(htmlContent);
   var goodContentArray = [];
 
-  $('.article-content a').each(function(index, element) {
-
+  $(".article-content a").each(function(index, element) {
     // If it's mailto link - skip
-    if($(element).attr('href').indexOf('mailto:') !== 0) {
-      
+    if (
+      $(element)
+        .attr("href")
+        .indexOf("mailto:") !== 0
+    ) {
       // If it's twitter link - skip
-      if($(element).attr('href').indexOf('https://twitter.com') !== 0) {
-
-        var textContent = $(element).text(); 
+      if (
+        $(element)
+          .attr("href")
+          .indexOf("https://twitter.com") !== 0
+      ) {
+        var textContent = $(element).text();
 
         // Link should be longer than 2 words and less than 12 words
-        if (textContent.split(' ').length > 2 && textContent.split(' ').length < 12) {
-
+        if (
+          textContent.split(" ").length > 2 &&
+          textContent.split(" ").length < 12
+        ) {
           // Check if first words starts with Capital letter
           if (textContent[0] === textContent[0].toUpperCase()) {
             goodContentArray.push(textContent);
-          }           
+          }
         }
       }
     }
@@ -159,40 +164,47 @@ function getCampaignExcerpts (htmlContent) {
   goodContentArray = _.first(goodContentArray, 5);
 
   var html = "";
-  _.each(goodContentArray, function(element){
+  _.each(goodContentArray, function(element) {
     html = html + element + ". ";
   });
 
   return html;
 }
 
-function getCampaignBody (htmlContent) {
+function getCampaignBody(htmlContent) {
   var $ = cheerio.load(htmlContent);
   var campaignBody = $('#bodyContent #bodyTable td[align="left"]');
 
   return campaignBody;
 }
 
-function getIssueInfo (htmlContent) {
+function getIssueInfo(htmlContent) {
   var $ = cheerio.load(htmlContent);
-  var issueInfo = $('#issueSection').text().trim().split('This issue on')[0].trim().slice(0,-1);
+  var issueInfo = $("#issueSection")
+    .text()
+    .trim()
+    .split("This issue on")[0]
+    .trim()
+    .slice(0, -1);
 
   return issueInfo;
 }
 
-
 /*
  * Render content of given camplaign (/archive/:campaignId page).
  */
-exports.view = function(req, res){
-  var contentData = _.findWhere(campaignsCache, {'id': req.params.campaignId});
-  res.render('archive/index', {campaigns: campaignsCache, issue: contentData});
+exports.view = function(req, res) {
+  var contentData = _.findWhere(campaignsCache, { id: req.params.campaignId });
+  res.render("archive/index", {
+    campaigns: campaignsCache,
+    issue: contentData,
+  });
 };
 
 /*
  * Render latest issue on index page.
  */
-exports.view_latest = function(req, res){
+exports.view_latest = function(req, res) {
   var contentData = campaignsCache[0];
-  res.render('index', {campaigns: campaignsCache, issue: contentData});
+  res.render("index", { campaigns: campaignsCache, issue: contentData });
 };

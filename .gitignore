@@ -7,3 +7,4 @@ desktop.ini
 cache
 npm-debug.log
 *.iml
+.next
