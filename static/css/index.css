@@ -69,10 +69,7 @@ header .subtitle {
   display: block;
 }
 
-header .subscribe {
-}
-
-header .subscribe input {
+§header .subscribe input {
   background: #FAFAFA;
   border: 2px solid #E3E3E3;
   width: 100%;
@@ -82,7 +79,6 @@ header .subscribe button {
   background: #760200;
   color: white;
   border: 2px solid #760200;
-  /*width: 100%;*/
   cursor: pointer;
 }
 
