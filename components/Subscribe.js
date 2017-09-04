@@ -13,13 +13,17 @@ export default class Subscribe extends Component {
     render() {
         return (
             <div className="subscribe container mt-5">
-                <div className="row mx-auto justify-content-center">
-                    <input type="text" placeholder="E-mail address"
-                           className="px-md-3 py-md-1 mx-3 col-md-7 col-sm-12"
-                           ref={(input) => {this.email = input;}}
-                           onKeyPress={this.handleNewSubscriber}
-                    />
-                    <button className="px-md-5 py-md-1 mx-3 col-md-4 col-sm-12">Subscribe</button>
+                <div className="row mx-auto justify-content-center flex-nowrap">
+                    <div className="col-md-6 mx-md-3 col-sm-12 sy-1">
+                        <input type="text" placeholder="E-mail address"
+                               className="px-md-3 py-md-1"
+                               ref={(input) => {this.email = input;}}
+                               onKeyPress={this.handleNewSubscriber}
+                        />
+                    </div>
+                    <div className="col-md-3 mx-md-2 col-sm-12 sy-1">
+                        <button className="px-md-5 py-md-1 w-100">Subscribe</button>
+                    </div>
                 </div>
             </div>
         )

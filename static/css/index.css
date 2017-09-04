@@ -69,6 +69,9 @@ header .subtitle {
   display: block;
 }
 
+header .subscribe {
+}
+
 header .subscribe input {
   background: #FAFAFA;
   border: 2px solid #E3E3E3;
@@ -79,7 +82,7 @@ header .subscribe button {
   background: #760200;
   color: white;
   border: 2px solid #760200;
-  width: 100%;
+  /*width: 100%;*/
   cursor: pointer;
 }
 
@@ -249,9 +252,9 @@ header .issue-info {
     padding: 5px 0;
   }
 
-  .container {
-    max-width: 580px;
-  }
+  /*.container {*/
+    /*max-width: 580px;*/
+  /*}*/
 
   header .intro,
   header .subscribe {
@@ -320,9 +323,9 @@ header .issue-info {
     padding: 5px 0;
   }
 
-  .container {
-    max-width: 300px;
-  }
+  /*.container {*/
+    /*max-width: 300px;*/
+  /*}*/
 
   header .intro,
   header .subscribe {
