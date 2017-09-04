@@ -22,108 +22,10 @@ body {
   text-decoration: underline;
 }
 
-.container {
-  max-width: 992px;
-  width: 100%;
-  background-color: white;
-  margin: 0 auto;
-  border: 1px solid #E7E7E7;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-  padding: 15px;
-  min-height: 100%;
-}
-
 header {
   width: 100%;
   overflow: auto;
   font-family: Georgia, Times, 'Times New Roman', serif;
-}
-
-header .intro, 
-header .subscribe {
-  width: 260px;
-  font-size: 1.16em;
-}
-
-header .intro {
-  float: left;
-  border: 1px solid black;
-  padding: 10px;
-  text-align: center;
-}
-
-header .subscribe {
-  float: right;
-}
-
-header .subscribe input {
-  width: 100%;
-}
-
-header .subscribe .mc-field-group {
-  margin-bottom: 5px;
-}
-
-header .subscribe .clear {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-header .subscribe input[type="email"] {
-  border-radius: 1px;
-  padding: 0.35em 0.5em;
-  border: 1px solid #E7E7E7;
-  background: #F5F5F5;
-}
-
-header .subscribe input[type="email"]:focus,
-header .subscribe input[type="email"]:active {
-  outline: none;
-  -webkit-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
-  -moz-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
-  box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
-}
-
-header .subscribe input[type="submit"] {
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  border-radius: 1px;
-  font-weight: bold;
-  color: white;
-  background: #750404;
-  border: 1px solid #490000;
-  padding: 0.5em;
-  cursor: pointer;
-}
-
-header .subscribe input[type="submit"]:active,
-header .subscribe input[type="submit"]:focus,
-header .subscribe input[type="submit"]:hover {
-  background: #490000;
-}
-
-#mc_embed_signup div.mce_inline_error,
-#mc_embed_signup #mce-error-response {
-  z-index: 1;
-  font-family: Courier, monospace;
-  color: red!important;
-  font-size: 0.8em;
-  padding: 0!important;
-  margin: 0!important;
-  background-color: transparent!important;
-  font-weight: normal!important;
-  line-height: 1.2;
-}
-
-#mc_embed_signup #mce-success-response {
-  z-index: 1;
-  font-family: Courier, monospace;
-  font-size: 0.8em;
-  color: rgb(69, 143, 69);
-  line-height: 1.2;
-}
-
-#mc_embed_signup input.mce_inline_error {
-  border-color: rgb(211, 0, 0)!important;
 }
 
 header .logo {
@@ -167,19 +69,18 @@ header .subtitle {
   display: block;
 }
 
-header .subscribe-input {
+header .subscribe input {
   background: #FAFAFA;
   border: 2px solid #E3E3E3;
-  padding: 4px 20px;
   width: 100%;
 }
 
-header .subscribe-btn {
+header .subscribe button {
   background: #760200;
   color: white;
-  border: 0px;
-  padding: 6px 20px;
+  border: 2px solid #760200;
   width: 100%;
+  cursor: pointer;
 }
 
 header .issue-info {

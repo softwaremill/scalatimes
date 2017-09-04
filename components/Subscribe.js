@@ -12,20 +12,14 @@ export default class Subscribe extends Component {
 
     render() {
         return (
-            <div className="row">
-                <div className="mt-4 mx-auto col-md-6">
-                    <div className="row">
-                        <div className="col-sm-12 col-md-8">
-                            <input type="text" placeholder="E-mail address"
-                                   className="subscribe-input"
-                                   ref={(input) => {this.email = input;}}
-                                   onKeyPress={this.handleNewSubscriber}
-                            />
-                        </div>
-                        <div className="col-sm-12 col-md-4">
-                            <button className="subscribe-btn">Subscribe</button>
-                        </div>
-                    </div>
+            <div className="subscribe container mt-5">
+                <div className="row mx-auto justify-content-center">
+                    <input type="text" placeholder="E-mail address"
+                           className="px-md-3 py-md-1 mx-3 col-md-7 col-sm-12"
+                           ref={(input) => {this.email = input;}}
+                           onKeyPress={this.handleNewSubscriber}
+                    />
+                    <button className="px-md-5 py-md-1 mx-3 col-md-4 col-sm-12">Subscribe</button>
                 </div>
             </div>
         )
