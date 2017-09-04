@@ -3,9 +3,9 @@ import Link from "next/link";
 export default () => {
   return (
     <nav className="navbar navbar-expand-lg">
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item">
+          <li>
             <Link href="/">
               <a className="nav-link">Latest news</a>
             </Link>
@@ -32,7 +32,7 @@ export default () => {
           </li>
           <li>
             <Link href="http://www.softwaremill.com" prefetch>
-              <a className="nav-link">Hiring</a>
+              <a className="nav-link">HIRING</a>
             </Link>
           </li>
         </ul>

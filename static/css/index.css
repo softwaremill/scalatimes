@@ -1,0 +1,505 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 24px;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.navbar-nav > li {
+  margin: 0 30px;
+}
+
+.navbar-nav > li > a {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-nav > li > a:hover, a:active {
+  color: #750404;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 992px;
+  width: 100%;
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid #E7E7E7;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  padding: 15px;
+  min-height: 100%;
+}
+
+header {
+  width: 100%;
+  overflow: auto;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+header .intro, 
+header .subscribe {
+  width: 260px;
+  font-size: 1.16em;
+}
+
+header .intro {
+  float: left;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+header .subscribe {
+  float: right;
+}
+
+header .subscribe input {
+  width: 100%;
+}
+
+header .subscribe .mc-field-group {
+  margin-bottom: 5px;
+}
+
+header .subscribe .clear {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+header .subscribe input[type="email"] {
+  border-radius: 1px;
+  padding: 0.35em 0.5em;
+  border: 1px solid #E7E7E7;
+  background: #F5F5F5;
+}
+
+header .subscribe input[type="email"]:focus,
+header .subscribe input[type="email"]:active {
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+  -moz-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+  box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+}
+
+header .subscribe input[type="submit"] {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  border-radius: 1px;
+  font-weight: bold;
+  color: white;
+  background: #750404;
+  border: 1px solid #490000;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+header .subscribe input[type="submit"]:active,
+header .subscribe input[type="submit"]:focus,
+header .subscribe input[type="submit"]:hover {
+  background: #490000;
+}
+
+#mc_embed_signup div.mce_inline_error,
+#mc_embed_signup #mce-error-response {
+  z-index: 1;
+  font-family: Courier, monospace;
+  color: red!important;
+  font-size: 0.8em;
+  padding: 0!important;
+  margin: 0!important;
+  background-color: transparent!important;
+  font-weight: normal!important;
+  line-height: 1.2;
+}
+
+#mc_embed_signup #mce-success-response {
+  z-index: 1;
+  font-family: Courier, monospace;
+  font-size: 0.8em;
+  color: rgb(69, 143, 69);
+  line-height: 1.2;
+}
+
+#mc_embed_signup input.mce_inline_error {
+  border-color: rgb(211, 0, 0)!important;
+}
+
+header .logo {
+  width: 100%;
+  padding: 0 285px;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+header .logo .top {
+  font-size: 1.32em;
+  font-style: italic;
+  display: block;
+}
+
+header .logo .top span {
+  font-style: normal;
+}
+
+header .logo .middle {
+  font-size: 3.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: block;
+}
+
+header .logo .bottom {
+  font-size: 1.32em;
+  text-transform: uppercase;
+  font-family: Courier, monospace;
+  font-weight: normal;
+  display: block;
+}
+
+header .subtitle {
+  text-align: center;
+  font-size: 1.22em;
+  color: #939293;
+  display: block;
+}
+
+header .subscribe-input {
+  background: #FAFAFA;
+  border: 2px solid #E3E3E3;
+  padding: 4px 20px;
+  width: 100%;
+}
+
+header .subscribe-btn {
+  background: #760200;
+  color: white;
+  border: 0px;
+  padding: 6px 20px;
+  width: 100%;
+}
+
+header .issue-info {
+  border-top: 3px double black;
+  border-bottom: 3px double black;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 3px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.4em;
+  clear: both;
+}
+
+.newspaper-body {
+  width: 100%;
+  position: relative;
+}
+
+.column {
+  width: 192px;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.newspaper-body .left-column, 
+.newspaper-body .right-column {
+  position: absolute;
+  top: 0;
+}
+
+.newspaper-body .left-column {
+  left: 0;
+}
+
+.newspaper-body .right-column {
+  right: 0;
+}
+
+.newspaper-body .issue{
+  padding: 0 192px;
+  vertical-align: top;
+  width: 960px;
+  margin-bottom: 10px;
+}
+
+.promotion-table {
+  padding: 15px 15px 0;
+  width: 100%;
+}
+
+.exchange-list {
+  padding-left: 30px;
+}
+
+.banners-table td {
+  padding: 15px 35px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: larger;
+}
+
+.banners-table img {
+  margin-top: 10px;
+}
+
+.issue-table {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  padding: 15px 15px 0;
+}
+
+.issue-table img {
+  max-width: 100%!important;
+}
+
+.issue-table a:hover strong {
+  color: #ED0000!important;
+}
+
+.newspaper-body .sml-ad {
+  border: 2px solid black;
+  padding: 5px 7px;
+  text-align: center;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  line-height: 1.8;
+  font-size: 1.16em;
+  margin-bottom: 10px;
+}
+
+.column ol {
+  padding: 0;
+  margin:  0;
+  list-style: none;
+}
+
+.column .issue-link {
+  color: black;
+}
+
+.column .issue-title {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.16em;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.column .issue-link p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.column .issue-link:hover .issue-title {
+  color: #ED0000;
+}
+
+.column ul {
+  padding: 0;
+  list-style: none;
+}
+
+.column ol>li {
+  padding-top: 7px;
+  padding-bottom: 1px;
+}
+
+/*.column ol  ul {
+  padding-bottom: 12px;
+}*/
+
+.column hr {
+  width: 80px;
+}
+
+.column ol > li:last-child hr {
+  display: none;
+}
+
+
+.other-archives {
+  display: table;
+  width: 100%;
+  border-top: 1px solid black;
+  padding: 10px 0 0;
+}
+
+.other-archives .column {
+  display: table-cell;
+  border-right: 1px solid black;
+  height: 100%;
+}
+
+.other-archives .column:last-child {
+  border-right: none;
+}
+
+/* tablets */
+/*@media only screen and (min-device-width : 600px) and (max-device-width : 1024px) {*/
+@media only screen and (min-width : 600px) and (max-width : 1024px) {
+  body {
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  .container {
+    max-width: 580px;
+  }
+
+  header .intro,
+  header .subscribe {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  header .intro {
+    padding: 0;
+    font-size: 1.1em;
+    border: none;
+    color: gray; 
+  }
+
+  header .logo {
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .newspaper-body .issue {
+    padding: 0;
+    width: 100%;
+  }
+
+  .issue-table {
+    border: none;
+    border-bottom: 3px double black;
+  }
+
+  .newspaper-body .left-column, 
+  .newspaper-body .right-column {
+    position: initial;
+    margin-bottom: 10px;
+  }
+
+  .newspaper-body .left-column {
+    border-right: 1px solid black; 
+  }
+
+  .column {
+    display: inline-block;
+    width: 274px;
+  }
+
+  .other-archives {
+    display: block;
+  }
+
+  .other-archives .column {
+    display: inline-block;
+  }
+
+  .other-archives .column:nth-child(even) {
+    border-right: none;
+  }
+
+  .other-archives .column:last-child {
+    border-right: 1px solid black;
+  }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 599px) {
+  body {
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  .container {
+    max-width: 300px;
+  }
+
+  header .intro,
+  header .subscribe {
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  header .intro {
+    padding: 0;
+    font-size: 1.1em;
+    border: none;
+    color: gray; 
+  }
+
+  header .logo {
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .newspaper-body .issue {
+    padding: 0;
+    width: 100%;
+  }
+
+  .promotion-table {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .exchange-list {
+    padding-left: 10px;
+  }
+
+  .banners-table td {
+    padding: 5px 10px;
+  }
+
+  .banners-table img {
+    margin-top: 5px;
+  }
+
+  .issue-table {
+    border: none;
+    border-bottom: 3px double black;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .newspaper-body .left-column, 
+  .newspaper-body .right-column {
+    position: initial;
+  }
+
+  .column {
+    display: inline-block;
+    width: 268px;
+  }
+
+  .other-archives {
+    display: block;
+    border-top: none;
+    padding: 0;
+  }
+
+  .other-archives .column {
+    display: inline-block;
+  }
+
+  .other-archives .column {
+    border-right: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .column ol > li:last-child hr {
+    display: block;
+  }
+
+}
