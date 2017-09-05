@@ -22,16 +22,79 @@ body {
   text-decoration: underline;
 }
 
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none;
+}
+
+.mx-0 {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.mx-3 {
+  margin-right: 1rem !important;
+  margin-left: 1rem !important;
+}
+
+.mx-4 {
+  margin-right: 1.5rem !important;
+  margin-left: 1.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.px-3 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+@media screen and (min-width: 768px) {
+  .px-md-3 {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .mr-md-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .px-md-5 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+
+  .py-md-1 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+}
+
+.w-33 {
+  width: 33% !important;
+}
+
+.w-66 {
+  width: 66% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.align-right {
+  text-align: right;
+}
+
 header {
-  width: 100%;
-  overflow: auto;
   font-family: Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
 }
 
 header .logo {
-  width: 100%;
-  padding: 0 285px;
-  text-align: center;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -69,7 +132,7 @@ header .subtitle {
   display: block;
 }
 
-§header .subscribe input {
+header .subscribe input {
   background: #FAFAFA;
   border: 2px solid #E3E3E3;
   width: 100%;
@@ -80,6 +143,17 @@ header .subscribe button {
   color: white;
   border: 2px solid #760200;
   cursor: pointer;
+}
+
+body {
+  width: 100%;
+  overflow: auto;
+}
+
+body .search input {
+  background: #FAFAFA;
+  border: 2px solid #E3E3E3;
+  width: 100%;
 }
 
 header .issue-info {

@@ -8,6 +8,7 @@ export default ({ children }) => {
     <div>
       <Head>
         <title>ScalaTimes</title>
+        <link rel="javascript" href="/static/js/bootstrap.min.js" />
         <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/static/css/index.css" />
       </Head>
@@ -16,7 +17,7 @@ export default ({ children }) => {
         <Subscribe/>
         <NavBar />
       </header>
-      <div>{children}</div>
+      <div className="body">{children}</div>
     </div>
   );
 };
