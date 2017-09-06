@@ -17,7 +17,7 @@ export default class Subscribe extends Component {
                 <div className="row mx-auto form-group">
                     <div className="col-sm-6 col-sm-offset-1 col-xs-12 sm-text-right xs-text-center">
                         <input type="email" placeholder="E-mail address"
-                               className="py-sm-1 py-xs-1 px-3 sm-w-100 mb-xs-2 xs-w-75"
+                               className="py-1 px-3 sm-w-100 mb-xs-2 xs-w-75"
                                ref={(input) => {this.email = input;}}
                                onKeyPress={this.handleNewSubscriber}
                         />

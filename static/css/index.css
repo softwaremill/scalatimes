@@ -54,6 +54,11 @@ body {
   margin-top: 3rem !important;
 }
 
+.py-1 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
 .px-3 {
   padding-right: 1rem !important;
   padding-left: 1rem !important;
@@ -82,11 +87,6 @@ body {
   .px-sm-5 {
     padding-right: 3rem !important;
     padding-left: 3rem !important;
-  }
-
-  .py-sm-1 {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
   }
 
   .py-sm-2 {
@@ -127,11 +127,6 @@ body {
   .mb-xs-2 {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
-  }
-
-  .py-xs-1 {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
   }
 
   .xs-w-75 {
@@ -212,10 +207,22 @@ body {
   overflow: auto;
 }
 
+body .search {
+  margin: 0.5rem 0.5rem 3.5rem 0.5rem;
+}
+
 body .search input {
   background: #FAFAFA;
   border: 2px solid #E3E3E3;
   width: 100%;
+  padding: 0.25rem 5.25rem 0.25rem 0.75rem !important;
+}
+
+.search-icon {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+  margin-right: 1.5rem !important;
+  color: #919091;
 }
 
 header .issue-info {
