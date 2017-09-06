@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export default class Subscribe extends Component {
 
@@ -32,5 +33,5 @@ export default class Subscribe extends Component {
 }
 
 Subscribe.propTypes = {
-    // http: React.PropTypes.object.isRequired
+    http: PropTypes.object //.isRequired
 };

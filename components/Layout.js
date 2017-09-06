@@ -14,9 +14,10 @@ export default ({ children }) => {
         <link rel="stylesheet" href="/static/css/index.css" />
       </Head>
       <header>
+        <NavBar extraStyle="visible-xs"/>
         <Title/>
         <Subscribe/>
-        <NavBar />
+        <NavBar extraStyle="hidden-xs"/>
       </header>
       <div className="body">{children}</div>
     </div>
