@@ -6,7 +6,7 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <nav className={`navbar navbar-default ${this.props.extraStyle}`}>
+            <nav className={`navbar navbar-default nav-justified ${this.props.extraStyle}`}>
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
@@ -21,32 +21,32 @@ export default class NavBar extends Component {
                         <ul className="nav navbar-nav">
                             <li>
                                 <Link href="/">
-                                    <a className="navbar-link mx-4">Latest news</a>
+                                    <a className="navbar-link mx-5">Latest news</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/all" prefetch>
-                                    <a className="navbar-link mx-4">All news</a>
+                                    <a className="navbar-link mx-5">All news</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/promote" prefetch>
-                                    <a className="navbar-link mx-4">Promote your event</a>
+                                    <a className="navbar-link mx-5">Promote your event</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/banners" prefetch>
-                                    <a className="navbar-link mx-4">Get banner</a>
+                                    <a className="navbar-link mx-5">Get banner</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/contact" prefetch>
-                                    <a className="navbar-link mx-4">Contact</a>
+                                    <a className="navbar-link mx-5">Contact</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="http://www.softwaremill.com" prefetch>
-                                    <a className="navbar-link mx-4">HIRING</a>
+                                    <a className="navbar-link mx-5">HIRING</a>
                                 </Link>
                             </li>
                         </ul>

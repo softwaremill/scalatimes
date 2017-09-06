@@ -8,18 +8,20 @@ body {
   line-height: 1.6;
 }
 
-.navbar-nav > li {
-  margin: 0 30px;
+.navbar-default {
+  background-color: white;
+  border-style: none;
 }
 
-.navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a {
   color: black;
   text-decoration: none;
 }
 
-.navbar-nav > li > a:hover, a:active {
+.navbar-default .navbar-nav > li > a:hover, a:active {
   color: #750404;
   text-decoration: underline;
+  background-color: white;
 }
 
 .mx-auto {
@@ -43,6 +45,11 @@ body {
   margin-left: 1.5rem !important;
 }
 
+.mx-5 {
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
+}
+
 .mt-5 {
   margin-top: 3rem !important;
 }
@@ -53,6 +60,16 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
   .px-sm-3 {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
@@ -75,6 +92,10 @@ body {
   .py-sm-2 {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
+  }
+
+  .navbar {
+    margin-top: 5rem !important;
   }
 
   .navbar-nav {
