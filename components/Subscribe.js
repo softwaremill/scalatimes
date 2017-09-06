@@ -14,15 +14,15 @@ export default class Subscribe extends Component {
         return (
             <div className="subscribe container mt-5">
                 <div className="row mx-auto form-group">
-                    <div className="col-md-6 col-md-offset-1 col-sx-12 text-right">
+                    <div className="col-sm-6 col-sm-offset-1 col-xs-12 sm-text-right xs-text-center">
                         <input type="email" placeholder="E-mail address"
-                               className="py-md-1 px-3 w-100 has-feedback"
+                               className="py-sm-1 py-xs-1 px-3 sm-w-100 mb-xs-2 xs-w-75"
                                ref={(input) => {this.email = input;}}
                                onKeyPress={this.handleNewSubscriber}
                         />
                     </div>
-                    <div className="col-md-4 col-sx-12 text-left">
-                        <button className="w-100">Subscribe</button>
+                    <div className="col-sm-4 col-xs-12 mt-xs-2 sm-text-left xs-text-center">
+                        <button className="sm-w-100 xs-w-75">Subscribe</button>
                     </div>
                 </div>
             </div>

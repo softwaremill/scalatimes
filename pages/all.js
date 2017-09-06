@@ -1,6 +1,22 @@
-import Link from "next/link";
 import Layout from "../components/Layout";
 
 export default () => {
-  return <Layout />;
+    return <Layout>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+            etwas<br/>
+    </Layout>;
 };

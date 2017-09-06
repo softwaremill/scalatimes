@@ -4,12 +4,13 @@ import Title from "./Title";
 import Subscribe from "./Subscribe";
 
 export default ({ children }) => {
-  return (
+    return (
     <div>
       <Head>
         <title>ScalaTimes</title>
-        <link rel="javascript" href="/static/js/bootstrap.min.js" />
-        <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+        <script src="/static/js/jquery-3.2.1.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="/static/css/index.css" />
       </Head>
       <header>
