@@ -83,6 +83,12 @@ a:hover, a:active {
   padding-left: 1rem !important;
 }
 
+@media screen and (min-width: 992px) {
+  .search-max-width {
+    max-width: 900px !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .navbar-nav {
     width: 100%;
@@ -129,6 +135,10 @@ a:hover, a:active {
     table-layout: fixed;
   }
 
+  .sm-w-70 {
+    width: 70% !important;
+  }
+
   .sm-w-100 {
     width: 100% !important;
   }
@@ -159,6 +169,10 @@ a:hover, a:active {
 
   .xs-w-75 {
     width: 75% !important;
+  }
+
+  .xs-w-70 {
+    width: 70% !important;
   }
 
   .xs-text-center {
@@ -237,7 +251,7 @@ header .subscribe button {
 }
 
 body .search {
-  margin: 0.5rem 0.5rem 3.5rem 0.5rem;
+  margin: 2rem 0.5rem 3.5rem 0.5rem;
 }
 
 body .search input {
