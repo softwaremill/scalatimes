@@ -205,7 +205,7 @@ header .logo {
 }
 
 header .logo .top {
-  font-size: 1.32em;
+  font-size: 1.12em;
   font-style: italic;
   display: block;
 }
@@ -215,7 +215,7 @@ header .logo .top span {
 }
 
 header .logo .middle {
-  font-size: 3.5em;
+  font-size: 3em;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
@@ -223,7 +223,7 @@ header .logo .middle {
 }
 
 header .logo .bottom {
-  font-size: 1.32em;
+  font-size: 1.12em;
   text-transform: uppercase;
   font-family: Courier, monospace;
   font-weight: normal;
@@ -232,7 +232,7 @@ header .logo .bottom {
 
 header .subtitle {
   text-align: center;
-  font-size: 1.22em;
+  font-size: 1.12em;
   color: #939293;
   display: block;
 }
