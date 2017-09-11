@@ -6,6 +6,8 @@ body {
   font-size: 24px;
   font-family: Georgia, Times, 'Times New Roman', serif;
   line-height: 1.6;
+  width: 100%;
+  overflow: auto;
 }
 
 .navbar-default {
@@ -13,14 +15,14 @@ body {
   border-style: none;
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: black;
+a {
+  color: black !important;
   text-decoration: none;
 }
 
-.navbar-default .navbar-nav > li > a:hover, a:active {
-  color: #750404;
-  text-decoration: underline;
+a:hover, a:active {
+  color: #750404 !important;
+  text-decoration: underline !important;
   background-color: white;
 }
 
@@ -50,8 +52,25 @@ body {
   margin-left: 3rem !important;
 }
 
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
 .mt-5 {
   margin-top: 3rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
 }
 
 .py-1 {
@@ -78,6 +97,11 @@ body {
   .px-sm-3 {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
+  }
+
+  .px-sm-5 {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
   }
 
   .mr-sm-2 {
@@ -116,16 +140,20 @@ body {
   .sm-text-left {
     text-align: left;
   }
+
+  .footer-links > a {
+    width: 33%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .mt-xs-2 {
     margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
   }
 
   .mb-xs-2 {
-    margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
   }
 
@@ -135,6 +163,12 @@ body {
 
   .xs-text-center {
     text-align: center;
+  }
+
+  .footer-links > a {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
   }
 }
 
@@ -202,11 +236,6 @@ header .subscribe button {
   cursor: pointer;
 }
 
-body {
-  width: 100%;
-  overflow: auto;
-}
-
 body .search {
   margin: 0.5rem 0.5rem 3.5rem 0.5rem;
 }
@@ -218,11 +247,40 @@ body .search input {
   padding: 0.25rem 5.25rem 0.25rem 0.75rem !important;
 }
 
+footer {
+  padding-top: 3rem !important;
+  text-align: center;
+  border-top: solid 2px #939293;
+}
+
+.footer-links {
+  margin: 3rem auto;
+}
+
+.footer-icon {
+  margin-right: 1rem;
+  font-size: 3rem;
+  color: #939293;
+}
+
 .search-icon {
   margin-top: 0.75rem !important;
   margin-bottom: 0.75rem !important;
   margin-right: 1.5rem !important;
   color: #919091;
+}
+
+.previous > header {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.archive-right {
+  border-left: #E3E3E3 solid medium;
+}
+
+.archive-left {
+  border-right: #E3E3E3 solid medium;
 }
 
 header .issue-info {
