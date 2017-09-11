@@ -78,6 +78,11 @@ a:hover, a:active {
   padding-bottom: 0.25rem !important;
 }
 
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
 .px-3 {
   padding-right: 1rem !important;
   padding-left: 1rem !important;
@@ -90,7 +95,15 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 768px) {
+  .navbar {
+    margin-top: 5rem !important;
+  }
+
   .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
     width: 100%;
     text-align: center;
   }
@@ -103,11 +116,6 @@ a:hover, a:active {
   .px-sm-3 {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
-  }
-
-  .px-sm-5 {
-    margin-right: 0.5rem !important;
-    margin-left: 0.5rem !important;
   }
 
   .mr-sm-2 {
@@ -124,15 +132,9 @@ a:hover, a:active {
     padding-bottom: 0.5rem !important;
   }
 
-  .navbar {
-    margin-top: 5rem !important;
-  }
-
-  .navbar-nav {
-    float: none;
-    margin: 0 auto;
-    display: table;
-    table-layout: fixed;
+  .mx-sm-5 {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
   }
 
   .sm-w-70 {
@@ -167,12 +169,23 @@ a:hover, a:active {
     margin-bottom: 0.5rem !important;
   }
 
-  .xs-w-75 {
-    width: 75% !important;
+  .mx-xs-1 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
   }
 
-  .xs-w-70 {
-    width: 70% !important;
+  .mx-xs-3 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .mx-xs-4 {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+
+  .xs-w-75 {
+    width: 75% !important;
   }
 
   .xs-text-center {
@@ -183,6 +196,13 @@ a:hover, a:active {
     width: 100%;
     display: block;
     margin-top: 20px;
+  }
+
+  .search-icon {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+    padding-right: 3rem !important;
+    color: #919091;
   }
 }
 
@@ -280,7 +300,7 @@ footer {
 .search-icon {
   margin-top: 0.75rem !important;
   margin-bottom: 0.75rem !important;
-  margin-right: 1.5rem !important;
+  margin-right: 3rem !important;
   color: #919091;
 }
 

@@ -11,9 +11,9 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div className="search">
-                <div className="col-xs-12 col-sm-10 has-feedback xs-w-75 mx-auto search-max-width">
-                    <input type="text" className="py-1 px-3" placeholder="Search"
+            <div className="search mx-xs-4">
+                <div className="col-xs-12 col-sm-10 has-feedback mx-auto search-max-width">
+                    <input type="text" className="px-sm-3" placeholder="Search"
                            ref={(input) => {this.phrase = input;}}
                            onKeyPress={this.handleSearch}/>
                     <span className="glyphicon glyphicon-search form-control-feedback search-icon"></span>

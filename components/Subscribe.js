@@ -17,13 +17,13 @@ export default class Subscribe extends Component {
                 <div className="row mx-auto form-group">
                     <div className="col-sm-6 col-sm-offset-1 col-xs-12 sm-text-right xs-text-center mb-xs-2">
                         <input type="email" placeholder="E-mail address"
-                               className="py-1 px-3 sm-w-100 xs-w-75"
+                               className="py-1 px-3"
                                ref={(input) => {this.email = input;}}
                                onKeyPress={this.handleNewSubscriber}
                         />
                     </div>
                     <div className="col-sm-4 col-xs-12 mt-xs-2 sm-text-left xs-text-center">
-                        <button className="sm-w-100 xs-w-75">Subscribe</button>
+                        <button className="w-100">Subscribe</button>
                     </div>
                 </div>
             </div>
