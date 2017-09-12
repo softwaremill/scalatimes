@@ -40,7 +40,7 @@ export default class NavBar extends Component {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" prefetch>
+                                <Link href="https://softwaremill.com/contact/" prefetch>
                                     <a className="navbar-link mx-5">Contact</a>
                                 </Link>
                             </li>
