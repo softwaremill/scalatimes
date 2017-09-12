@@ -16,7 +16,7 @@ export default class Search extends Component {
                     <input type="text" className="px-sm-3" placeholder="Search"
                            ref={(input) => {this.phrase = input;}}
                            onKeyPress={this.handleSearch}/>
-                    <span className="glyphicon glyphicon-search form-control-feedback search-icon"></span>
+                    <span className="fa fa-search form-control-feedback search-icon"></span>
                 </div>
             </div>
         )

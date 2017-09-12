@@ -18,6 +18,9 @@ export default () => {
                 </div>
             </div>
             <div className="col-sm-6 col-xs-12">
+                <div className="text-center">
+                    current issue content
+                </div>
             </div>
             <div className="col-sm-3 hidden-xs">
                 <div className="row previous text-center">
