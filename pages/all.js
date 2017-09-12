@@ -1,22 +1,7 @@
-import Layout from "../components/Layout";
+import Page from "../layouts/content";
 
 export default () => {
-    return <Layout>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-            etwas<br/>
-    </Layout>;
+    return <Page>
+        <div>archive ???</div>
+    </Page>;
 };

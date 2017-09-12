@@ -1,6 +1,5 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
+import Page from "../layouts/main";
 
 export default () => {
-    return <Layout></Layout>;
+    return <Page></Page>;
 };

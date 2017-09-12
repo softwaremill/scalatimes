@@ -2,7 +2,6 @@ import Head from "next/head";
 import NavBar from "./NavBar";
 import Title from "./Title";
 import Subscribe from "./Subscribe";
-import Footer from "./Footer";
 
 export default ({ children }) => {
     return (
@@ -21,8 +20,6 @@ export default ({ children }) => {
         <Subscribe/>
         <NavBar extraStyle="hidden-xs"/>
       </header>
-      <div className="body mb-1">{children}</div>
-      <Footer/>
     </div>
   );
 };
