@@ -12,7 +12,7 @@ export default () => {
                         Would you like to reveal your source of weekly Scala news? Get a banner on your web! Just follow the below
                         simple steps:
                     </div>
-                    <div className="row mkt-icons">
+                    <div className="row mkt-icons banners-icons">
                         <div className="col-sm-4 col-xs-12 px-4">
                             <div className="mkt-icon center-block">
                                 <img src="/static/img/download.png"/>

@@ -192,9 +192,9 @@ a:hover, a:active {
   }
 }
 
-@media screen and (min-width: 767px) and (max-width: 991px) {
-  .mkt-icons {
-    margin-left: -5rem;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .banners-icons {
+    margin-left: -5rem !important;
   }
 }
 
@@ -360,6 +360,10 @@ footer {
 }
 
 .banners {
+  text-align: center;
+}
+
+.stickers {
   text-align: center;
 }
 
