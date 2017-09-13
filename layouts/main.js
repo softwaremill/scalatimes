@@ -5,7 +5,7 @@ export default ({children}) => {
     return (
         <div>
             <Header />
-            <div className="body mb-1">{children}</div>
+            <div className="body">{children}</div>
             <Footer />
         </div>
     );
