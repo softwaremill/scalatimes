@@ -50,20 +50,28 @@ export default () => {
                             </div>
                             <div className="square-banner-sizes mx-auto">
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>125x101</span>
+                                    <a href="/static/img/banners/125-2.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>125x101</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>260x101</span>
+                                    <a href="/static/img/banners/260-2.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>260x101</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>285x111</span>
+                                    <a href="/static/img/banners/285-2.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>285x111</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>300x117</span>
+                                    <a href="/static/img/banners/biggest-2.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>300x117</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -73,20 +81,28 @@ export default () => {
                             </div>
                             <div className="round-banner-sizes mx-auto">
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>125x114</span>
+                                    <a href="/static/img/banners/125.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>125x114</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>260x203</span>
+                                    <a href="/static/img/banners/260.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>260x203</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>285x223</span>
+                                    <a href="/static/img/banners/285.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>285x223</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <i className="fa fa-download align-right download-icon"/>
-                                    <span>300x235</span>
+                                    <a href="/static/img/banners/biggest.png">
+                                        <i className="fa fa-download align-right download-icon"/>
+                                        <span>300x235</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
