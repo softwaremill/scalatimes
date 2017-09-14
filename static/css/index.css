@@ -50,6 +50,7 @@ header .subscribe input {
   background: #FAFAFA;
   border: 2px solid #E3E3E3;
   width: 100%;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
 }
 
 header .subscribe button {
@@ -65,6 +66,17 @@ body {
   line-height: 1.6;
   width: 100%;
   overflow: auto;
+}
+
+body .search {
+  margin: 2rem 0.5rem 3.5rem 0.5rem;
+}
+
+body .search input {
+  background: #FAFAFA;
+  border: 2px solid #E3E3E3;
+  width: 100%;
+  padding: 0.25rem 5.25rem 0.25rem 0.75rem;
 }
 
 .navbar-default {
@@ -197,11 +209,6 @@ a:hover, a:active {
     display: inline-block;
   }
 
-  .px-sm-3 {
-    padding-right: 1rem !important;
-    padding-left: 1rem !important;
-  }
-
   .mr-sm-2 {
     margin-right: 0.5rem !important;
   }
@@ -300,11 +307,39 @@ a:hover, a:active {
     margin-top: 20px;
   }
 
+  header .logo .top {
+    font-size: 1em;
+  }
+
+  header .logo .middle {
+    font-size: 2em;
+  }
+
+  header .logo .bottom {
+    font-size: 1em;
+  }
+
+  header .subtitle {
+    font-size: 1em;
+  }
+
+  input, button {
+    height: 70px;
+  }
+
+  input {
+    padding-right: 1rem !important;
+    padding-left: 4rem !important;
+  }
+
+  body .search {
+    margin-top: 3rem;
+  }
+
   .search-icon {
-    margin-top: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
-    padding-right: 3rem !important;
-    color: #919091;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    padding-right: 4rem !important;
   }
 
   .square-banner-sizes {
@@ -321,34 +356,6 @@ a:hover, a:active {
     margin-top: -3rem !important;
     margin-bottom: 4rem !important;
   }
-
-  header .logo .top {
-    font-size: 1em;
-  }
-
-  header .logo .middle {
-    font-size: 2em;
-  }
-
-  header .logo .bottom {
-    font-size: 1em;
-  }
-
-  header .subtitle {
-    font-size: 1em;
-    line-height: 1.25;
-  }
-}
-
-body .search {
-  margin: 2rem 0.5rem 3.5rem 0.5rem;
-}
-
-body .search input {
-  background: #FAFAFA;
-  border: 2px solid #E3E3E3;
-  width: 100%;
-  padding: 0.25rem 5.25rem 0.25rem 0.75rem !important;
 }
 
 footer {
@@ -368,9 +375,9 @@ footer {
 }
 
 .search-icon {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-  margin-right: 3rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 3rem;
   color: #919091;
 }
 
