@@ -244,10 +244,12 @@ a:hover, a:active {
 
   .square-banner-sizes {
     margin-top: -3rem !important;
+    margin-bottom: 3rem;
   }
 
   .round-banner-sizes {
     margin-top: 1rem !important;
+    margin-bottom: 3rem;
   }
 
   .mkt-icons p {
