@@ -2,6 +2,63 @@
   box-sizing: border-box;
 }
 
+header {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+header .logo {
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+header .logo .top {
+  font-size: 1.12em;
+  font-style: italic;
+  display: block;
+}
+
+header .logo .top span {
+  font-style: normal;
+}
+
+header .logo .middle {
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: block;
+}
+
+header .logo .bottom {
+  font-size: 1.12em;
+  text-transform: uppercase;
+  font-family: Courier, monospace;
+  font-weight: normal;
+  display: block;
+}
+
+header .subtitle {
+  text-align: center;
+  font-size: 1.12em;
+  color: #939293;
+  display: block;
+  line-height: 1.25;
+}
+
+header .subscribe input {
+  background: #FAFAFA;
+  border: 2px solid #E3E3E3;
+  width: 100%;
+}
+
+header .subscribe button {
+  background: #760200;
+  color: white;
+  border: 2px solid #760200;
+  cursor: pointer;
+}
+
 body {
   font-size: 24px;
   font-family: Georgia, Times, 'Times New Roman', serif;
@@ -24,6 +81,14 @@ a:hover, a:active {
   color: #750404 !important;
   text-decoration: underline !important;
   background-color: white;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.align-right {
+  text-align: right;
 }
 
 .mx-auto {
@@ -256,71 +321,23 @@ a:hover, a:active {
     margin-top: -3rem !important;
     margin-bottom: 4rem !important;
   }
-}
 
-.w-100 {
-  width: 100% !important;
-}
+  header .logo .top {
+    font-size: 1em;
+  }
 
-.align-right {
-  text-align: right;
-}
+  header .logo .middle {
+    font-size: 2em;
+  }
 
-header {
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  text-align: center;
-}
+  header .logo .bottom {
+    font-size: 1em;
+  }
 
-header .logo {
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-header .logo .top {
-  font-size: 1.12em;
-  font-style: italic;
-  display: block;
-}
-
-header .logo .top span {
-  font-style: normal;
-}
-
-header .logo .middle {
-  font-size: 3em;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  display: block;
-}
-
-header .logo .bottom {
-  font-size: 1.12em;
-  text-transform: uppercase;
-  font-family: Courier, monospace;
-  font-weight: normal;
-  display: block;
-}
-
-header .subtitle {
-  text-align: center;
-  font-size: 1.12em;
-  color: #939293;
-  display: block;
-  line-height: 1.25;
-}
-
-header .subscribe input {
-  background: #FAFAFA;
-  border: 2px solid #E3E3E3;
-  width: 100%;
-}
-
-header .subscribe button {
-  background: #760200;
-  color: white;
-  border: 2px solid #760200;
-  cursor: pointer;
+  header .subtitle {
+    font-size: 1em;
+    line-height: 1.25;
+  }
 }
 
 body .search {
