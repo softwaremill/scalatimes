@@ -36,7 +36,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div className="container get-banners">
+            <div className="container downloads">
                 <div className="mkt-header">
                     Would you like to share Scala Times stickers among the event participants?
                 </div>
@@ -54,7 +54,16 @@ export default () => {
                     <p>Have a great event!</p>
                 </div>
                 <div>
-
+                    <div className="col-sm-5 col-sm-offset-1 col-xs-12">
+                        <div className="center-block">
+                            <img src="/static/img/stickers.png"/>
+                        </div>
+                    </div>
+                    <div className="col-sm-5 col-xs-12">
+                        <div className="center-block">
+                            <img src="/static/img/stickers_2.png"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
