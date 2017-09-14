@@ -34,7 +34,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div className="container get-banners my-5">
+            <div className="container downloads">
                 <div className="mkt-header">
                     The variety of banners for your choice.
                 </div>

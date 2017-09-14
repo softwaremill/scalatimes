@@ -408,12 +408,13 @@ div.mkt-icons p {
   padding-right: 1.5rem;
 }
 
-.get-banners {
+.downloads {
   text-align: center;
   margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
-.get-banners .download-icon {
+.downloads .download-icon {
   font-size: 2rem;
   color: #939293;
   padding-right: 1.5rem;
