@@ -36,7 +36,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div className="get-banners">
+            <div className="container get-banners">
                 <div className="mkt-header">
                     Would you like to share Scala Times stickers among the event participants?
                 </div>
