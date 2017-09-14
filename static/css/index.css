@@ -307,6 +307,7 @@ header .subtitle {
   font-size: 1.12em;
   color: #939293;
   display: block;
+  line-height: 1.25;
 }
 
 header .subscribe input {
@@ -382,6 +383,7 @@ footer {
 .mkt-header {
   margin-bottom: 2rem;
   font-size: 4rem;
+  line-height: 1.4;
 }
 
 .mkt-body {
