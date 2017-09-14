@@ -34,7 +34,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div className="container get-banners">
+            <div className="container get-banners my-5">
                 <div className="mkt-header">
                     The variety of banners for your choice.
                 </div>
@@ -42,7 +42,7 @@ export default () => {
                     <i className="fa fa-download"/>
                     <span style={{marginLeft:"1.5rem"}}>Download the size (RGB colors, png type file):</span>
                 </div>
-                <div className="container my-5">
+                <div className="container mt-5">
                     <div className="row" style={{marginBottom:"7rem"}}>
                         <div className="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
                             <div style={{height: "210px"}}>
