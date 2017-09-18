@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import Title from "./Title";
 import Subscribe from "./Subscribe";
 
-export default ({ children }) => {
+export default () => {
     return (
     <div>
       <Head>
