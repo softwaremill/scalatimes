@@ -138,6 +138,10 @@ a:hover, a:active {
   margin-top: 1rem !important;
 }
 
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
 .mt-5 {
   margin-top: 3rem !important;
 }
@@ -182,6 +186,22 @@ a:hover, a:active {
 .px-5 {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
+}
+
+#mce-responses {
+  display: block;
+}
+
+#mce-error-response {
+  color: red;
+}
+
+#mce-success-response {
+  color: green;
+}
+
+.response {
+  display: block;
 }
 
 @media screen and (min-width: 992px) {
