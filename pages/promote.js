@@ -53,15 +53,25 @@ export default () => {
                     <br />
                     <p>Have a great event!</p>
                 </div>
-                <div>
-                    <div className="col-sm-5 col-sm-offset-1 col-xs-12">
-                        <div className="center-block">
-                            <img src="/static/img/stickers.png"/>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12">
+                            <div className="col-sm-12">
+                                <img src="/static/img/stickers/stickers_1a.png"/>
+                            </div>
+                            <div className="col-sm-6">
+                                <div style={{paddingTop: "8px"}}>
+                                    <img src="/static/img/stickers/stickers_1b.png"/>
+                                </div>
+                            </div>
+                            <div className="col-sm-6">
+                                <div style={{paddingTop: "8px", paddingLeft: "30px"}}>
+                                    <img src="/static/img/stickers/stickers_1c.png"/>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-sm-5 col-xs-12">
-                        <div className="center-block">
-                            <img src="/static/img/stickers_2.png"/>
+                        <div className="col-md-6 col-sm-12" style={{paddingLeft: "5px"}}>
+                            <img src="/static/img/stickers/stickers_2.png"/>
                         </div>
                     </div>
                 </div>
