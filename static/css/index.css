@@ -109,29 +109,9 @@ a:hover, a:active {
   float: none;
 }
 
-.mx-0 {
-  margin-right: 0rem !important;
-  margin-left: 0rem !important;
-}
-
-.mx-3 {
-  margin-right: 1rem !important;
-  margin-left: 1rem !important;
-}
-
-.mx-4 {
-  margin-right: 1.5rem !important;
-  margin-left: 1.5rem !important;
-}
-
 .mx-5 {
   margin-right: 3rem !important;
   margin-left: 3rem !important;
-}
-
-.my-5 {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
 }
 
 .mt-3 {
@@ -146,10 +126,6 @@ a:hover, a:active {
   margin-top: 3rem !important;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem !important;
-}
-
 .mb-5 {
   margin-bottom: 3rem !important;
 }
@@ -158,34 +134,9 @@ a:hover, a:active {
   padding-top: 3rem !important;
 }
 
-.py-1 {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
-}
-
-.py-3 {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-
-.px-1 {
-  padding-right: 0.25rem !important;
-  padding-left: 0.25rem !important;
-}
-
-.px-3 {
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-
 .px-4 {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
-}
-
-.px-5 {
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
 }
 
 #mce-responses {
@@ -202,6 +153,115 @@ a:hover, a:active {
 
 .response {
   display: block;
+}
+
+footer {
+  padding-top: 3rem !important;
+  text-align: center;
+  border-top: solid 2px #939293;
+}
+
+.footer-links {
+  margin: 3rem auto;
+}
+
+.footer-icon {
+  margin-right: 1rem;
+  font-size: 3rem;
+  color: #939293;
+}
+
+.search-icon {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 3rem;
+  color: #919091;
+}
+
+.previous > header {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.banners {
+  text-align: center;
+}
+
+.stickers {
+  text-align: center;
+}
+
+.spread-the-word {
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: solid 2px #DEDEDE;
+}
+
+.spread-the-word > div {
+  max-width: 950px;
+}
+
+.mkt-header {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  line-height: 1.4;
+}
+
+.mkt-body {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.mkt-icons {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.mkt-icon {
+  padding-top: 3rem;
+  max-width: 260px;
+  height: 180px;
+}
+
+div.mkt-icons p {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.downloads {
+  text-align: center;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.downloads .download-icon {
+  font-size: 2rem;
+  color: #939293;
+  padding-right: 1.5rem;
+}
+
+.square-banner-sizes {
+  text-align: left;
+  max-width: 130px;
+}
+
+.round-banner-sizes {
+  text-align: left;
+  max-width: 130px;
+}
+
+.archive-right {
+  border-left: #E3E3E3 solid medium;
+}
+
+.archive-left {
+  border-right: #E3E3E3 solid medium;
+}
+
+.newspaper-body {
 }
 
 @media screen and (min-width: 992px) {
@@ -376,432 +436,4 @@ a:hover, a:active {
     margin-top: -3rem !important;
     margin-bottom: 4rem !important;
   }
-}
-
-footer {
-  padding-top: 3rem !important;
-  text-align: center;
-  border-top: solid 2px #939293;
-}
-
-.footer-links {
-  margin: 3rem auto;
-}
-
-.footer-icon {
-  margin-right: 1rem;
-  font-size: 3rem;
-  color: #939293;
-}
-
-.search-icon {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 3rem;
-  color: #919091;
-}
-
-.previous > header {
-  font-size: 3rem;
-  margin-bottom: 2.5rem;
-}
-
-.banners {
-  text-align: center;
-}
-
-.stickers {
-  text-align: center;
-}
-
-.spread-the-word {
-  margin-top: 5rem;
-  padding-bottom: 5rem;
-  border-bottom: solid 2px #DEDEDE;
-}
-
-.spread-the-word > div {
-  max-width: 950px;
-}
-
-.mkt-header {
-  margin-bottom: 2rem;
-  font-size: 4rem;
-  line-height: 1.4;
-}
-
-.mkt-body {
-  margin-top: 1.5rem;
-  margin-bottom: 5rem;
-}
-
-.mkt-icons {
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-}
-
-.mkt-icon {
-  padding-top: 3rem;
-  max-width: 260px;
-  height: 180px;
-}
-
-div.mkt-icons p {
-  font-size: 2rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.downloads {
-  text-align: center;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
-
-.downloads .download-icon {
-  font-size: 2rem;
-  color: #939293;
-  padding-right: 1.5rem;
-}
-
-.square-banner-sizes {
-  text-align: left;
-  max-width: 130px;
-}
-
-.round-banner-sizes {
-  text-align: left;
-  max-width: 130px;
-}
-
-.archive-right {
-  border-left: #E3E3E3 solid medium;
-}
-
-.archive-left {
-  border-right: #E3E3E3 solid medium;
-}
-
-header .issue-info {
-  border-top: 3px double black;
-  border-bottom: 3px double black;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  padding: 3px;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 1.4em;
-  clear: both;
-}
-
-.newspaper-body {
-  width: 100%;
-  position: relative;
-}
-
-.column {
-  width: 192px;
-  padding: 10px;
-  vertical-align: top;
-}
-
-.newspaper-body .left-column, 
-.newspaper-body .right-column {
-  position: absolute;
-  top: 0;
-}
-
-.newspaper-body .left-column {
-  left: 0;
-}
-
-.newspaper-body .right-column {
-  right: 0;
-}
-
-.newspaper-body .issue{
-  padding: 0 192px;
-  vertical-align: top;
-  width: 960px;
-  margin-bottom: 10px;
-}
-
-.promotion-table {
-  padding: 15px 15px 0;
-  width: 100%;
-}
-
-.exchange-list {
-  padding-left: 30px;
-}
-
-.banners-table td {
-  padding: 15px 35px;
-  vertical-align: bottom;
-  text-align: center;
-  font-size: larger;
-}
-
-.banners-table img {
-  margin-top: 10px;
-}
-
-.issue-table {
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  padding: 15px 15px 0;
-}
-
-.issue-table img {
-  max-width: 100%!important;
-}
-
-.issue-table a:hover strong {
-  color: #ED0000!important;
-}
-
-.newspaper-body .sml-ad {
-  border: 2px solid black;
-  padding: 5px 7px;
-  text-align: center;
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  line-height: 1.8;
-  font-size: 1.16em;
-  margin-bottom: 10px;
-}
-
-.column ol {
-  padding: 0;
-  margin:  0;
-  list-style: none;
-}
-
-.column .issue-link {
-  color: black;
-}
-
-.column .issue-title {
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.16em;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  display: block;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.column .issue-link p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.column .issue-link:hover .issue-title {
-  color: #ED0000;
-}
-
-.column ul {
-  padding: 0;
-  list-style: none;
-}
-
-.column ol>li {
-  padding-top: 7px;
-  padding-bottom: 1px;
-}
-
-/*.column ol  ul {
-  padding-bottom: 12px;
-}*/
-
-.column hr {
-  width: 80px;
-}
-
-.column ol > li:last-child hr {
-  display: none;
-}
-
-
-.other-archives {
-  display: table;
-  width: 100%;
-  border-top: 1px solid black;
-  padding: 10px 0 0;
-}
-
-.other-archives .column {
-  display: table-cell;
-  border-right: 1px solid black;
-  height: 100%;
-}
-
-.other-archives .column:last-child {
-  border-right: none;
-}
-
-/* tablets */
-/*@media only screen and (min-device-width : 600px) and (max-device-width : 1024px) {*/
-@media only screen and (min-width : 600px) and (max-width : 1024px) {
-  body {
-    margin: 0;
-    padding: 5px 0;
-  }
-
-  /*.container {*/
-    /*max-width: 580px;*/
-  /*}*/
-
-  header .intro,
-  header .subscribe {
-    float: none;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  header .intro {
-    padding: 0;
-    font-size: 1.1em;
-    border: none;
-    color: gray; 
-  }
-
-  header .logo {
-    padding: 0;
-    margin-top: 30px;
-  }
-
-  .newspaper-body .issue {
-    padding: 0;
-    width: 100%;
-  }
-
-  .issue-table {
-    border: none;
-    border-bottom: 3px double black;
-  }
-
-  .newspaper-body .left-column, 
-  .newspaper-body .right-column {
-    position: initial;
-    margin-bottom: 10px;
-  }
-
-  .newspaper-body .left-column {
-    border-right: 1px solid black; 
-  }
-
-  .column {
-    display: inline-block;
-    width: 274px;
-  }
-
-  .other-archives {
-    display: block;
-  }
-
-  .other-archives .column {
-    display: inline-block;
-  }
-
-  .other-archives .column:nth-child(even) {
-    border-right: none;
-  }
-
-  .other-archives .column:last-child {
-    border-right: 1px solid black;
-  }
-}
-
-@media only screen and (min-width : 320px) and (max-width : 599px) {
-  body {
-    margin: 0;
-    padding: 5px 0;
-  }
-
-  /*.container {*/
-    /*max-width: 300px;*/
-  /*}*/
-
-  header .intro,
-  header .subscribe {
-    float: none;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  header .intro {
-    padding: 0;
-    font-size: 1.1em;
-    border: none;
-    color: gray; 
-  }
-
-  header .logo {
-    padding: 0;
-    margin-top: 30px;
-  }
-
-  .newspaper-body .issue {
-    padding: 0;
-    width: 100%;
-  }
-
-  .promotion-table {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-  }
-
-  .exchange-list {
-    padding-left: 10px;
-  }
-
-  .banners-table td {
-    padding: 5px 10px;
-  }
-
-  .banners-table img {
-    margin-top: 5px;
-  }
-
-  .issue-table {
-    border: none;
-    border-bottom: 3px double black;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .newspaper-body .left-column, 
-  .newspaper-body .right-column {
-    position: initial;
-  }
-
-  .column {
-    display: inline-block;
-    width: 268px;
-  }
-
-  .other-archives {
-    display: block;
-    border-top: none;
-    padding: 0;
-  }
-
-  .other-archives .column {
-    display: inline-block;
-  }
-
-  .other-archives .column {
-    border-right: none;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .column ol > li:last-child hr {
-    display: block;
-  }
-
 }
