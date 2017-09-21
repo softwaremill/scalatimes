@@ -57,12 +57,12 @@ export default () => {
                     <div className="hidden-xs">
                         <img src="/static/img/stickers/1.png"/>
                         <div style={{paddingTop: "4px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                            <img src="/static/img/stickers/3.png" style={{padding: "4px"}}/>
+                            <img src="/static/img/stickers/2.png" style={{padding: "4px"}}/>
                             <img src="/static/img/stickers/3.png" style={{padding: "4px"}}/>
                         </div>
                     </div>
                     <div className="hidden-sm" style={{paddingLeft: "4px"}}>
-                        <img src="/static/img/stickers/2.png"/>
+                        <img src="/static/img/stickers/4.png"/>
                     </div>
                 </div>
             </div>
