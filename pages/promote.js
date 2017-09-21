@@ -53,10 +53,10 @@ export default () => {
                     <br />
                     <p>Have a great event!</p>
                 </div>
-                <div className="mx-auto hidden-xs" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
-                    <div>
+                <div className="mx-auto" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                    <div className="hidden-xs">
                         <img src="/static/img/stickers/1.png"/>
-                        <div className="" style={{paddingTop: "4px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                        <div style={{paddingTop: "4px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
                             <img src="/static/img/stickers/3.png" style={{padding: "4px"}}/>
                             <img src="/static/img/stickers/3.png" style={{padding: "4px"}}/>
                         </div>
