@@ -293,6 +293,10 @@ div.mkt-icons p {
     margin-right: 0.5rem !important;
   }
 
+  .pl-sm-2 {
+    padding-left: 0.5rem !important;
+  }
+
   .px-sm-0 {
     margin-right: 0rem !important;
     margin-left: 0rem !important;
