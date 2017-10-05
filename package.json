@@ -8,9 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^3.2.1",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.18.1",
+    "next": "^3.2.2",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
   }
 }
