@@ -155,6 +155,60 @@ a:hover, a:active {
   display: block;
 }
 
+.issue-number {
+  font-size: 3rem;
+  margin-bottom: -1rem;
+}
+
+.issue-date {
+  color: gray;
+  font-size: 2rem;
+  margin-top: -1rem;
+}
+
+.issue-categories {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.issue-content {
+  margin: 6rem 3.5rem 0.5rem;
+  padding-bottom: 5rem;
+}
+
+.issue-category {
+  text-align: left;
+}
+
+.category-title {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.link {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.link-title {
+  color: #750404 !important;
+}
+
+.link-desc {
+  font-size: 1.75rem;
+}
+
+.link-author {
+  font-size: 1.5rem;
+  color: gray;
+}
+
 footer {
   padding-top: 3rem !important;
   text-align: center;
@@ -253,14 +307,6 @@ div.mkt-icons p {
   max-width: 130px;
 }
 
-.archive-right {
-  border-left: #E3E3E3 solid medium;
-}
-
-.archive-left {
-  border-right: #E3E3E3 solid medium;
-}
-
 .newspaper-body {
 }
 
@@ -287,6 +333,11 @@ div.mkt-icons p {
   .navbar-nav > li {
     float: none;
     display: inline-block;
+  }
+
+  .framed {
+    border-left: #E3E3E3 solid medium;
+    border-right: #E3E3E3 solid medium;
   }
 
   .mr-sm-2 {
