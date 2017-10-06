@@ -1,8 +1,8 @@
-export default ({children}) => {
+export default () => {
     return (
         <footer>
             <div className="container">
-                <div className="row" style={{color:"#939293"}}>powered by</div>
+                <div className="row" style={{color:"#939293", fontSize:"2rem"}}>powered by</div>
                 <div className="row mt-3 mb-5"><img src="/static/img/sml_logo_grey.png"/></div>
             </div>
             <div className="footer-links">
