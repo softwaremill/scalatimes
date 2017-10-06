@@ -8,7 +8,7 @@ export default (props) => {
 
     return (
         <div className="archived-issue">
-            <h3>#{props.number}</h3>
+            <h3><a href="/">#{props.number}</a></h3>
             <p>#{props.summary.trunc(180)}</p>
         </div>
     )

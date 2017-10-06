@@ -529,6 +529,14 @@ div.mkt-icons p {
     border-right: #E3E3E3 solid medium;
   }
 
+  .left-column {
+    margin-left: 1rem;
+  }
+
+  .right-column {
+    margin-right: 1rem;
+  }
+
   .previous {
     min-width: 200px;
     max-width: 300px;
@@ -537,5 +545,20 @@ div.mkt-icons p {
   .issue {
     min-width: 420px;
     max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .left-column {
+    margin-left: 4rem;
+  }
+
+  .right-column {
+    margin-right: 4rem;
+  }
+
+  .framed {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
