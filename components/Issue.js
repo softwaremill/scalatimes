@@ -1,6 +1,7 @@
+import * as React from "react"
+import Moment from 'react-moment'
 import Categories from "./Categories"
 import IssueContent from "./IssueContent"
-import Moment from 'react-moment'
 
 export default (props) => {
     return (

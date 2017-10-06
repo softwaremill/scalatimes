@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 export default class Subscribe extends Component {
 
@@ -20,8 +20,8 @@ export default class Subscribe extends Component {
                             <button type="submit" id="mc-embedded-subscribe" className="w-100">Subscribe</button>
                         </div>
                         <div id="mce-responses" className="col-xs-10 col-xs-offset-1 mt-4">
-                            <div id="mce-error-response" className="response" style={{display:"none"}}></div>
-                            <div id="mce-success-response" className="response" style={{display: "none"}}></div>
+                            <div id="mce-error-response" className="response" style={{display: "none"}}/>
+                            <div id="mce-success-response" className="response" style={{display: "none"}}/>
                         </div>
                         <div style={{position: "absolute", marginLeft: "-5000px"}}>
                             <input type="text" name="b_ba834c562d82d9aba5eaf90ba_32cef9ab4e" tabIndex={-1} value=""/>

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Link from "next/link";
-import PropTypes from 'prop-types';
+import React, {Component} from 'react'
+import Link from "next/link"
+import PropTypes from 'prop-types'
 
 export default class NavBar extends Component {
 
@@ -12,9 +12,9 @@ export default class NavBar extends Component {
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
                                 data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
+                            <span className="icon-bar"/>
+                            <span className="icon-bar"/>
+                            <span className="icon-bar"/>
                         </button>
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,10 +53,10 @@ export default class NavBar extends Component {
                     </div>
                 </div>
             </nav>
-        );
+        )
     }
 }
 
 NavBar.propTypes = {
     extraStyle: PropTypes.string.isRequired
-};
+}

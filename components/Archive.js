@@ -1,3 +1,4 @@
+import * as React from "react"
 import ArchivedIssue from "../components/ArchivedIssue"
 
 export default (props) => {

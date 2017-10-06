@@ -1,3 +1,4 @@
+import * as React from "react"
 import Category from "./Category"
 
 export default (props) => {

@@ -1,3 +1,5 @@
+import * as React from "react"
+
 export default (props) => {
     String.prototype.trunc = String.prototype.trunc ||
         function (n) {

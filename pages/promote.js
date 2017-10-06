@@ -1,4 +1,5 @@
-import Page from "../layouts/main";
+import * as React from "react"
+import Page from "../layouts/main"
 
 export default () => {
     return <Page>
@@ -67,5 +68,5 @@ export default () => {
                 </div>
             </div>
         </div>
-    </Page>;
-};
+    </Page>
+}

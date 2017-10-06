@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 export default class Search extends Component {
 
@@ -17,7 +17,7 @@ export default class Search extends Component {
                     <input type="text" id="search_phrase" placeholder="Search phrase"
                            ref={(input) => {this.phrase = input;}}
                            onKeyPress={this.handleSearch}/>
-                    <span className="fa fa-search form-control-feedback search-icon"></span>
+                    <span className="fa fa-search form-control-feedback search-icon"/>
                 </div>
             </div>
         )

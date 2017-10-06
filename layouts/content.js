@@ -1,4 +1,5 @@
-import Page from "./main";
+import * as React from "react"
+import Page from "./main"
 import Search from "../components/Search"
 import Archive from "../components/Archive"
 
