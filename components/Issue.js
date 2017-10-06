@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 
 export default (props) => {
     return (
-        <div>
+        <div className="issue">
             <div className="issue-number">#{props.number}</div>
             <div className="framed">
                 <Moment className="issue-date" format='MMMM Do, YYYY' date={props.date}/>

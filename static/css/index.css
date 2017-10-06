@@ -171,6 +171,9 @@ a:hover, a:active {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .issue-content {
@@ -209,6 +212,19 @@ a:hover, a:active {
   color: gray;
 }
 
+.archived-issue {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.archived-issue h3 {
+  font-size: 2.5rem;
+}
+
+.archived-issue p {
+  font-size: 1.5rem;
+}
+
 footer {
   padding-top: 3rem !important;
   text-align: center;
@@ -232,9 +248,14 @@ footer {
   color: #919091;
 }
 
+.previous {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .previous > header {
   font-size: 3rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 
 .banners {
@@ -308,101 +329,9 @@ div.mkt-icons p {
 }
 
 .newspaper-body {
-}
-
-@media screen and (min-width: 992px) {
-  .search-max-width {
-    max-width: 900px !important;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .navbar {
-    margin-top: 5rem !important;
-  }
-
-  .navbar-nav {
-    float: none;
-    margin: 0 auto;
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar-nav > li {
-    float: none;
-    display: inline-block;
-  }
-
-  .framed {
-    border-left: #E3E3E3 solid medium;
-    border-right: #E3E3E3 solid medium;
-  }
-
-  .mr-sm-2 {
-    margin-right: 0.5rem !important;
-  }
-
-  .pl-sm-2 {
-    padding-left: 0.5rem !important;
-  }
-
-  .px-sm-0 {
-    margin-right: 0rem !important;
-    margin-left: 0rem !important;
-  }
-
-  .px-sm-5 {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
-  }
-
-  .py-sm-2 {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-  }
-
-  .mx-sm-5 {
-    margin-left: 3rem !important;
-    margin-right: 3rem !important;
-  }
-
-  .sm-w-70 {
-    width: 70% !important;
-  }
-
-  .sm-w-100 {
-    width: 100% !important;
-  }
-
-  .sm-text-right {
-    text-align: right;
-  }
-
-  .sm-text-left {
-    text-align: left;
-  }
-
-  .footer-links > a {
-    width: 33%;
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-  .square-banner-sizes {
-    margin-top: 3rem !important;
-  }
-
-  .round-banner-sizes {
-    margin-top: 3rem !important;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .banners-icons {
-    margin-left: -5rem !important;
-  }
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 @media screen and (max-width: 767px) {
@@ -490,5 +419,123 @@ div.mkt-icons p {
   .mkt-icons p {
     margin-top: -3rem !important;
     margin-bottom: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    margin-top: 5rem !important;
+  }
+
+  .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
+  .framed {
+    border-left: #E3E3E3 solid medium;
+  }
+
+  .previous {
+    max-width: 250px;
+    min-width: 185px;
+  }
+
+  .issue {
+    min-width: 420px;
+  }
+
+  .mr-sm-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .pl-sm-2 {
+    padding-left: 0.5rem !important;
+  }
+
+  .px-sm-0 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .px-sm-5 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+
+  .py-sm-2 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .mx-sm-5 {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+  }
+
+  .sm-w-70 {
+    width: 70% !important;
+  }
+
+  .sm-w-100 {
+    width: 100% !important;
+  }
+
+  .sm-text-right {
+    text-align: right;
+  }
+
+  .sm-text-left {
+    text-align: left;
+  }
+
+  .footer-links > a {
+    width: 33%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .square-banner-sizes {
+    margin-top: 3rem !important;
+  }
+
+  .round-banner-sizes {
+    margin-top: 3rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .banners-icons {
+    margin-left: -5rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .search-max-width {
+    max-width: 900px !important;
+  }
+
+  .framed {
+    border-left: #E3E3E3 solid medium;
+    border-right: #E3E3E3 solid medium;
+  }
+
+  .previous {
+    min-width: 200px;
+    max-width: 300px;
+  }
+
+  .issue {
+    min-width: 420px;
+    max-width: 1200px;
   }
 }

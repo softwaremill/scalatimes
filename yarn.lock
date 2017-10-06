@@ -2835,6 +2835,10 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
+react-truncate@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/react-truncate/-/react-truncate-2.1.5.tgz#c33c1bf7053c2800d4012fefab09a18013019721"
+
 react@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
