@@ -1,4 +1,5 @@
 import * as React from "react"
+import Link from "next/link"
 
 export default (props) => {
     String.prototype.trunc = String.prototype.trunc ||
@@ -8,7 +9,7 @@ export default (props) => {
 
     return (
         <div className="archived-issue">
-            <h3><a href="/">#{props.number}</a></h3>
+            <h3><Link href={{pathname: '/', query: {issue: props.number}}}><a>#{props.number}</a></Link></h3>
             <p>#{props.summary.trunc(180)}</p>
         </div>
     )

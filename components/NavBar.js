@@ -20,7 +20,7 @@ export default class NavBar extends Component {
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
                             <li>
-                                <Link href="/">
+                                <Link href={{pathname: '/', query: {issue: 'latest'}}}>
                                     <a className="navbar-link mx-5">Latest news</a>
                                 </Link>
                             </li>
