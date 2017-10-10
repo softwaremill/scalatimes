@@ -3,7 +3,7 @@ import Page from "./main"
 import Search from "../components/Search"
 import Archive from "../components/Archive"
 
-export default ({children, archive = null}) => {
+export default ({children, archive = []}) => {
     return (
         <Page>
             <Search/>
