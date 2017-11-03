@@ -1,5 +1,10 @@
-* {
-  box-sizing: border-box;
+
+html, body {
+  height: 100%;
+}
+
+body > div, #__next, #__next > div, #__next > div > div {
+  height: 100%;
 }
 
 header {

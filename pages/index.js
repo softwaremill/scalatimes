@@ -8,7 +8,7 @@ import {issueUrl} from "../components/url"
 
 export default class MyPage extends React.Component {
     static async getInitialProps(ctx) {
-        let number = get(ctx, 'query.issue', "latest");
+            let number = get(ctx, 'query.issue', "latest");
         let res = await fetch(issueUrl + number + '?archive=true');
         if (res.ok) {
             let json = await res.json();

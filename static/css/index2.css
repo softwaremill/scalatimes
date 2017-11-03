@@ -1,0 +1,174 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media(max-width: 1200px) {
+  .app {
+    width: 85%;
+  }
+}
+
+@media(max-width: 900px) {
+  .app {
+    width: 100%;
+  }
+}
+
+@media(max-width: 700px) {
+  .app {
+    width: 100%;
+  }
+}
+
+.app > * {
+  margin-bottom: 3em;
+}
+
+.app > *:first-child {
+  margin-top: 1em;
+}
+
+.app > *:last-child {
+  margin-bottom: 0;
+}
+
+header {
+  text-align: center;
+}
+
+header p {
+  color: #555;
+}
+
+.subscribe {
+  text-align: center;
+}
+
+.subscribe form input {
+  line-height: 2;
+  font-size: 1em;
+  display: inline-block;
+}
+
+@media(max-width: 600px) {
+  form input[type="email"], form input[type="submit"] {
+    display: block;
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 3;
+  }
+
+  form input:last-of-type {
+    margin-top: 1em;
+  }
+}
+
+input[type="email"] {
+  font-family: inherit;
+  padding: 0 0.5em;
+  border: 1px solid #ddd;
+  background: #fefefe;
+  color: #555;
+  width: 320px;
+}
+
+input[type="submit"] {
+  font-family: inherit;
+  padding: 0 1em;
+  border: 1px solid #750404;
+  border-radius: 0;
+  background: #750404;
+  color: #fff;
+  margin-left: .5em;
+}
+
+
+.nav-horizontal a {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 0 1em 1em 1em;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #555;
+  transition: color .2s ease-in-out;
+}
+
+/* .nav-horizontal a:first-of-type {
+  margin-left: 0
+}
+
+.nav-horizontal a:last-of-type {
+  margin-right: 0
+} */
+
+.nav-horizontal a i {
+  margin-right: .5em;
+  color: #750404;
+}
+
+
+.main-nav, .footer-nav {
+  text-align: center;
+}
+
+nav a {
+  transition: color .2s ease-in-out;
+  color: #555;
+}
+
+nav a:hover {
+  color: #750404;
+}
+
+.main-nav a.active {
+  color: #750404;
+  border-bottom: 3px solid #750404;
+}
+
+footer {
+  text-align: center;
+}
+
+.logo img {
+  max-width:100%;
+  max-height:100%;
+}
+
+footer .logo:before {
+  content: "powered by";
+  display: block;
+  width: auto;
+  color: #555;
+  margin-bottom: .5em;
+}
+
+footer nav {
+  margin-top: 2em;
+}
+
+.content {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: #fefefe;
+}
