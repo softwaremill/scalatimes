@@ -2,7 +2,7 @@ import React from 'react'
 import get from 'lodash/get'
 import 'isomorphic-fetch'
 import Error from './_error'
-import Page from "../layouts/content"
+import Layout from "../layouts/Layout"
 import Issue from "../components/Issue"
 import {issueUrl} from "../components/url"
 
@@ -24,10 +24,10 @@ export default class MyPage extends React.Component {
         }
 
         return (
-            <Page archive={this.props.archive}>
-                <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
-                       date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/>
-            </Page>
+            <Layout archive={this.props.archive}>
+                {/* <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
+                       date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/> */}
+            </Layout>
         )
     }
 }
