@@ -1,6 +1,6 @@
 import React from "react"
 import Head from "next/head"
-import Link from "next/link";
+import MenuLink from '../components/MenuLink';
 
 const handleSubmit = () => {};
 
@@ -36,21 +36,15 @@ export default ({ children }) => {
           <span className="fa fa-times inactive"/>
         </label>
         <nav>
-          <Link href={{pathname: '/', query: {issue: 'latest'}}}>
-            <a className="active">Latest news</a>
-          </Link>
-          <Link href="promote">
-          <a>Promote your event</a>
-          </Link>
-          <Link href="banners">
-            <a>Get banner</a>
-          </Link>
-          <Link href="#">
-            <a>Contact</a>
-          </Link>
-          <Link href="#">
-            <a>HIRING</a>
-          </Link>
+          <MenuLink href={{pathname: '/', query: {issue: 'latest'}}}>
+            Latest news
+          </MenuLink>
+          <MenuLink href="promote">
+            Promote your event
+          </MenuLink>
+          <MenuLink href="banners">
+            Get banner
+          </MenuLink>
         </nav>
       </section>
       <section className="content">
@@ -61,9 +55,9 @@ export default ({ children }) => {
           <img src="/static/img/sml_logo_grey.png"/>
         </div>
         <nav className="nav-horizontal">
-          <a href="https://softwaremill.com/portfolio/"><i className="fa fa-code"/>Our projects</a>
-          <a href="https://softwaremill.com/join-us/"><i className="fa fa-handshake-o"/>We are hiring</a>
-          <a href="https://twitter.com/softwaremill"><i className="fa fa-twitter"/>Follow us!</a>
+          <a href="https://softwaremill.com/portfolio/" target="_blank"><i className="fa fa-code"/>Our projects</a>
+          <a href="https://softwaremill.com/join-us/" target="_blank"><i className="fa fa-handshake-o"/>We are hiring</a>
+          <a href="https://twitter.com/softwaremill" target="_blank"><i className="fa fa-twitter"/>Follow us!</a>
         </nav>
       </footer>
     </div>
