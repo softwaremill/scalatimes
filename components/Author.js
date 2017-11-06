@@ -1,30 +1,17 @@
-import React, {Component} from "react"
-import Link from "next/link"
+import React, { Component } from "react"
 
-export default class Author extends Component {
+const renderTwitterHandle = (handle) => {
+  return [
+    " (",
+    <a href={`https://twitter.com/${handle}`}>@{handle}</a>,
+    ")"
+  ]
+};
 
-    constructor(props) {
-        super(props);
-        this.twitterLink = this.twitterLink.bind(this);
-        this.twitterHandle = this.twitterHandle.bind(this)
-    }
-
-    twitterLink() {
-        return `https://twitter.com/${this.props.handle}`;
-    }
-
-    twitterHandle() {
-        return `@${this.props.handle}`;
-    }
-
-    render() {
-        return this.props.handle === '' ? <div className="link-author">~{this.props.author}</div> :
-            <div className="link-author">
-                ~{this.props.author}
-                {" ("}
-                <Link href={this.twitterLink()}>{this.twitterHandle()}</Link>
-                {")"}
-            </div>;
-    }
-
-}
+export default ({ author, twitterHandle }) => {
+  return (
+    <p className="issue-entry__author">
+      ~{author} {twitterHandle && renderTwitterHandle(twitterHandle)}
+    </p>
+  );
+};

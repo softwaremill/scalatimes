@@ -32,13 +32,13 @@ h2 {
 }
 
 h3 {
-  font-size: 1.333rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
   margin-top: 0;
   margin-bottom: 1.5rem;  
 }
 
-h3 {
+h4 {
   font-size: 1.2rem;
   line-height: 1.5rem;
   margin-top: 0;
@@ -53,6 +53,7 @@ p {
 }
 
 a {
+  text-decoration: none;
   transition: color .2s ease-in-out;
   color: #555;
 }

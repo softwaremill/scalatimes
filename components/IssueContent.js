@@ -1,13 +1,10 @@
-import * as React from "react"
-import Category from "./Category"
+import React from "react"
+import IssueEntriesGroup from "./IssueEntriesGroup"
 
 export default (props) => {
-    return (
-        <div className="issue-content">
-            {props.categories.map((cat, idx) => <div key={cat.id}>
-                <Category name={cat.name} links={cat.links}/>
-                {(idx != (props.categories.length - 1)) &&  <hr style={{width: "65%", borderWidth: "3px", margin: "3rem auto"}}/>}
-            </div>)}
-        </div>
-    )
+  return (
+    <div className="issue__content">
+      {props.categories.map(cat => <IssueEntriesGroup key={cat.name} name={cat.name} links={cat.links} />)}
+    </div>
+  )
 }

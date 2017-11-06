@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout"
 import Issue from "../components/Issue"
 import {issueUrl} from "../components/url"
 
-export default class MyPage extends React.Component {
+export default class extends React.Component {
     static async getInitialProps(ctx) {
             let number = get(ctx, 'query.issue', "latest");
         let res = await fetch(issueUrl + number + '?archive=true');
@@ -24,9 +24,9 @@ export default class MyPage extends React.Component {
         }
 
         return (
-            <Layout archive={this.props.archive}>
-                {/* <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
-                       date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/> */}
+            <Layout>
+                <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
+                       date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/>
             </Layout>
         )
     }

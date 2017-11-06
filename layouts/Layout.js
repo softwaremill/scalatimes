@@ -13,6 +13,7 @@ export default ({ children }) => {
           <link href="/static/css/normalize.css" rel="stylesheet" />
           <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
           <link href="/static/css/styles.css" rel="stylesheet" />
+          <link href="/static/css/issue-styles.css" rel="stylesheet" />
       </Head>
       <header>
         <div className="header__logo">
