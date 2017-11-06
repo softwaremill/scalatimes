@@ -69,6 +69,7 @@ a.active {
 
 
 .app {
+  position: relative;
   max-width: 100rem;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -149,13 +150,13 @@ header {
 
 
 
-.nav-horizontal {
+nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.nav-horizontal a {
+nav a {
   text-decoration: none;
   color: #555;
   transition: color .2s ease-in-out;
@@ -163,15 +164,73 @@ header {
   line-height: 1.5rem;
 }
 
-.nav-horizontal a i {
+nav a i {
   margin-right: .3em;
   color: #750404;
 }
+
+
+
 
 .main-nav {
   font-size: 1.2rem;
 }
 
+.main-nav input[type="checkbox"] {
+  display: none;
+}
+
+.main-nav label {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .main-nav label {
+    position: relative;
+    display: inline-block;
+    padding: 1rem;
+    z-index: 1;
+    font-size: 2rem;
+  }
+  
+  .main-nav input[type="checkbox"]:checked ~ nav {
+    opacity: .98;
+  }
+  
+  .main-nav input[type="checkbox"]:checked ~ label .active, 
+  .main-nav input[type="checkbox"]:not(:checked) ~ label .inactive {
+    display: none;
+  }
+  
+  .main-nav input[type="checkbox"]:checked ~ label .inactive,
+  .main-nav input[type="checkbox"]:not(:checked) ~ label .active {
+    display: inline-block;
+  }
+  
+  .main-nav nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-top: 4.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    background: #fff;
+    transition: opacity .25s ease-in-out;
+    box-shadow: 0px 0px 20px 0px #aaa;
+  }
+
+}
+  
 
 
 

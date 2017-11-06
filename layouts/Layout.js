@@ -29,8 +29,13 @@ export default ({ children }) => {
           <input type="email" placeholder="E-mail address" /><input type="submit" value="Subscribe"/>
         </form>
       </section>
-      <section>
-        <nav className="nav-horizontal main-nav">
+      <section className="main-nav">
+        <input type="checkbox" id="menu-toggle" className="menu-toggle"/>
+        <label htmlFor="menu-toggle" className="menu-toggle">
+          <span className="fa fa-bars active"/>
+          <span className="fa fa-times inactive"/>
+        </label>
+        <nav>
           <Link href={{pathname: '/', query: {issue: 'latest'}}}>
             <a className="active">Latest news</a>
           </Link>
