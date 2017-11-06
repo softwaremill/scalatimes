@@ -1,5 +1,5 @@
-import * as React from "react"
-import Page from "../layouts/main"
+import React from "react"
+import Layout from "../layouts/Layout"
 
 export default class Error extends React.Component {
     static getInitialProps({res, jsonPageRes}) {
@@ -11,13 +11,13 @@ export default class Error extends React.Component {
 
     render() {
         return (
-            <Page>
+            <Layout>
                 <div className="error">
                     {this.props.statusCode
                         ? `An error ${this.props.statusCode} occurred on server`
                         : 'An error occurred on client'}
                 </div>
-            </Page>
+            </Layout>
         )
     }
 }
