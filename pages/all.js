@@ -1,8 +1,8 @@
-import * as React from "react"
-import Page from "../layouts/content"
+import React from "react"
+import Layout from "../layouts/Layout"
 
 export default () => {
-    return <Page>
+    return <Layout>
         <div>archive ???</div>
-    </Page>
+    </Layout>
 }
