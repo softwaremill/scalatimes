@@ -6,6 +6,8 @@ import Layout from "../layouts/Layout"
 import Issue from "../components/Issue"
 import {issueUrl} from "../components/url"
 
+import Archive from '../components/Archive';
+
 export default class extends React.Component {
     static async getInitialProps(ctx) {
             let number = get(ctx, 'query.issue', "latest");
@@ -25,8 +27,16 @@ export default class extends React.Component {
 
         return (
             <Layout>
-                <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
+                <div className="main">
+                    <div className="sidebar">
+                        <Archive issues={this.props.archive}/>
+                    </div>
+                    <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
                        date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/>
+                    <div className="sidebar">
+                        <Archive issues={this.props.archive}/>
+                    </div>
+            </div>
             </Layout>
         )
     }

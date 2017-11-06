@@ -4,9 +4,8 @@ import ArchivedIssue from "../components/ArchivedIssue"
 export default (props) => {
     return (
         <div className="previous text-center">
-            <header>Archive</header>
             <div>
-                {props.issues.map((arc) => <ArchivedIssue key={arc.issueNumber} number={arc.issueNumber}
+                {props.issues.slice(0, 6).map((arc) => <ArchivedIssue key={arc.issueNumber} number={arc.issueNumber}
                                                           summary={arc.concatenatedTitles}/>)}
             </div>
         </div>

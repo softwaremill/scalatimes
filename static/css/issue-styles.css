@@ -1,6 +1,6 @@
 .issue {
-  max-width: 45rem;
   margin: 0 auto;
+  padding: 0 1.5rem;  
 }
 
 .issue__header {
@@ -25,7 +25,7 @@
 
 .issue-entries-group {
   margin-bottom: 4.5rem;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #ddd;
 }
 
 .issue-entries-group:last-of-type {
@@ -46,4 +46,22 @@
 
 .issue-entry__author {
   color: #999;
+}
+
+.main {
+  display: flex;
+}
+
+.sidebar {
+  width: 20rem;
+  padding: 0 1.5rem;
+  margin-top: 6rem;
+}
+
+.sidebar:first-of-type {
+  border-right: 1px solid #ddd;
+}
+
+.sidebar:last-of-type {
+  border-left: 1px solid #ddd;
 }
