@@ -27,16 +27,16 @@ export default class extends React.Component {
 
         return (
             <Layout>
-                <div className="main">
-                    <div className="sidebar">
+                <div className="news-page">
+                    <div className="news-page__sidebar">
                         <Archive issues={this.props.archive}/>
                     </div>
                     <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
                        date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/>
-                    <div className="sidebar">
+                    <div className="news-page__sidebar">
                         <Archive issues={this.props.archive}/>
                     </div>
-            </div>
+                </div>
             </Layout>
         )
     }

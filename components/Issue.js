@@ -5,7 +5,7 @@ import IssueContent from "./IssueContent"
 
 export default (props) => {
   return (
-    <div className="issue">
+    <div className="news-page__issue">
       <div className="issue__header">
         <h2>#{props.number}</h2>
         <h4>
