@@ -1,43 +1,62 @@
 import React from 'react'
-import get from 'lodash/get'
-import 'isomorphic-fetch'
 import Error from './_error'
 import Layout from "../layouts/Layout"
 import Issue from "../components/Issue"
-import {issueUrl} from "../components/url"
-
+import {withRouter} from 'next/router';
 import Archive from '../components/Archive';
+import * as api from '../api';
+import get from 'lodash/get';
 
-export default class extends React.Component {
-    static async getInitialProps(ctx) {
-            let number = get(ctx, 'query.issue', "latest");
-        let res = await fetch(issueUrl + number + '?archive=true');
-        if (res.ok) {
-            let json = await res.json();
-            return {status: res.status, currentIssue: json.currentIssue, archive: json.archivedIssues}
-        } else {
-            return {status: res.status}
-        }
+class PageDataLoader extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  static async getInitialProps(ctx) {
+    const isClient = typeof window !== 'undefined';
+    if(isClient) return {};
+    const issueNumber = get(ctx, 'query.issue', 'latest');
+    const issue = await api.fetchSingleIssue(issueNumber);
+    return {issue, issueNumber, ssr: true};
+  }
+
+  async componentDidMount() {
+    const issueNumber = get(this.props.router, 'query.issue', 'latest');
+    this.setState({issueNumber});
+    if(!this.props.ssr) {
+      const issue = await api.fetchSingleIssue(issueNumber);      
+      this.setState({issue});
     }
+    const archive = await api.fetchArchives(0, 20);
+    this.setState({archive});
+  }
 
-    render() {
-        if (this.props.status !== 200) {
-            return <Error statusCode={this.props.statusCode}/>
-        }
-
-        return (
-            <Layout>
-                <div className="news-page">
-                    <div className="news-page__sidebar">
-                        <Archive issues={this.props.archive}/>
-                    </div>
-                    <Issue key={this.props.currentIssue.id} number={this.props.currentIssue.number}
-                       date={this.props.currentIssue.date} categories={this.props.currentIssue.categories}/>
-                    <div className="news-page__sidebar">
-                        <Archive issues={this.props.archive}/>
-                    </div>
-                </div>
-            </Layout>
-        )
-    }
+  render() {
+    const combinedProps = {...this.props, ...this.state};
+    return <Page {...combinedProps}/>
+  }
+  
 }
+
+const Page = ({issue, archive, issueNumber}) => {
+  const loadingIssueText = issueNumber === 'latest' ? 'Loading latest issue' : `Loading issue #${issueNumber}`;
+  return (
+    <Layout>
+      <div className="news-page">
+        <div className="news-page__sidebar">
+          {archive ? <Archive issues={archive}/> : <h4>Loading issues archive</h4>}
+        </div>
+        <div className="news-page__issue">
+          {issue ? <Issue number={issue.number} date={issue.date} categories={issue.categories}/> : <h3>{loadingIssueText}</h3>}
+        </div>
+        <div className="news-page__sidebar">
+          {archive ? <Archive issues={archive}/> : <h4>Loading issues archive</h4>}
+        </div>
+      </div>
+    </Layout>
+  )
+};
+
+export default withRouter(PageDataLoader);
