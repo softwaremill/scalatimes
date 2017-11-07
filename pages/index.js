@@ -19,13 +19,13 @@ class PageDataLoader extends React.Component {
     if(isClient) return {};
     const issueNumber = get(ctx, 'query.issue', 'latest');
     const issue = await api.fetchSingleIssue(issueNumber);
-    return {issue, issueNumber, ssr: true};
+    return {issue, issueNumber, __ssr: true};
   }
 
   async componentDidMount() {
     const issueNumber = get(this.props.router, 'query.issue', 'latest');
     this.setState({issueNumber});
-    if(!this.props.ssr) {
+    if(!this.props.__ssr) {
       const issue = await api.fetchSingleIssue(issueNumber);      
       this.setState({issue});
     }
