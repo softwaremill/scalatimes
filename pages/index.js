@@ -46,13 +46,13 @@ const Page = ({issue, archive, issueNumber}) => {
     <Layout>
       <div className="news-page">
         <div className="news-page__sidebar">
-          {archive ? <Archive issues={archive}/> : <h4>Loading issues archive</h4>}
+          {archive ? <Archive issues={archive.slice(0, 6)}/> : <h4>Loading issues archive</h4>}
         </div>
         <div className="news-page__issue">
           {issue ? <Issue number={issue.number} date={issue.date} categories={issue.categories}/> : <h3>{loadingIssueText}</h3>}
         </div>
         <div className="news-page__sidebar">
-          {archive ? <Archive issues={archive}/> : <h4>Loading issues archive</h4>}
+          {archive ? <Archive issues={archive.slice(6)}/> : <h4>Loading issues archive</h4>}
         </div>
       </div>
     </Layout>

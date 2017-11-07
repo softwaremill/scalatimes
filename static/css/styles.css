@@ -67,7 +67,10 @@ a.active {
   border-bottom: 3px solid #750404;
 }
 
-
+a > i {
+  margin-right: .3em;
+  color: #750404;
+}
 
 .app {
   position: relative;
@@ -164,14 +167,6 @@ nav a {
   margin: 0 1em calc(1.5rem - 3px) 1em;
   line-height: 1.5rem;
 }
-
-nav a i {
-  margin-right: .3em;
-  color: #750404;
-}
-
-
-
 
 .main-nav {
   font-size: 1.2rem;
