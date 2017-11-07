@@ -1,15 +1,16 @@
 import React from "react"
-import Moment from 'react-moment'
+import format from 'date-fns/format';
 import IssueToC from "./IssueToC"
 import IssueContent from "./IssueContent"
 
 export default (props) => {
+  const formatedDate = format(props.date, 'MMMM Do, YYYY');
   return (
     <div>
       <div className="issue__header">
         <h2>#{props.number}</h2>
         <h4>
-          <Moment format='MMMM Do, YYYY' date={props.date} />
+          {formatedDate}
         </h4>
         <IssueToC names={props.categories.map((cat) => cat.name)} />
       </div>
