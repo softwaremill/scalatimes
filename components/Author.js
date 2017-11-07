@@ -1,11 +1,7 @@
 import React, { Component } from "react"
 
 const renderTwitterHandle = (handle) => {
-  return [
-    " (",
-    <a href={`https://twitter.com/${handle}`}>@{handle}</a>,
-    ")"
-  ]
+  return <span>(<a href={`https://twitter.com/${handle}`}>@{handle}</a>)</span>
 };
 
 export default ({ author, twitterHandle }) => {

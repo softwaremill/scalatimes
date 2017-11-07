@@ -5,7 +5,7 @@ export default (props) => {
   return (
     <div className="issue-entries-group">
       <h2 id={props.name}>{props.name.toUpperCase()}</h2>
-      {props.links.map(issue => <IssueEntry issue={issue}/>)}
+      {props.links.map(issue => <IssueEntry key={issue.url} issue={issue}/>)}
     </div>
   )
 }
