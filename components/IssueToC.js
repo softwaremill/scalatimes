@@ -5,7 +5,7 @@ export default (props) => {
     <div className="issue-toc">
       {
         props.names.map((name, idx) => {
-          return <Link href={"#" + name} key={name}><a className="issue-toc__item"><h4>{name.toUpperCase()}</h4></a></Link>
+          return <a href={"#" + name} key={name} className="issue-toc__item"><h4>{name.toUpperCase()}</h4></a>
         })
       }
     </div>

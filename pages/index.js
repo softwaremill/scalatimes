@@ -22,7 +22,16 @@ class PageDataLoader extends React.Component {
     return {issue, issueNumber, __ssr: true};
   }
 
-  async componentDidMount() {
+  async componentWillReceiveProps() {
+    const issueNumber = get(this.props.router, 'query.issue', 'latest');
+    this.setState({issueNumber});
+    const issue = await api.fetchSingleIssue(issueNumber);      
+    this.setState({issue});
+    const archive = await api.fetchArchives(0, 20);
+    this.setState({archive});
+  }
+
+  async componentWillMount() {
     const issueNumber = get(this.props.router, 'query.issue', 'latest');
     this.setState({issueNumber});
     if(!this.props.__ssr) {
