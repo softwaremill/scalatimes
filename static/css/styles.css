@@ -140,6 +140,16 @@ header {
   margin-left: .5em;
 }
 
+.subscribe-form__msg--ok {
+  margin-top: 1.5rem;
+  color: forestgreen;
+}
+
+.subscribe-form__msg--error {
+  margin-top: 1.5rem;
+  color: rgb(177, 40, 40);
+}
+
 @media(max-width: 600px) {
   .subscribe-form input[type="email"], .subscribe-form input[type="submit"] {
     display: block;

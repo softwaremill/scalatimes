@@ -1,8 +1,7 @@
 import React from "react"
 import Head from "next/head"
 import MenuLink from '../components/MenuLink';
-
-const handleSubmit = () => {};
+import SubscribeForm from '../components/SubscribeForm';
 
 export default ({ children }) => {
   return (
@@ -26,9 +25,7 @@ export default ({ children }) => {
         </p>
       </header>
       <section>
-        <form className="subscribe-form" onSubmit={handleSubmit}>
-          <input type="email" placeholder="E-mail address" /><input type="submit" value="Subscribe"/>
-        </form>
+        <SubscribeForm/>
       </section>
       <section className="main-nav">
         <input type="checkbox" id="menu-toggle" className="menu-toggle"/>
