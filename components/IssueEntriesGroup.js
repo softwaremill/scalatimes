@@ -4,8 +4,8 @@ import IssueEntry from "./IssueEntry"
 export default (props) => {
   return (
     <div className="issue-entries-group">
-      <h2 id={props.name}>{props.name.toUpperCase()}</h2>
-      {props.links.map(issue => <IssueEntry key={issue.url} issue={issue}/>)}
+      <h2 className="issue-entries-group__title" id={props.name}><span>{props.name.toUpperCase()}</span></h2>
+      {props.links.map(link => <IssueEntry key={link.url} issue={link}/>)}
     </div>
   )
 }

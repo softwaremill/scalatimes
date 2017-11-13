@@ -40,7 +40,10 @@
 }
 
 
-
+.issue--loading, .sidebar-archive--loading {
+  opacity: 1;
+  color: rgba(0, 0, 0, 0);
+}
 
 .issue__header {
   text-align: center;
@@ -49,6 +52,10 @@
 
 .issue__header h2 {
   margin-bottom: 0;
+}
+
+.issue--loading .issue__header span {
+  background: #111;
 }
 
 .issue-toc {
@@ -62,14 +69,25 @@
   margin: 0 .5rem;
 }
 
+.issue--loading .issue-toc__item span {
+  background: #555;
+}
+
+
 .issue-entries-group {
   margin-bottom: 4.5rem;
   border-bottom: 1px solid #ddd;
 }
 
+.issue--loading .issue-entries-group__title span {
+  background: #111;
+}
+
 .issue-entries-group:last-of-type {
   border-bottom: none;
 }
+
+
 
 .issue-entry {
   margin-bottom: 3rem;
@@ -79,11 +97,51 @@
   color: #750404;  
 }
 
+.issue--loading .issue-entry a {
+  background: #750404;
+}
+
+
 .issue-entry__title, .issue-entry__desc {
   margin-bottom: .5rem;
 }
+
+.issue--loading .issue-entry__desc span {
+  background: #111;
+}
+
+
 
 .issue-entry__author {
   color: #999;
 }
 
+.issue--loading .issue-entry__author span {
+  background: #999;
+}
+
+
+.sidebar-archive--loading .archive-item__title span {
+  background: #333
+}
+
+.sidebar-archive--loading .archive-item__summary span {
+  background: #999
+}
+
+@keyframes loadingAnimation{
+  0%{
+      opacity: .03
+  }
+  100%{
+    opacity: .07
+  }
+}
+
+.loading-animation {
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: loadingAnimation;
+  animation-timing-function: ease-in-out;
+}

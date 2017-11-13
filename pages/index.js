@@ -2,8 +2,10 @@ import React from 'react'
 import Error from './_error'
 import Layout from "../layouts/Layout"
 import Issue from "../components/Issue"
+import IssueLoading from "../components/IssueLoading"
 import {withRouter} from 'next/router';
 import Archive from '../components/Archive';
+import ArchiveLoading from '../components/ArchiveLoading';
 import * as api from '../api';
 import get from 'lodash/get';
 
@@ -18,28 +20,37 @@ class PageDataLoader extends React.Component {
     const isClient = typeof window !== 'undefined';
     if(isClient) return {};
     const issueNumber = get(ctx, 'query.issue', 'latest');
-    const issue = await api.fetchSingleIssue(issueNumber);
-    return {issue, issueNumber, __ssr: true};
+    try {
+      return {issue: await api.fetchSingleIssue(issueNumber), issueNumber}
+    } catch (e) {
+      return {issueError: true, issueNumber}
+    }
+  }
+
+  async loadData(forceIssueLoad) {
+    const issueNumber = get(this.props.router, 'query.issue', 'latest');
+    this.setState({issueNumber, archiveError: false});
+    if(forceIssueLoad) {
+      this.setState({issueError: false});
+      try {
+        this.setState({issue: await api.fetchSingleIssue(issueNumber)});
+      } catch (e) {
+        this.setState({issueError: true});
+      }
+    }
+    try {
+      this.setState({archive: await api.fetchArchives(0, 20)});      
+    } catch (e) {
+      this.setState({archiveError: true});
+    }
   }
 
   async componentWillReceiveProps() {
-    const issueNumber = get(this.props.router, 'query.issue', 'latest');
-    this.setState({issueNumber});
-    const issue = await api.fetchSingleIssue(issueNumber);      
-    this.setState({issue});
-    const archive = await api.fetchArchives(0, 20);
-    this.setState({archive});
+    this.loadData(true);
   }
 
   async componentWillMount() {
-    const issueNumber = get(this.props.router, 'query.issue', 'latest');
-    this.setState({issueNumber});
-    if(!this.props.__ssr) {
-      const issue = await api.fetchSingleIssue(issueNumber);      
-      this.setState({issue});
-    }
-    const archive = await api.fetchArchives(0, 20);
-    this.setState({archive});
+    this.loadData(!this.props.issue);
   }
 
   render() {
@@ -49,19 +60,24 @@ class PageDataLoader extends React.Component {
   
 }
 
-const Page = ({issue, archive, issueNumber}) => {
+
+const Errorable = ({content, loadingMsg, errorFlag, errorMsg, children}) => {
+  return content ? children(content) : errorFlag ? <h4>{errorMsg}</h4> : <h4>{loadingMsg}</h4>
+};
+
+const Page = ({issue, archive, issueNumber, issueError, archiveError}) => {
   const loadingIssueText = issueNumber === 'latest' ? 'Loading latest issue' : `Loading issue #${issueNumber}`;
   return (
     <Layout>
       <div className="news-page">
         <div className="news-page__sidebar">
-          {archive ? <Archive issues={archive.slice(0, 6)}/> : <h4>Loading issues archive</h4>}
+          {archive ? <Archive issues={archive.slice(0, 6)}/> : <ArchiveLoading/>}
         </div>
         <div className="news-page__issue">
-          {issue ? <Issue number={issue.number} date={issue.date} categories={issue.categories}/> : <h3>{loadingIssueText}</h3>}
+          {issue ? <Issue issue={issue}/> : <IssueLoading/>}
         </div>
         <div className="news-page__sidebar">
-          {archive ? <Archive issues={archive.slice(6)}/> : <h4>Loading issues archive</h4>}
+          {archive ? <Archive issues={archive.slice(6, 12)}/> : <ArchiveLoading/>}
         </div>
       </div>
     </Layout>

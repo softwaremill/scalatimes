@@ -7,7 +7,7 @@ const renderTwitterHandle = (handle) => {
 export default ({ author, twitterHandle }) => {
   return (
     <p className="issue-entry__author">
-      ~{author} {twitterHandle && renderTwitterHandle(twitterHandle)}
+      <span>~{author} {twitterHandle && renderTwitterHandle(twitterHandle)}</span>
     </p>
   );
 };

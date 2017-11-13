@@ -5,9 +5,11 @@ const truncate = (n, str) =>  (str.length > n) ? str.substr(0, n - 1).trim() + '
 
 export default (props) => {
   return (
-    <div className="archived-issue">
-      <h3><Link href={{ pathname: '/', query: { issue: props.number } }}><a>#{props.number}</a></Link></h3>
-      <p>#{truncate(180, props.summary)}</p>
+    <div className="sidebar-archive__item">
+      <h3 className="archive-item__title">
+        <Link href={{ pathname: '/', query: { issue: props.number } }}><a><span>#{props.number}</span></a></Link>
+      </h3>
+      <p className="archive-item__summary"><span>{truncate(180, props.summary)}</span></p>
     </div>
   )
 }
