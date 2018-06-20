@@ -6,7 +6,7 @@ mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
 
 // Variable, that keeps all campaigns 
 var campaignsCache = [];
-var cachePath = "/home/scalatimes/cache/";
+var cachePath = process.env.CACHE_PATH;
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
