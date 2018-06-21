@@ -1,8 +1,10 @@
 FROM node:10
 
-ENV CACHE_PATH=/app/cache
+ENV CACHE_PATH=/app/cache/
+EXPOSE 3000
+VOLUME ${CACHE_PATH}
+
 WORKDIR /app
-RUN mkdir -p ${CACHE_PATH}
 COPY  package*.json ./
 RUN npm install
 COPY . .

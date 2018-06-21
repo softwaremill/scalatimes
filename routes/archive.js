@@ -9,6 +9,7 @@ var campaignsCache = [];
 var cachePath = process.env.CACHE_PATH;
 if (!cachePath.endsWith("/")) cachePath += '/';
 console.log("Disk cache path: " + cachePath);
+var mcFetchLimit = process.env.MC_LIMIT;
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
@@ -18,7 +19,7 @@ setInterval(function(){
 
 
 function getAllCampaignsForList(listId) {
-  mc.campaigns.list({filters: {'status':'sent', 'list_id':listId}, 'limit': 100}, function(data) {
+  mc.campaigns.list({filters: {'status':'sent', 'list_id':listId}, 'limit': mcFetchLimit}, function(data) {
     console.log("start generating campaignsCache...");
     var campaigns = data.data;
     getCampaignsContent(campaigns);
