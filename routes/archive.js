@@ -9,7 +9,7 @@ var campaignsCache = [];
 var cachePath = process.env.CACHE_PATH;
 if (!cachePath.endsWith("/")) cachePath += '/';
 console.log("Disk cache path: " + cachePath);
-var mcFetchLimit = process.env.MC_LIMIT;
+var mcFetchLimit = process.env.MC_LIMIT || 10;
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
