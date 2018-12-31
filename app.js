@@ -8,20 +8,28 @@ var express = require('express')
   , events = require('./routes/events')
   , banners = require('./routes/banners')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , favicon = require('serve-favicon')
+  , cookieParser = require('cookie-parser')
+  , session = require('express-session')
+  , morgan = require('morgan')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
+  , errorHandler = require('errorhandler');
 
 var app = express();
 
 // all environments
+//todo use correct favicon
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.cookieParser());
-app.use(express.session({ secret: 'something'}));
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
+app.use(cookieParser());
+app.use(session({ secret: 'something'}));
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(methodOverride());
 
 app.use(function(req, res, next){
     res.locals.error_flash = req.session.error_flash;
@@ -31,12 +39,12 @@ app.use(function(req, res, next){
     next();
 });
 
-app.use(app.router);
+//app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorHandler());
 }
 
 // app.get('/issues', archive.list);
