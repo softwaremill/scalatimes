@@ -30,14 +30,17 @@ block content
           span &nbsp;&#x22C6;&nbsp;&#x22C6;&nbsp;
         span.middle Scala Times
         span.bottom Weekly Scala newspaper
-    div.issue-info= issue.issueInfo
+    div.issue-info
+      if issue
+        != issue.issueInfo
 
   section.newspaper-body
     section.issue
       table.issue-table
         tbody
           tr
-            != issue.campaignBody
+            if issue
+              != issue.campaignBody
         tfoot
           tr
             td
