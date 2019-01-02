@@ -14,8 +14,6 @@ spec:
       labels:
         app: scalatimes
     spec:
-      nodeSelector:
-        preemptible: "false"
       containers:
       - name: scalatimes
         image: softwaremill/scalatimes:latest
