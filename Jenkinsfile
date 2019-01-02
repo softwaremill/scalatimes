@@ -68,7 +68,7 @@ spec:
                 container('kubectl') {
                     stage('Deploy') {
                         sh """
-                            sed -i "s;\\(softwaremill/scalatimes:\\)latest;\\1${dockerTag};g" k8s/deployment.yml
+                            sed -i "s;\\(softwaremill/scalatimes:\\)latest;\\1${dockerTag};g" k8s/scalatimes-deployment.yml
                             kubectl 
                         """
                     }
