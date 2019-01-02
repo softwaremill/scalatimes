@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: scalatimes
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+    - secretName: scalatimes-tls
+      hosts:
+        - scalatimes.com
+        - www.scalatimes.com
+  rules:
+    - host: scalatimes.com
+      http:
+        paths:
+          - backend:
+              serviceName: scalatimes
+              servicePort: 3000
+    - host: www.scalatimes.com
+      http:
+        paths:
+          - backend:
+              serviceName: scalatimes
+              servicePort: 3000

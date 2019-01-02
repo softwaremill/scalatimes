@@ -1,0 +1,23 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: scalatimes-tls
+  namespace: default
+spec:
+  secretName: scalatimes-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: scalatimes.com
+  dnsNames:
+  - scalatimes.com
+  - www.scalatimes.com
+  acme:
+    config:
+    - http01:
+        ingress: scalatimes
+      domains:
+      - scalatimes.com
+      - www.scalatimes.com
+
+  
