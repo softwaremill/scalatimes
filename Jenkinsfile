@@ -53,7 +53,7 @@ spec:
                     sh "docker build -t softwaremill/scalatimes:${dockerTag} ."
                 }
             }
-            if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'ci-pipeline') {
+            if (env.BRANCH_NAME == 'master') {
                 container('docker') {
                     stage('Publish docker image') {
                         withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
