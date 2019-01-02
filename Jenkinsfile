@@ -8,6 +8,10 @@ properties([
         ])
 ])
 
+String getDockerTag() {
+    return sh(script: 'git describe --always --tags --abbrev=7', returnStdout: true)?.trim()
+}
+
 def label = "docker-${UUID.randomUUID().toString()}"
 def serviceAccount = "sml-internal-jenkins"
 podTemplate(label: label, yaml: """
@@ -43,6 +47,32 @@ spec:
             stage('Checkout') {
                 checkout scm
                 dockerTag = getDockerTag()
+            }
+            container('docker') {
+                stage('Build docker image') {
+                    sh "docker build -t softwaremill/scalatimes:${dockerTag} ."
+                }
+            }
+            if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'ci-pipeline') {
+                container('docker') {
+                    stage('Publish docker image') {
+                        withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                            sh """
+                                docker login -u \${DOCKER_USERNAME} -p \${DOCKER_PASSWORD}
+                                docker push softwaremill/scalatimes:${dockerTag}
+                            """
+
+                        }
+                    }
+                }
+                container('kubectl') {
+                    stage('Deploy') {
+                        sh """
+                            sed -i "s;\\(softwaremill/scalatimes:\\)latest;\\1${dockerTag};g" k8s/deployment.yml
+                            kubectl 
+                        """
+                    }
+                }
             }
         } catch (Exception e) {
             currentBuild.result = 'FAILURE'

@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scalatimes
+  labels:
+    app: scalatimes
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      name: scalatimes
+      labels:
+        app: scalatimes
+    spec:
+      nodeSelector:
+        preemptible: "false"
+      containers:
+      - name: scalatimes
+        image: softwaremill/scalatimes:latest
+        imagePullPolicy: Always
+        env:
+          - name: MAILCHIMP_API_KEY
+            valueFrom:
+              secretKeyRef:
+                key: MAILCHIMP_API_KEY
+                name: scalatimes-mailchimp
+          - name: MAILCHIMP_LIST_ID
+            valueFrom:
+              secretKeyRef:
+                key: MAILCHIMP_LIST_ID
+                name: scalatimes-mailchimp
+          - name: MC_LIMIT
+            value: "25"
+        volumeMounts:
+          - mountPath: /app/cache
+            name: scalatimes-pv
+      imagePullSecrets:
+      - name: sml-docker-hub
+      restartPolicy: Always
+      volumes:
+      - name: scalatimes-pv
+        persistentVolumeClaim:
+          claimName: scalatimes-pvc
+  selector:
+    matchLabels:
+      app: scalatimes

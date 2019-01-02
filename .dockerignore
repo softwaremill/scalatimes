@@ -2,3 +2,5 @@
 .idea
 .gitignore
 .dockerignore
+Jenkinsfile
+k8s
