@@ -251,6 +251,47 @@ header .issue-info {
   margin-bottom: 10px;
 }
 
+.subscribeers-baner {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  color: #BD0808;
+  padding-bottom: 1.85em;
+}
+
+.subscribeers-baner .count {
+  font-size: 2.6em;
+}
+
+.subscribeers-baner .stars {
+  vertical-align: 0.8em;
+  animation: blinker 0.7s linear infinite;
+}
+
+@keyframes blinker {
+  1% {
+    color: #BD0808;
+  }
+  49% {
+    color: #BD0808;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.subscribeers-baner .description {
+  font-family: Courier, monospace;
+  color: black;
+}
+
+.subscribeers-baner .line {
+  font-family: Courier, monospace;
+  line-height: 0.1em;
+  color: black;
+}
+
 .column ol {
   padding: 0;
   margin:  0;
