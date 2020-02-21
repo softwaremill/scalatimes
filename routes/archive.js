@@ -1,6 +1,7 @@
 var mcapi = require('../node_modules/mailchimp-api/mailchimp');
 var _ = require('underscore');
 var cheerio = require('cheerio');
+var moment = require('moment');
 var fs = require('fs');
 mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
 
@@ -76,6 +77,7 @@ function getCampaignsContent(campaigns) {
         var issueInfo = getIssueInfo(htmlContent);
         var campaignTitle = getCampaignTitle(htmlContent);
         var campaignIndex = getCampaignIndex(issueInfo, i);
+        var campaignMillis = getCampaignMillis(issueInfo);
         campaignsArray.push({
           'title': campaignTitle,
           'id': campaignId,
@@ -83,18 +85,17 @@ function getCampaignsContent(campaigns) {
           'excerpt': excerpt,
           'campaignBody': campaignBody,
           'issueInfo': issueInfo,
-          'index': campaignIndex
+          'index': campaignIndex,
+          'millis': campaignMillis
         });
 
         // check if all requests were finished => array is complete
         if (num == campaigns.length) {
-
-          campaignsCache = _.sortBy(campaignsArray, "index").reverse();
+          campaignsCache = _.sortBy(campaignsArray, "millis").reverse();
           // send to console, that variable is ready and timestamp
           console.log ("campaignsCache is ready");
           var date = new Date();
           console.log(date);
-
         }
 
       });
@@ -109,7 +110,22 @@ function getCampaignTitle(htmlContent) {
   return $('meta[property="og:title"]').attr("content");
 }
 
+function getCampaignMillis(issueInfo) {
+  var strings = issueInfo.trim().split(',');
+  var day = strings[0].replace("th", "").replace("nd", "").replace("st", "");
+  var year = strings[1];
+  var dateStr = day + " " + year;
+  var millisStr = moment(dateStr).unix();
+  return parseLong(millisStr)
+}
+
 function getCampaignIndex(issueInfo, i) {
+  var strings = issueInfo.trim().split(',');
+  var day = strings[0].replace("th", "").replace("nd", "").replace("st", "");
+  var year = strings[1];
+  var dateStr = day + " " + year;
+  var millisStr = moment(dateStr).unix();
+
   var campaignIndexStr = issueInfo.substr(issueInfo.lastIndexOf(" "), issueInfo.length);
   var campaignIndex = i;
   if (!_.isNull(campaignIndexStr) && !_.isUndefined(campaignIndexStr))
