@@ -1,5 +1,6 @@
 var mcapi = require('../node_modules/mailchimp-api/mailchimp');
 var _ = require('underscore');
+var moment = require('moment');
 var cheerio = require('cheerio');
 var fs = require('fs');
 mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
@@ -75,6 +76,7 @@ function getCampaignsContent(campaigns) {
         var campaignBody = getCampaignBody(htmlContent);
         var issueInfo = getIssueInfo(htmlContent);
         var campaignTitle = getCampaignTitle(htmlContent);
+        var campaignDate = getCampaignDate(issueInfo);
         var campaignIndex = getCampaignIndex(issueInfo, i);
         campaignsArray.push({
           'title': campaignTitle,
@@ -83,13 +85,14 @@ function getCampaignsContent(campaigns) {
           'excerpt': excerpt,
           'campaignBody': campaignBody,
           'issueInfo': issueInfo,
+          'date': campaignDate,
           'index': campaignIndex
         });
 
         // check if all requests were finished => array is complete
         if (num == campaigns.length) {
 
-          campaignsCache = _.sortBy(campaignsArray, "index").reverse();
+          campaignsCache = _.sortBy(campaignsArray, "date").reverse();
           // send to console, that variable is ready and timestamp
           console.log ("campaignsCache is ready");
           var date = new Date();
@@ -107,6 +110,11 @@ function getCampaignsContent(campaigns) {
 function getCampaignTitle(htmlContent) {
   var $ = cheerio.load(htmlContent);
   return $('meta[property="og:title"]').attr("content");
+}
+
+function getCampaignDate(issueInfo) {
+  var dateStr = issueInfo.substr(0, issueInfo.lastIndexOf(','));
+  return moment(dateStr, "MMMM Do, YYYY").format();
 }
 
 function getCampaignIndex(issueInfo, i) {

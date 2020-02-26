@@ -47,12 +47,13 @@ Navigate to `routes/archive.js` file and update Mailchimp API key and List ID.
 After that run
 
 ```
-  MAILCHIMP_API_KEY={YOUR_API_KEY} MAILCHIMP_LIST_ID={YOUR_LIST_ID} node app.js
+  CACHE_PATH=/tmp MAILCHIMP_API_KEY={YOUR_API_KEY} MAILCHIMP_LIST_ID={YOUR_LIST_ID} node app.js
 ```
 
 or for Windows run like this
 
 ```
+  $env:CACHE_PATH="{some path}"
   $env:MAILCHIMP_API_KEY="{key}"
   $env:MAILCHIMP_LIST_ID="{list_id}"
 
@@ -72,7 +73,7 @@ You should have the latest issue on index page, and archive (last 100 issues) on
 
 ### Disk cache
 
-The app tries to load campaigns from local cache directory `/home/scalatimes/cache`. This directory can be purged to force reload from MailChimp API.
+The app tries to load campaigns from local cache directory specified by `CACHE_PATH`. This directory can be purged to force reload from MailChimp API.
 
 ### Fix archive page
 
