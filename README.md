@@ -41,6 +41,8 @@ This will install all required dependencies for this project (Express, Jade, Mai
 ### Run app
 
 Navigate to `routes/archive.js` file and update Mailchimp API key and List ID.
+You need a Mailchimp API key and List ID. If you have a user account connected to the SoftwareMill account, use following
+instructions to retrieve this data:  
 [Here](http://kb.mailchimp.com/accounts/management/about-api-keys) you can find information on how to find your Mailchimp API key.
 [Here](http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id) you can find information on how to find List ID.
 
@@ -70,6 +72,9 @@ in console.
 Novigate to `http://localhost:3000/` in your browser.
 
 You should have the latest issue on index page, and archive (last 100 issues) on `http://localhost:3000/archive` page. 
+
+### Live deployment
+The production deployment exposed on https://scalatimes.com is automatically deployed from the `master` branch.
 
 ### Disk cache
 
