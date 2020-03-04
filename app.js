@@ -23,7 +23,7 @@ var app = express();
 app.use(favicon(path.join(__dirname, 'public', 'images/favicon.ico')));
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(cookieParser());
 app.use(session({ secret: 'something'}));
 app.use(morgan('dev'));

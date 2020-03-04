@@ -35,7 +35,7 @@ In console navigate to project's folder and run
   npm install
 ```
 
-This will install all required dependencies for this project (Express, Jade, Mailchimp API, Cheerio, Underscore).
+This will install all required dependencies for this project (Express, Pug, Mailchimp API, Cheerio, Underscore).
 
 
 ### Run app
