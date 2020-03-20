@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
   header
@@ -34,17 +34,45 @@ block content
       form.novalidate(action='/search', method='get', autocomplete='off')
         input(name='query')
         button(type="submit") Search
-    div.issue-info
-      if issue
-        != issue.issueInfo
+    div.issue-info= "Displaying search results"
 
   section.newspaper-body
     section.issue
       table.issue-table
         tbody
           tr
-            if issue
-              != issue.campaignBody
+            td
+              if searchResult.success
+                div.pagination-box
+                  span
+                    if searchResult.previousUrl
+                      a(href=""+searchResult.previousUrl) previous
+                  span
+                    if searchResult.nextUrl
+                      a(href=""+searchResult.nextUrl) next
+
+                each result in searchResult.results
+                  div.search-result
+                    | <strong>[#{result.fields.date.substr(0,10)}]</strong>&nbsp;
+                    a.search-result-link(href=""+result.fields.url) #{result.fields.title}
+                    p
+                      em= result.fields.description
+                      br
+                      em.search-result-author
+                        if result.fields.author
+                          | #{result.fields.author}
+                        if result.fields.twitter_handle
+                          | &nbsp;(@#{result.fields.twitter_handle})
+                div.pagination-box
+                  span
+                    if searchResult.previousUrl
+                      a(href="" + searchResult.previousUrl) previous
+                  span
+                    if searchResult.nextUrl
+                      a(href="" + searchResult.nextUrl) next
+              else if !searchResult.success
+                != searchResult.message
+
         tfoot
           tr
             td
@@ -58,39 +86,29 @@ block content
         each campaign in campaigns
           li
             a.issue-link(href="/"+campaign.id)
-             h2.issue-title= campaign.title
+              h2.issue-title= campaign.title
               p= campaign.excerpt
             hr
 
     section.right-column.archive.column
-      div.sml-ad-container
-        div.sml-ad
-          div.subscribeers-baner
-            span.stars &#9733;&#9733;
-            span.count 5500
-            span.stars &#9733;&#9733;
-            div.line ------------
-            div.description SUBSCRIBERS!
-            div.line ------------
-
-        div.sml-ad Organizing an event? <br/>
-          a(href="/events") Promote it&nbsp;
-          | with <br/> Scala Times.
-        div.sml-ad The Scala Times reader? <br/>
-          a(href="/banners") Get a banner!
-        div.sml-ad Got a tip?
-          a(href="mailto:scalatimes@softwaremill.com") Send it in
-          |!<br>Follow us on&nbsp;
-          a(href="http://twitter.com/scalatimes") Twitter
-          //- |.<br>Want ST banner for your blog?
-          //- a(href="") Take one
-          |.<br>Curated by
-          a(href="http://softwaremill.com") SoftwareMill
-          |.<br>We are
-          a(href="https://softwaremill.com/join-us/") hiring
-          |.<br>And
-          a(href="https://softwaremill.com/portfolio/") taking on projects
-          |.
+      div.sml-ad Organizing an event? <br/>
+        a(href="/events") Promote it&nbsp;
+        | with <br/> Scala Times.
+      div.sml-ad The Scala Times reader? <br/>
+        a(href="/banners") Get a banner!
+      div.sml-ad Got a tip? 
+        a(href="mailto:scalatimes@softwaremill.com") Send it in
+        |!<br>Follow us on 
+        a(href="http://twitter.com/scalatimes") Twitter
+        //- |.<br>Want ST banner for your blog? 
+        //- a(href="") Take one
+        |.<br>Curated by 
+        a(href="http://softwaremill.com") SoftwareMill
+        |.<br>We are 
+        a(href="https://softwaremill.com/join-us/") hiring
+        |.<br>And 
+        a(href="https://softwaremill.com/portfolio/") taking on projects
+        |.
       ol
 
   section.other-archives
@@ -102,5 +120,5 @@ block content
       ol
     div.archive.column
       ol
-    div.archive.column   
+    div.archive.column
       ol

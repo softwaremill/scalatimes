@@ -28,6 +28,7 @@ app.use(cookieParser());
 app.use(session({ secret: 'something'}));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}));
 app.use(methodOverride());
 
 app.use(function(req, res, next){
@@ -49,6 +50,7 @@ if ('development' == app.get('env')) {
 // app.get('/issues', archive.list);
 app.get('/events', events.view);
 app.get('/banners', banners.view);
+app.get('/search', archive.search);
 app.get('/:campaignId', archive.view);
 app.get('/', archive.view_latest);
 

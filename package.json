@@ -6,6 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.18.3",
     "cheerio": "*",
     "cookie-parser": "^1.4.3",

@@ -366,6 +366,35 @@ header .issue-info {
   border-right: none;
 }
 
+.search-result > a.search-result-link {
+  font-family: georgia,times,times new roman,serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.search-result em.search-result-author {
+  color: #A9A9A9;
+}
+
+.search-result p{
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+
+.pagination-box {
+  display: flex;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.pagination-box span {
+  width: 50%;
+}
+
+.pagination-box span:last-child {
+  text-align: right;
+}
+
 /* tablets */
 /*@media only screen and (min-device-width : 600px) and (max-device-width : 1024px) {*/
 @media only screen and (min-width : 600px) and (max-width : 1024px) {
