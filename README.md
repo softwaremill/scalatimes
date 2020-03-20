@@ -46,6 +46,15 @@ instructions to retrieve this data:
 [Here](http://kb.mailchimp.com/accounts/management/about-api-keys) you can find information on how to find your Mailchimp API key.
 [Here](http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id) you can find information on how to find List ID.
 
+The application allows users to search links based on some text. It does so by using AWS Cloud Search underneath. In order
+for this to work you must have AWS account with
+[Search Domain created there](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html).
+Each Search Domain is given unique endpoint that can be used to issue search queries.
+[More details here](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/search-api.html).
+
+Example value of `AWS_CS_QUERY_URL` =
+`http://search-movies-rr2f34ofg56xneuemujamut52i.us-east-1.cloudsearch.amazonaws.com/2013-01-01/search`
+
 After that run
 
 ```
