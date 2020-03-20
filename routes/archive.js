@@ -222,8 +222,8 @@ exports.search = function (req, res) {
         "q": req.query.query,
         "size": 25,
         "start": offset,
-        "return": "_all_fields,_score",
-        "sort": "_score desc"
+        "return": "_all_fields",
+        "sort": "custom_score desc"
       }
     }).then(r => {
       if (r.data.hits && r.data.hits.found) {
