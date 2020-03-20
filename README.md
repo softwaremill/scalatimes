@@ -49,7 +49,7 @@ instructions to retrieve this data:
 After that run
 
 ```
-  CACHE_PATH=/tmp MAILCHIMP_API_KEY={YOUR_API_KEY} MAILCHIMP_LIST_ID={YOUR_LIST_ID} node app.js
+  CACHE_PATH=/tmp MAILCHIMP_API_KEY={YOUR_API_KEY} MAILCHIMP_LIST_ID={YOUR_LIST_ID} AWS_CS_QUERY_URL={AWS_CS_URL}  node app.js
 ```
 
 or for Windows run like this
@@ -58,6 +58,7 @@ or for Windows run like this
   $env:CACHE_PATH="{some path}"
   $env:MAILCHIMP_API_KEY="{key}"
   $env:MAILCHIMP_LIST_ID="{list_id}"
+  $env:AWS_CS_QUERY_URL="{aws_cloud_serach_url}"
 
   node app.js
 ```

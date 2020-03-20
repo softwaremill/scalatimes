@@ -12,6 +12,7 @@ var cachePath = process.env.CACHE_PATH;
 if (!cachePath.endsWith("/")) cachePath += '/';
 console.log("Disk cache path: " + cachePath);
 var mcFetchLimit = process.env.MC_LIMIT || 10;
+let CLOUD_SEARCH_URL = process.env.AWS_CS_QUERY_URL;
 const PAGE_SIZE = 25;
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
@@ -211,14 +212,12 @@ exports.view_latest = function(req, res){
 };
 
 exports.search = function (req, res) {
-  let queryUrl = "https://search-scala-times-search-pgdkzismdfps33g7qmdhsveyxa.eu-central-1.cloudsearch.amazonaws.com/2013-01-01/search";
-
   let searchResult = {success: false, message: "No results..."};
 
   if (req.query.query) {
     let offset = (1 * req.query.offset) || 0;
 
-    axios.get(queryUrl, {
+    axios.get(CLOUD_SEARCH_URL, {
       params: {
         "q": req.query.query,
         "size": 25,
@@ -240,7 +239,7 @@ exports.search = function (req, res) {
       res.render('archive/search', {campaigns: campaignsCache, searchResult: searchResult});
 
     }).catch(function (error) {
-      console.error(error.toJSON());
+      console.error(error);
       res.render('index', {campaigns: campaignsCache, issue: campaignsCache[0]});
     });
   } else {
