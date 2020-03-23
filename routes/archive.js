@@ -220,7 +220,7 @@ exports.search = function (req, res) {
     axios.get(CLOUD_SEARCH_URL, {
       params: {
         "q": req.query.query,
-        "size": 25,
+        "size": PAGE_SIZE,
         "start": offset,
         "return": "_all_fields",
         "sort": "custom_score desc"
