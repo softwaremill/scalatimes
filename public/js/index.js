@@ -1,7 +1,7 @@
 $(function() {
 
   var tableHeight = $('.issue-table').outerHeight();
-  var rightColumnHeight = tableHeight - (3 * $('.sml-ad').outerHeight()+10);
+  var rightColumnHeight = tableHeight - ($('.sml-ad-container').outerHeight()+10);
   var lis = $('.left-column.archive ol>li');
 
   console.log(lis);
@@ -26,7 +26,7 @@ $(function() {
       leftLi.push(elem);
       tableHeight = liLeftHeight;
       $('.issue-table').css("height", tableHeight);
-      rightColumnHeight = tableHeight - $('.sml-ad').outerHeight();
+      rightColumnHeight = tableHeight - $('.sml-ad-container').outerHeight();
 
     } else {
 
@@ -39,7 +39,7 @@ $(function() {
       } else if (liRightHeight-rightColumnHeight <= 40) {
 
         rightLi.push(elem);
-        tableHeight = liRightHeight + ($('.sml-ad').outerHeight()+10);
+        tableHeight = liRightHeight + ($('.sml-ad-container').outerHeight()+10);
         $('.issue-table').css('height', tableHeight);
 
       } else {

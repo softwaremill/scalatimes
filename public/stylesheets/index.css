@@ -251,6 +251,10 @@ header .issue-info {
   margin-bottom: 10px;
 }
 
+.sml-ad-container {
+  width: 100%;
+}
+
 .subscribeers-baner {
   font-family: Georgia, Times, 'Times New Roman', serif;
   color: #BD0808;
