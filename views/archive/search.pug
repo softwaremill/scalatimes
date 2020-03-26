@@ -34,7 +34,7 @@ block content
       form.novalidate(action='/search', method='get', autocomplete='off')
         input(name='query')
         button(type="submit") Search
-    div.issue-info= "Displaying search results"
+    div.issue-info Displaying search results for: "#{searchResult.queryString}"
 
   section.newspaper-body
     section.issue
