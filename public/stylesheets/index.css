@@ -437,6 +437,10 @@ header .issue-info {
   margin-top: 5px;
 }
 
+.search-result--no-results {
+  text-align: center;
+}
+
 .pagination-box {
   display: flex;
   font-size: 1.2em;

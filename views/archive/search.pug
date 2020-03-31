@@ -35,7 +35,7 @@ block content
         input(name='query', placeholder='Search...')
         button(type="submit")
           img(src='images/search.svg')
-    div.issue-info Search results for #{searchResult.queryString}
+    div.issue-info Search results for: #{searchResult.queryString}
 
   section.newspaper-body
     section.issue
@@ -64,7 +64,7 @@ block content
                     if searchResult.nextUrl
                       a(href="" + searchResult.nextUrl) Next &raquo;
               else if !searchResult.success
-                div.search-result
+                div.search-result--no-results
                   != searchResult.message
 
         tfoot
