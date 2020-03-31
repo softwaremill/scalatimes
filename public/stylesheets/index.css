@@ -231,6 +231,8 @@ header .issue-info {
   border-right: 1px solid black;
   border-left: 1px solid black;
   padding: 15px 15px 0;
+  width: 100%;
+  min-height: 345px;
 }
 
 .issue-table img {
@@ -366,19 +368,73 @@ header .issue-info {
   border-right: none;
 }
 
+.search-container {
+  margin-top: 40px;
+}
+
+.search-container form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input {
+  flex: 1;
+  max-width: 280px;
+  border-radius: 1px;
+  padding: 0.5em;
+  border: 1px solid #e7e7e7;
+  background: #f5f5f5;
+  margin-right: 5px;
+}
+
+.search-container input:focus,
+.search-container input:active {
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+  -moz-box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+  box-shadow: inset 0px 0px 7px 0px rgba(207, 207, 207, 0.75);
+}
+
+.search-container button[type="submit"] {
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  border-radius: 1px;
+  font-weight: bold;
+  color: white;
+  background: #750404;
+  border: 1px solid #490000;
+  padding: 0.5em 1.4em;
+  cursor: pointer;
+}
+
+.search-container button[type="submit"]:active,
+.search-container button[type="submit"]:focus,
+.search-container button[type="submit"]:hover {
+  background: #490000;
+}
+
 .search-result > a.search-result-link {
   font-family: georgia,times,times new roman,serif;
   font-size: 14px;
   font-weight: bold;
 }
 
-.search-result em.search-result-author {
-  color: #A9A9A9;
+.search-result .search-result-author {
+  color: #a9a9a9;
 }
 
-.search-result p{
-  margin-bottom: 35px;
-  margin-top: 20px;
+.search-result em.search-result-author::after {
+  content: " \00B7";
+}
+
+.search-result .result-date {
+  color: #a9a9a9;
+}
+
+.search-result p {
+  margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 .pagination-box {
@@ -434,6 +490,7 @@ header .issue-info {
   .issue-table {
     border: none;
     border-bottom: 3px double black;
+    min-height: 0;
   }
 
   .newspaper-body .left-column, 
@@ -525,6 +582,7 @@ header .issue-info {
     border-bottom: 3px double black;
     padding-left: 0;
     padding-right: 0;
+    min-height: 0;
   }
 
   .newspaper-body .left-column, 

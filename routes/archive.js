@@ -212,7 +212,7 @@ exports.view_latest = function(req, res){
 };
 
 exports.search = function (req, res) {
-  let searchResult = {success: false, message: "No results...", queryString: req.query.query};
+  let searchResult = {success: false, message: "No results containing your search term were found.", queryString: req.query.query};
 
   if (req.query.query) {
     let offset = (1 * req.query.offset) || 0;
