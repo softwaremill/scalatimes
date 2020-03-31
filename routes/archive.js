@@ -3,6 +3,7 @@ var _ = require('underscore');
 var moment = require('moment');
 var cheerio = require('cheerio');
 var fs = require('fs');
+var axios = require('axios');
 mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
 
 // Variable, that keeps all campaigns 
@@ -11,6 +12,8 @@ var cachePath = process.env.CACHE_PATH;
 if (!cachePath.endsWith("/")) cachePath += '/';
 console.log("Disk cache path: " + cachePath);
 var mcFetchLimit = process.env.MC_LIMIT || 10;
+let CLOUD_SEARCH_URL = process.env.AWS_CS_QUERY_URL;
+const PAGE_SIZE = 25;
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
@@ -206,4 +209,45 @@ exports.view = function(req, res){
 exports.view_latest = function(req, res){
   var contentData = campaignsCache[0];
   res.render('index', {campaigns: campaignsCache, issue: contentData});
+};
+
+exports.search = function (req, res) {
+  let searchResult = {success: false, message: "No results containing your search term were found.", queryString: req.query.query};
+
+  if (req.query.query) {
+    let offset = (1 * req.query.offset) || 0;
+
+    axios.get(CLOUD_SEARCH_URL, {
+      params: {
+        "q": req.query.query,
+        "size": PAGE_SIZE,
+        "start": offset,
+        "return": "_all_fields",
+        "sort": "custom_score desc"
+      }
+    }).then(r => {
+      if (r.data.hits && r.data.hits.found) {
+        searchResult.success = true;
+        searchResult.results = r.data.hits.hit;
+        if (offset !== 0) {
+          searchResult.previousUrl = buildSearchUrl(req.query.query, offset - PAGE_SIZE);
+        }
+        if (offset + PAGE_SIZE < r.data.hits.found) {
+          searchResult.nextUrl = buildSearchUrl(req.query.query, offset + PAGE_SIZE);
+        }
+      }
+      res.render('archive/search', {campaigns: campaignsCache, searchResult: searchResult});
+
+    }).catch(function (error) {
+      console.error(error);
+      res.render('index', {campaigns: campaignsCache, issue: campaignsCache[0]});
+    });
+  } else {
+    res.render('archive/search', {campaigns: campaignsCache, searchResult: searchResult});
+  }
+
+  function buildSearchUrl(queryString, offset) {
+    return "/search".concat("?query=", encodeURIComponent(queryString), "&offset=", offset);
+  }
+
 };
