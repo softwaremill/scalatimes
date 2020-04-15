@@ -88,6 +88,12 @@ $(function() {
 
     console.log(array);
 
+    if (array.length === 0) {
+      $('.other-archives').css('display', 'none');
+    } else {
+      $('.other-archives').css('display', 'table');
+    }
+
     for (var i = 0; i < array.length; i++) {
       var columnHtml="";
 
