@@ -532,11 +532,11 @@ header .issue-info {
 @media only screen and (min-width : 320px) and (max-width : 599px) {
   body {
     margin: 0;
-    padding: 5px 0;
+    padding: 0;
   }
 
   .container {
-    max-width: 300px;
+    width: 100%;
   }
 
   header .intro,
@@ -596,7 +596,7 @@ header .issue-info {
 
   .column {
     display: inline-block;
-    width: 268px;
+    width: 100%;
   }
 
   .other-archives {
