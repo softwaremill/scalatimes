@@ -1,0 +1,39 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  release:
+    types:
+      - released
+
+env:
+  GCR_REGISTRY: eu.gcr.io/sml-gke-iac
+  GCR_REPOSITORY: scalatimes
+
+jobs:
+  deploy:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: sml-gke-iac
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - name: Use gcloud helper to push Docker image
+        run: gcloud auth configure-docker
+      - name: Get release or tag
+        uses: tenhaus/get-release-or-tag@v2
+        id: tag
+      - name: Build Docker image and push to GCR
+        env:
+          IMAGE_TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          docker build -t $GCR_REGISTRY/$GCR_REPOSITORY:$IMAGE_TAG .
+          docker push $GCR_REGISTRY/$GCR_REPOSITORY:$IMAGE_TAG
+          echo "... image has been built and pushed to $GCR_REGISTRY/$GCR_REPOSITORY:$IMAGE_TAG"
