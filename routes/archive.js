@@ -39,6 +39,8 @@ async function getAllCampaignsForList(listId) {
         const data = await mc.campaigns.list({
             status: "sent",
             listId: listId,
+            sort_field: "send_time",
+            sort_dir: "desc",
             count: mcFetchLimit,
         });
         console.log("start generating campaignsCache...");
@@ -66,7 +68,7 @@ async function fetchCampaignContent(id, callback) {
     try {
         const data = await mc.campaigns.getContent(id);
         console.log("Fetched HTML for campaign " + id);
-        const htmlContent = data.html;
+        const htmlContent = data.archive_html;
         cacheHtmlToDisk(id, htmlContent);
         callback(htmlContent);     
     } catch (e) {
