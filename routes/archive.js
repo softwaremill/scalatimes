@@ -61,23 +61,25 @@ function readListFromDiskCache() {
     });
     return campaigns;
 }
-async function fetchCampaignContent(id) {
+
+async function fetchCampaignContent(id, callback) {
     try {
-        const data = await mc.campaigns.getContent({campaign_id: id});
-        console.log("Fetched HTML for campaign " + campaign_id);
-        return data.html;
+        const data = await mc.campaigns.getContent(id);
+        console.log("Fetched HTML for campaign " + id);
+        const htmlContent = data.html;
+        cacheHtmlToDisk(id, htmlContent);
+        callback(htmlContent);     
     } catch (e) {
         console.error(e);
     }
 }
+
 function fetchCampaignHtml(id, callback) {
   var path = diskCachePathForKey(id);
   fs.readFile(path, 'utf8', function(err, data) {
     if (err) {
       console.log("Fetching campaign " + id + " from Mailchimp API");
-      const htmlContent = fetchCampaignContent(id);
-      cacheHtmlToDisk(id, htmlContent);
-      callback(htmlContent);     
+      fetchCampaignContent(id, callback);
     }
     else {
       console.log("Loading campaign " + id + " from disk cache");
@@ -96,7 +98,7 @@ function getCampaignsContent(campaigns) {
     
     (function (i) {
       var campaignId = campaigns[i].id;
-      console.log("Processing campaign " + id);
+      console.log("Processing campaign " + campaignId);
 
       fetchCampaignHtml(campaignId, function(htmlContent) {
         num++;
