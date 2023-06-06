@@ -1,15 +1,19 @@
-var mcapi = require('../node_modules/mailchimp-api/mailchimp');
-var _ = require('underscore');
-var moment = require('moment');
-var cheerio = require('cheerio');
-var fs = require('fs');
-var axios = require('axios');
-mc = new mcapi.Mailchimp(process.env.MAILCHIMP_API_KEY);
+const mc = require("@mailchimp/mailchimp_marketing");
+var _ = require("underscore");
+var moment = require("moment");
+var cheerio = require("cheerio");
+var fs = require("fs");
+var axios = require("axios");
 
-// Variable, that keeps all campaigns 
+mc.setConfig({
+    apiKey: process.env.MAILCHIMP_API_KEY,
+    server: "us2",
+});
+runPing();
+// Variable, that keeps all campaigns
 var campaignsCache = [];
 var cachePath = process.env.CACHE_PATH;
-if (!cachePath.endsWith("/")) cachePath += '/';
+if (!cachePath.endsWith("/")) cachePath += "/";
 console.log("Disk cache path: " + cachePath);
 var mcFetchLimit = process.env.MC_LIMIT || 10;
 let CLOUD_SEARCH_URL = process.env.AWS_CS_QUERY_URL;
@@ -17,43 +21,63 @@ const PAGE_SIZE = 25;
 getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
 
 // Update campaignsCache every 60 minutes
-setInterval(function(){
-  getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
-}, 1000*60*60);
+setInterval(function() {
+    getAllCampaignsForList(process.env.MAILCHIMP_LIST_ID);
+}, 1000 * 60 * 60);
 
+async function runPing() {
+    try {
+        const response = await mc.ping.get();
+        console.log(response);
+    } catch (e) {
+        console.error(e);
+    } 
+}
 
-function getAllCampaignsForList(listId) {
-  mc.campaigns.list({filters: {'status':'sent', 'list_id':listId}, 'limit': mcFetchLimit}, function(data) {
-    console.log("start generating campaignsCache...");
-    var campaigns = data.data;
-    getCampaignsContent(campaigns);
-  }, function(error) {
-    console.log(error);
-    getCampaignsContent(readListFromDiskCache());
-  });
+async function getAllCampaignsForList(listId) {
+    try {
+        const data = await mc.campaigns.list({
+            status: "sent",
+            listId: listId,
+            count: mcFetchLimit,
+        });
+        console.log("start generating campaignsCache...");
+        console.log("fetched campaigns: " + data.total_items);
+        var campaigns = data.campaigns;
+        console.log("array size: " + campaigns.length);
+        getCampaignsContent(campaigns);
+    } catch (error) {
+        getCampaignsContent(readListFromDiskCache());
+    }
 }
 
 function readListFromDiskCache() {
-  var files = fs.readdirSync(cachePath);
-  var campaigns = _.map(files, function(filename) {
-    var id = filename.slice(0, -("html".length + 1));
-    return {
-      id: id
-    }
-  });
-  return campaigns;
+    var files = fs.readdirSync(cachePath);
+    var campaigns = _.map(files, function(filename) {
+        var id = filename.slice(0, -("html".length + 1));
+        return {
+            id: id,
+        };
+    });
+    return campaigns;
 }
-
+async function fetchCampaignContent(id) {
+    try {
+        const data = await mc.campaigns.getContent({campaign_id: id});
+        console.log("Fetched HTML for campaign " + campaign_id);
+        return data.html;
+    } catch (e) {
+        console.error(e);
+    }
+}
 function fetchCampaignHtml(id, callback) {
   var path = diskCachePathForKey(id);
   fs.readFile(path, 'utf8', function(err, data) {
     if (err) {
       console.log("Fetching campaign " + id + " from Mailchimp API");
-      mc.campaigns.content({cid:id}, function(contentData) {
-        var htmlContent = contentData.html;
-        cacheHtmlToDisk(id, htmlContent);
-        callback(htmlContent);
-      });
+      const htmlContent = fetchCampaignContent(id);
+      cacheHtmlToDisk(id, htmlContent);
+      callback(htmlContent);     
     }
     else {
       console.log("Loading campaign " + id + " from disk cache");
@@ -72,6 +96,7 @@ function getCampaignsContent(campaigns) {
     
     (function (i) {
       var campaignId = campaigns[i].id;
+      console.log("Processing campaign " + id);
 
       fetchCampaignHtml(campaignId, function(htmlContent) {
         num++;
@@ -193,7 +218,6 @@ function getIssueInfo (htmlContent) {
 
   return issueInfo;
 }
-
 
 /*
  * Render content of given camplaign (/archive/:campaignId page).
