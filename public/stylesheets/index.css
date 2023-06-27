@@ -13,12 +13,12 @@ body {
 }
 
 a {
-  color: #BD0808;
+  color: #bd0808;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ED0000;
+  color: #ed0000;
 }
 
 .container {
@@ -26,8 +26,8 @@ a:hover {
   width: 100%;
   background-color: white;
   margin: 0 auto;
-  border: 1px solid #E7E7E7;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   padding: 15px;
   min-height: 100%;
 }
@@ -35,10 +35,10 @@ a:hover {
 header {
   width: 100%;
   overflow: auto;
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-header .intro, 
+header .intro,
 header .subscribe {
   width: 260px;
   font-size: 1.16em;
@@ -71,8 +71,8 @@ header .subscribe .clear {
 header .subscribe input[type="email"] {
   border-radius: 1px;
   padding: 0.35em 0.5em;
-  border: 1px solid #E7E7E7;
-  background: #F5F5F5;
+  border: 1px solid #e7e7e7;
+  background: #f5f5f5;
 }
 
 header .subscribe input[type="email"]:focus,
@@ -84,7 +84,7 @@ header .subscribe input[type="email"]:active {
 }
 
 header .subscribe input[type="submit"] {
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
   border-radius: 1px;
   font-weight: bold;
   color: white;
@@ -104,12 +104,12 @@ header .subscribe input[type="submit"]:hover {
 #mc_embed_signup #mce-error-response {
   z-index: 1;
   font-family: Courier, monospace;
-  color: red!important;
+  color: red !important;
   font-size: 0.8em;
-  padding: 0!important;
-  margin: 0!important;
-  background-color: transparent!important;
-  font-weight: normal!important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  font-weight: normal !important;
   line-height: 1.2;
 }
 
@@ -122,7 +122,7 @@ header .subscribe input[type="submit"]:hover {
 }
 
 #mc_embed_signup input.mce_inline_error {
-  border-color: rgb(211, 0, 0)!important;
+  border-color: rgb(211, 0, 0) !important;
 }
 
 header .logo {
@@ -186,7 +186,7 @@ header .issue-info {
   vertical-align: top;
 }
 
-.newspaper-body .left-column, 
+.newspaper-body .left-column,
 .newspaper-body .right-column {
   position: absolute;
   top: 0;
@@ -200,7 +200,7 @@ header .issue-info {
   right: 0;
 }
 
-.newspaper-body .issue{
+.newspaper-body .issue {
   padding: 0 192px;
   vertical-align: top;
   width: 960px;
@@ -236,18 +236,18 @@ header .issue-info {
 }
 
 .issue-table img {
-  max-width: 100%!important;
+  max-width: 100% !important;
 }
 
 .issue-table a:hover strong {
-  color: #ED0000!important;
+  color: #ed0000 !important;
 }
 
 .newspaper-body .sml-ad {
   border: 2px solid black;
   padding: 5px 7px;
   text-align: center;
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
   line-height: 1.8;
   font-size: 1.16em;
   margin-bottom: 10px;
@@ -258,8 +258,8 @@ header .issue-info {
 }
 
 .subscribeers-baner {
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  color: #BD0808;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  color: #bd0808;
   padding-bottom: 1.85em;
 }
 
@@ -274,10 +274,10 @@ header .issue-info {
 
 @keyframes blinker {
   1% {
-    color: #BD0808;
+    color: #bd0808;
   }
   49% {
-    color: #BD0808;
+    color: #bd0808;
   }
   50% {
     color: black;
@@ -300,7 +300,7 @@ header .issue-info {
 
 .column ol {
   padding: 0;
-  margin:  0;
+  margin: 0;
   list-style: none;
 }
 
@@ -309,7 +309,7 @@ header .issue-info {
 }
 
 .column .issue-title {
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.16em;
   font-weight: bold;
   color: black;
@@ -325,7 +325,7 @@ header .issue-info {
 }
 
 .column .issue-link:hover .issue-title {
-  color: #ED0000;
+  color: #ed0000;
 }
 
 .column ul {
@@ -333,7 +333,7 @@ header .issue-info {
   list-style: none;
 }
 
-.column ol>li {
+.column ol > li {
   padding-top: 7px;
   padding-bottom: 1px;
 }
@@ -349,7 +349,6 @@ header .issue-info {
 .column ol > li:last-child hr {
   display: none;
 }
-
 
 .other-archives {
   display: table;
@@ -415,7 +414,7 @@ header .issue-info {
 }
 
 .search-result > a.search-result-link {
-  font-family: georgia,times,times new roman,serif;
+  font-family: georgia, times, times new roman, serif;
   font-size: 14px;
   font-weight: bold;
 }
@@ -457,7 +456,7 @@ header .issue-info {
 
 /* tablets */
 /*@media only screen and (min-device-width : 600px) and (max-device-width : 1024px) {*/
-@media only screen and (min-width : 600px) and (max-width : 1024px) {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
   body {
     margin: 0;
     padding: 5px 0;
@@ -478,7 +477,7 @@ header .issue-info {
     padding: 0;
     font-size: 1.1em;
     border: none;
-    color: gray; 
+    color: gray;
   }
 
   header .logo {
@@ -497,14 +496,14 @@ header .issue-info {
     min-height: 0;
   }
 
-  .newspaper-body .left-column, 
+  .newspaper-body .left-column,
   .newspaper-body .right-column {
     position: initial;
     margin-bottom: 10px;
   }
 
   .newspaper-body .left-column {
-    border-right: 1px solid black; 
+    border-right: 1px solid black;
   }
 
   .column {
@@ -529,7 +528,7 @@ header .issue-info {
   }
 }
 
-@media only screen and (min-width : 320px) and (max-width : 599px) {
+@media only screen and (min-width: 320px) and (max-width: 599px) {
   body {
     margin: 0;
     padding: 0;
@@ -550,7 +549,7 @@ header .issue-info {
     padding: 0;
     font-size: 1.1em;
     border: none;
-    color: gray; 
+    color: gray;
   }
 
   header .logo {
@@ -589,7 +588,7 @@ header .issue-info {
     min-height: 0;
   }
 
-  .newspaper-body .left-column, 
+  .newspaper-body .left-column,
   .newspaper-body .right-column {
     position: initial;
   }
@@ -618,5 +617,4 @@ header .issue-info {
   .column ol > li:last-child hr {
     display: block;
   }
-
 }
