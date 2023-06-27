@@ -65,6 +65,7 @@ header .subscribe .mc-field-group {
 
 header .subscribe .clear {
   margin-top: 5px;
+  position: relative;
   margin-bottom: 5px;
 }
 
@@ -98,6 +99,14 @@ header .subscribe input[type="submit"]:active,
 header .subscribe input[type="submit"]:focus,
 header .subscribe input[type="submit"]:hover {
   background: #490000;
+}
+
+header .privacy {
+  margin-top: 3px;
+  padding: 3px;
+  font-size: 0.6em;
+  position: absolute;
+  clear: both;
 }
 
 #mc_embed_signup div.mce_inline_error,
