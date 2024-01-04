@@ -9,8 +9,9 @@ on:
       - released
 
 env:
-  GCR_REGISTRY: eu.gcr.io/sml-gke-iac
+  GCR_REGISTRY: europe-west2-docker.pkg.dev/sml-gke-iac
   GCR_REPOSITORY: scalatimes
+  IMAGE: scalatimes
 
 jobs:
   deploy:
@@ -18,27 +19,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Get release or tag
         uses: tenhaus/get-release-or-tag@v2
         id: tag
       - name: "Authenticate to Google Cloud"
         id: "auth"
-        uses: "google-github-actions/auth@v1"
+        uses: "google-github-actions/auth@v2"
         with:
           project_id: sml-gke-iac
           credentials_json: "${{ secrets.GCP_SA_KEY }}"
           token_format: "access_token"
       - name: Login to docker registry
-        uses: "docker/login-action@v1"
+        uses: "docker/login-action@v3"
         with:
-          registry: "eu.gcr.io"
+          registry: "europe-west2-docker.pkg.dev"
           username: "oauth2accesstoken"
           password: "${{ steps.auth.outputs.access_token }}"
       - name: Build Docker image and push to GCR
         env:
           IMAGE_TAG: ${{ steps.tag.outputs.tag }}
         run: |
-          docker build -t $GCR_REGISTRY/$GCR_REPOSITORY:$IMAGE_TAG .
-          docker push $GCR_REGISTRY/$GCR_REPOSITORY:$IMAGE_TAG
-          echo "... image has been built and pushed to $GCR_REGISTRY/$GCR_REPOSITORY:$IMAGE_TAG"
+          docker build -t $GCR_REGISTRY/$GCR_REPOSITORY/$IMAGE:$IMAGE_TAG .
+          docker push $GCR_REGISTRY/$GCR_REPOSITORY/$IMAGE:$IMAGE_TAG
+          echo "... image has been built and pushed to $GCR_REGISTRY/$GCR_REPOSITORY/$IMAGE:$IMAGE_TAG"
