@@ -107,7 +107,7 @@ function getCampaignsContent(campaigns) {
         var campaignTitle = getCampaignTitle(htmlContent);
 
         // Filter campaigns that start with "Scala Times Issue"
-        if (campaignTitle.startsWith("Scala Times Issue")) {
+        if (campaignTitle !== undefined && campaignTitle.startsWith("Scala Times Issue")) {
           var excerpt = getCampaignExcerpts(htmlContent);
           var campaignBody = getCampaignBody(htmlContent);
           var issueInfo = getIssueInfo(htmlContent);
