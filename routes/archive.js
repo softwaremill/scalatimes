@@ -31,7 +31,7 @@ async function runPing() {
         console.log(response);
     } catch (e) {
         console.error(e);
-    } 
+    }
 }
 
 async function getAllCampaignsForList(listId) {
@@ -70,7 +70,7 @@ async function fetchCampaignContent(id, callback) {
         console.log("Fetched HTML for campaign " + id);
         const htmlContent = data.archive_html;
         cacheHtmlToDisk(id, htmlContent);
-        callback(htmlContent);     
+        callback(htmlContent);
     } catch (e) {
         console.error(e);
     }
@@ -95,31 +95,36 @@ function getCampaignsContent(campaigns) {
   var campaignsArray = [];
 
   for (var i = 0; i < campaigns.length; i++) {
-    
+
     var num = 0;
-    
+
     (function (i) {
       var campaignId = campaigns[i].id;
       console.log("Processing campaign " + campaignId);
 
       fetchCampaignHtml(campaignId, function(htmlContent) {
         num++;
-        var excerpt = getCampaignExcerpts(htmlContent);
-        var campaignBody = getCampaignBody(htmlContent);
-        var issueInfo = getIssueInfo(htmlContent);
         var campaignTitle = getCampaignTitle(htmlContent);
-        var campaignDate = getCampaignDate(issueInfo);
-        var campaignIndex = getCampaignIndex(issueInfo, i);
-        campaignsArray.push({
-          'title': campaignTitle,
-          'id': campaignId,
-          'html': htmlContent,
-          'excerpt': excerpt,
-          'campaignBody': campaignBody,
-          'issueInfo': issueInfo,
-          'date': campaignDate,
-          'index': campaignIndex
-        });
+
+        // Filter campaigns that start with "Scala Times Issue"
+        if (campaignTitle.startsWith("Scala Times Issue")) {
+          var excerpt = getCampaignExcerpts(htmlContent);
+          var campaignBody = getCampaignBody(htmlContent);
+          var issueInfo = getIssueInfo(htmlContent);
+          var campaignDate = getCampaignDate(issueInfo);
+          var campaignIndex = getCampaignIndex(issueInfo, i);
+
+          campaignsArray.push({
+            'title': campaignTitle,
+            'id': campaignId,
+            'html': htmlContent,
+            'excerpt': excerpt,
+            'campaignBody': campaignBody,
+            'issueInfo': issueInfo,
+            'date': campaignDate,
+            'index': campaignIndex
+          });
+        }
 
         // check if all requests were finished => array is complete
         if (num == campaigns.length) {
@@ -181,11 +186,11 @@ function getCampaignExcerpts (htmlContent) {
 
     // If it's mailto link - skip
     if($(element).attr('href').indexOf('mailto:') !== 0) {
-      
+
       // If it's twitter link - skip
       if($(element).attr('href').indexOf('https://twitter.com') !== 0) {
 
-        var textContent = $(element).text(); 
+        var textContent = $(element).text();
 
         // Link should be longer than 2 words and less than 12 words
         if (textContent.split(' ').length > 2 && textContent.split(' ').length < 12) {
@@ -193,7 +198,7 @@ function getCampaignExcerpts (htmlContent) {
           // Check if first words starts with Capital letter
           if (textContent[0] === textContent[0].toUpperCase()) {
             goodContentArray.push(textContent);
-          }           
+          }
         }
       }
     }
