@@ -14,6 +14,8 @@ spec:
       labels:
         app: scalatimes
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
       - name: scalatimes
         image: softwaremill/scalatimes:latest
