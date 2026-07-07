@@ -6,6 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "3.0.80",
     "axios": "^1.8.2",
     "body-parser": "^1.18.3",
     "cheerio": "*",
@@ -13,11 +14,11 @@
     "errorhandler": "^1.5.0",
     "express": "^4.21.2",
     "express-session": "^1.15.6",
-    "pug": "3.0.3",
-    "@mailchimp/mailchimp_marketing": "3.0.80",
+    "helmet": "8.2.0",
     "method-override": "^3.0.0",
-    "morgan": "^1.9.1",
     "moment": "^2.29.4",
+    "morgan": "^1.9.1",
+    "pug": "3.0.3",
     "serve-favicon": "^2.5.0",
     "underscore": "*"
   }

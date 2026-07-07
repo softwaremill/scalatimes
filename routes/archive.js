@@ -39,7 +39,7 @@ async function getAllCampaignsForList(listId) {
         const data = await mc.campaigns.list({
             status: "sent",
             listId: listId,
-            sort_field: "send_time",
+            sort_field: "create_time",
             sort_dir: "desc",
             count: mcFetchLimit,
         });
