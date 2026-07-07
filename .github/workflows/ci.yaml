@@ -21,17 +21,17 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Get release or tag
-        uses: tenhaus/get-release-or-tag@v2
+        uses: tenhaus/get-release-or-tag@db458cc32a8bb175ad2d1c1b6aae6200653c625f # v2
         id: tag
       - name: "Authenticate to Google Cloud"
         id: "auth"
-        uses: "google-github-actions/auth@v2"
+        uses: "google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed" # v2.1.13
         with:
           project_id: sml-gke-iac
           credentials_json: "${{ secrets.GCP_SA_KEY }}"
           token_format: "access_token"
       - name: Login to docker registry
-        uses: "docker/login-action@v3"
+        uses: "docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9" # v3.7.0
         with:
           registry: "europe-west2-docker.pkg.dev"
           username: "oauth2accesstoken"
