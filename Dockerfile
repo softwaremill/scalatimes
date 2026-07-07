@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:26.4.0-alpine3.23
 
 ENV CACHE_PATH=/app/cache/
 EXPOSE 3000
