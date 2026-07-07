@@ -15,11 +15,13 @@ var express = require('express')
   , morgan = require('morgan')
   , bodyParser = require('body-parser')
   , methodOverride = require('method-override')
-  , errorHandler = require('errorhandler');
+  , errorHandler = require('errorhandler')
+  , helmet = require('helmet');
 
 var app = express();
 
 // all environments
+app.use(helmet());
 app.use(favicon(path.join(__dirname, 'public', 'images/favicon.ico')));
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
