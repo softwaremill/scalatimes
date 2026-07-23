@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "3.0.80",
-    "axios": "^1.8.2",
+    "axios": "^1.18.0",
     "body-parser": "^1.18.3",
     "cheerio": "*",
     "cookie-parser": "^1.4.3",
