@@ -59,7 +59,7 @@ jobs:
           persist-credentials: false
           path: sml-gitops
       - name: Update prod image tag
-        working-directory: sml-gitops/apps/overlays/visdom-orchestrator
+        working-directory: sml-gitops/apps/overlays/scalatimes
         env:
           IMAGE_FULL_TAG: ${{ env.GCR_REGISTRY }}/${{ env.GCR_REPOSITORY }}/${{ env.IMAGE }}:${{ steps.tag.outputs.tag }}
         run: kustomize edit set image "$IMAGE_FULL_TAG"
